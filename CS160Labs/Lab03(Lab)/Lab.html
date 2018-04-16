@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Lab 3: Turtle and Hare</title>
+  </head>
+  
+  <body style="color: rgb(0, 0, 102); background-color: rgb(255, 247, 215);">
+    <h2>
+      Lab 3: Graphical programs &amp; simple computation&#8212;the Turtle and
+      the Hare
+    </h2>
+
+    <h3>Objectives</h3>
+
+    <ul>
+      <li>
+        Have students write programs using graphics objects.
+      </li>
+      <li>
+        Familiarize students with the use of random numbers.
+      </li>
+    </ul>
+
+    <p>
+      In this lab, you will write a Java program that displays a race between
+      two different objects, an oval and a rectangle, representing a turtle
+      and a hare, respectively. With each mouse click, each racer should move a
+      random distance to the right until one of the racers crosses the finish
+      line. You will do this by modifying the file <code>Race.java</code>.
+    </p>
+
+    <h3>
+      Preliminaries
+    </h3>
+
+    <p>
+      If you have not already done so, you must complete the pre-lab exercise
+      for this lab before you can proceed to the in-lab parts.
+    </p>
+
+    <h3>
+      Part 1: Moving the racers
+    </h3>
+
+    <p>
+      As you noticed when you tested the <code>Race.class</code> program in the
+      <code>solution</code>, the racers advance a little bit each time you click
+      the mouse in the race canvas. You shouldn't be surprised, then, that it's
+      the method named <code>mouseclicked()</code> that handles this behavior in
+      the program. This part of the lab will consist of adding statements to the
+      <code>mouseclicked()</code> method so that it produces the desired
+      behavior.
+    </p>
+
+    <p>
+      One of the methods available for objects of the <em>GObject</em> class
+      (including <em>GOval</em>, <em>GRect</em> and <em>GLine</em>) is the
+      <code>move()</code> method, which moves a graphical object the specified
+      distance in pixels. The method takes two parameters, the first is for
+      horizontal distance and the second for vertical distance. Negative values
+      for horizontal movement cause the object to move left; positive values
+      cause it to move right. Similarly, negative values for vertical movement
+      cause the object to move up; positive values cause it to move down. You
+      can use this method to move the racers across the track.
+    </p>
+
+    <p>
+      Notice that the program already has the following local variable
+      declaration in the <code>mouseClicked()</code> method:
+    </p>
+
+    <pre>
+    double moveAmount;</pre>
+
+    <p>
+      This variable is intended to hold the number of pixels we want the racer
+      to move, but it currently has no value. Use an assignment statement of the
+      form <code>variableIdentifier&nbsp;=&nbsp;value;</code> to set the value
+      of the <code>moveAmount</code> variable to 10.0; put it immediately after
+      the declaration above. Next add two calls to the <code>move()</code>
+      method; the first should be
+      <code>this.turtle.move(moveAmount,&nbsp;0);</code> and the second should
+      do the same thing for the hare.
+    </p>
+
+    <p>
+      Compile and run the program. How does it behave?
+    </p>
+
+    <p>
+      At this stage, the two racers should move to the right 10 pixels with each
+      mouse click. This is a good start, but it's not how we want the program to
+      behave. As you noticed when you tested <code>Race.class</code> in the
+      <code>solution</code> directory, the racers move different amounts from
+      each other and different amounts each time the mouse is clicked. We can
+      achieve this behavior by varying the amount of movement each time one of
+      the racers moves; the simplest way to get this variation is by using a
+      random number generator. Try changing the assignment statement to the
+      following:
+    </p>
+
+    <pre>
+    moveAmount = 10.0 + 10.0 * Math.random();</pre>
+
+    <p>
+      Compile and run to see what happens. The racers should now move a
+      different amount with each mouse click, but they're still both moving at
+      the same pace. To fix that problem, we need to change the value of
+      <code>moveAmount</code> before we move the hare.
+    </p>
+
+    <p>
+      Before we change the amount, let's consider what the revised assignment
+      statement does: it still sets 10.0 pixels as part of the move amount, but
+      it adds 10 times the value of the expression <code>Math.random()</code>,
+      which is a call to the <code>random()</code> method of the <em>Math</em>
+      class. The <code>random()</code> method takes no parameters and returns a
+      (pseudo)-random value between 0.0 and 1.0. Thus, the value assigned to
+      <code>moveAmount</code> is now a random value in the range 10.0 to 20.0.
+      That's a reasonable pattern of movement for the turtle&#8212;fairly slow
+      and pretty steady&#8212;but it's not a good choice for the hare. The hare
+      can run faster than the turtle, but it's also more likely to stop and
+      rest. Add a second assignment statement to the variable
+      <code>moveAmount</code> between the two <code>move()</code> calls that
+      causes the hare's speed to vary randomly between 2.0 and 25.0 instead of
+      between 10.0 and 20.0. Compile the revised program and run it several
+      times to get an idea of who wins the race more often. If you like, try
+      changing the movement formulas to see if you can get more interesting
+      results.
+    </p>
+
+    <p>
+      When you are successful in getting the basic racers to work correctly,
+      show your lab instructor or TA.
+    </p>
+
+    <h3>
+      Part 2: Improving the racers' appearance
+    </h3>
+
+    <p>
+      Make the hare and turtle more realistic by adding small objects like
+      legs, heads, ears and eyes. (Use ovals, rectangles and lines of different
+      sizes and colors.) Note that you will have to move each of the objects
+      connected with a given racer the same amount at each step or your racers
+      will literally fall apart.
+    </p>
+
+    <p>
+      Show your finished program to the lab instructor or TA.
+    </p>
+  </body>
+</html>

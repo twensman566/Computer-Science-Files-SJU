@@ -1,0 +1,156 @@
+<!DOCTYPE>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:light" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:light" rel="stylesheet">
+    <style>
+      * {color: #93a1a1; font-family: "Roboto Condensed", sans-serif;}
+      body {background-color: #eee8d5;}
+      h2,h3 {color: #073642;}
+      a,a:active,a:visited {color: #d33682;}
+      pre,kbd,code {font-family: "Roboto Mono", sans-serif; font-size: 85%;}
+      kbd {color: #d33682;}
+      pre,code {color: #6c71c4;}
+    </style>
+    <title>Lab 12: Files, Arrays and Sorting</title>
+  </head>
+    
+  <body>
+    <h2>
+      Lab 12: Files, Arrays and Sorting&#8212;sorting a file of numbers
+    </h2>
+
+    <p>
+      In this lab, you will prepare static methods that read data from a file
+      into an array, write data from an array into a file, generate an array of
+      random data, and sort an array of data. For this lab, the data will be
+      type double.
+    </p>
+
+    <h3>
+      Preliminaries
+    </h3>
+
+    <p>
+      Using a terminal window, copy the directory named <kbd>Lab12</kbd> from
+      <kbd>/usr/people/classes/CS160/labs</kbd> into your <kbd>CS160</kbd>
+      directory. Use the <kbd>tree</kbd> command to verify that the directory
+      structure for your local copy of <kbd>Lab12</kbd> matches the following:
+    </p>
+
+    <pre style="color: #d33682;">
+    Lab12
+    |-- DoubleUtilities.java
+    |-- Lab.html
+    |-- RandomFileMaker.java
+    `-- solution
+        |-- DoubleUtilities.class
+        |-- RandomFileMaker.class
+        `-- RandomFileSorter.class
+    </pre>
+
+    <h3>
+      Part 1: Generating, reading and writing files
+    </h3>
+
+    <p>
+      You are given the file <kbd>DoubleUtilities.java</kbd>, which has stubs
+      for four static methods. You will be completing these four methods in the
+      lab, but it will be easiest to do them one at a time.
+    </p>
+
+    <p>
+      Start with the <code>generateValues()</code> method. You first need to
+      create a new array of doubles of the specified size. Next, use a loop to
+      generate <em>numDoubles</em> random values in the range of <em>low</em> to
+      <em>high</em>. Once the loop is finished, the method should return a
+      reference to the newly created array.
+    </p>
+
+    <p>
+      Use the included <kbd>RandomFileMaker.java</kbd> program to test this
+      class. Temporarily comment out the line that calls the
+      <code>writeFile()</code> method, and add a loop that prints all the values
+      in the array. When the method works correctly, check it in with the TA or
+      lab instructor.
+    </p>
+
+    <p>
+      Work on the <code>writeFile()</code> method next. This method is to write
+      an array of doubles to a file. The file will consist of one or more lines
+      of text, with the <strong>number</strong> of double values on the first
+      line and one double number on each line that follows. This method uses a
+      <code>PrintWriter</code> object to write each element of the array to a
+      file. Use the <code>FileChooser</code> class to open the
+      <code>PrintWriter</code>, and don't forget to close it when you're done
+      with it. (If you want to look at the documented code for the
+      <code>FileChooser</code> class, you can find it in
+      <kbd>/net/people/classes/Java/fileChooser</kbd>.)
+    </p>
+    
+    <p>
+      Example File:<br>
+      5<br>
+      11.006459811387067<br>
+      8.117552890098883<br>
+      11.492653355768562<br>
+      9.104252299675444<br>
+      8.8088378589365655<br>
+    </p>
+
+    <p>
+      Test the <code>writeFile()</code> method using the
+      <code>RandomFileMaker</code> program again, uncommenting the line that
+      calls the method. Show your working program to the TA or lab instructor.
+    </p>
+
+    <p>
+      Finally for this part, implement the <code>readFile()</code> method. Use a
+      <code>Scanner</code> opened with the <code>FileChooser</code> to read the
+      file; Use the <code>nextInt()</code> method to read the
+      <strong>number</strong> of double values into a variable that you then use
+      to create an array of the appropriate size. Use the
+      <code>nextDouble()</code> method to read in the double values into the
+      array.
+    </p>
+
+    <p>
+      Test the <code>readFile()</code> method by writing a simple program,
+      modeled on the <code>RandomFileMaker</code> program, call it
+      <kbd>RandomFileSorter.java</kbd>, that calls the method and then displays
+      the contents for the resulting array. Check in your work in before
+      continuing.
+    </p>
+
+    <h3>
+      Part 2: Sorting an array
+    </h3>
+
+    <p>
+      Implement the <code>sort()</code> method using the following algorithm:
+    </p>
+
+    <pre style="color: #93a1a1; font-family: 'Roboto Condensed', sans-serif; font-size: 100%;">
+      <strong>algorithm</strong> insertionSort(array):
+          <strong>for</strong> index <em>i</em> ranging from the second position in the array to the last:
+              <em>temp</em> &#8592; <em>array<sub>i</sub></em>
+              <em>j</em> &#8592; <em>i</em> &#8722; 1
+              <strong>while</strong> <em>j</em> &#8805; 0 <strong>and</strong> <em>array<sub>j</sub></em> &gt; <em>temp</em> :
+                  <em>array<sub>j</sub></em><sub>+1</sub> &#8592; <em>array<sub>j</sub></em>
+                  decrement <em>j</em>
+              <strong>end while</strong>
+              <em>array<sub>j</sub></em><sub>+1</sub> &#8592; temp
+          <strong>end for</strong>
+      <strong>end</strong> insertionSort
+    </pre>
+
+    <p>
+      Modify the test program that your wrote in the previous step to read
+      a file of numbers into an array, sort the array, and then write the
+      sorted results into a new file. Use the <em>RandomFileMaker</em> program
+      itself to generate several test files of different sizes. Test your
+      program thoroughly and then show it to the TA or lab instructor.
+    </p>
+  </body>
+</html>

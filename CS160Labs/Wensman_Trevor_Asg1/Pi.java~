@@ -1,0 +1,37 @@
+import java.util.Scanner;
+import acm.program.Program;
+
+public class Pi extends Program
+{
+  
+  public static void main(String[] args) 
+  {
+    
+// Create a Scanner object
+    Scanner input = new Scanner (System.in);
+    
+    // Prompt the user to enter input
+    //System.out.println("Enter number of terms");   
+    double num = -1;
+    double num1 = -1;
+// value of num user entered
+    double sum = 2;
+    
+    for(num1=0; num1<100;)
+    {
+      
+      num1 = num1 + 1;      
+      num = num + 2;
+      if(num1%2 == 0) 
+      {
+// if the remainder of `num/2` is 0
+        sum -= sum / (num);
+      }
+      else
+      {
+        sum += sum /(num);             
+      }
+      System.out.println(sum);      
+    }
+  }
+}

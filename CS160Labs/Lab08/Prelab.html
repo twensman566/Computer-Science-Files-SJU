@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:light" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:light" rel="stylesheet">
+    <style>
+      * {color: #93a1a1; font-family: "Roboto Condensed", sans-serif;}
+      body {background-color: #eee8d5;}
+      h2,h3 {color: #073642;}
+      a,a:active,a:visited {color: #d33682;}
+      pre,kbd,code {font-family: "Roboto Mono", sans-serif; font-size: 85%;}
+      kbd {color: #d33682;}
+      pre,code {color: #6c71c4;}
+    </style>
+    <title>Lab 8: Making Faces</title>
+  </head>
+
+  <body>
+    <h2>
+      Lab 8: Using Interfaces&#8212;Funny Faces
+    </h2>
+
+    <h3>
+      Preliminaries
+    </h3>
+
+    <p>
+      Using a terminal window, copy the directory named <kbd>Lab08</kbd> from
+      <kbd>/usr/people/classes/CS160/labs</kbd> into your <kbd>CS160</kbd>
+      directory. Use the <kbd>tree</kbd> command to verify that the directory
+      structure for your local copy of <kbd>Lab08</kbd> matches the following:
+    </p>
+
+    <pre style="color: #d33682;">
+    Lab08
+    |-- Face.java
+    |-- FaceTest.java
+    |-- FunnyFace.java
+    |-- OddFace.java
+    |-- Prelab.html
+    `-- solution
+        |-- Face.class
+        |-- FaceTest.class
+        |-- FunnyFace.class
+        `-- OddFace.class
+    </pre>
+
+    <h3>
+      Pre-lab exercise: Completing the <code>FunnyFace</code> class
+    </h3>
+
+    <p>
+      You are given the Java files for the <code>Face</code> interface and the
+      <code>FunnyFace</code> class that implements the <code>Face</code>
+      interface. The class, as given, is not fully implemented; you will be
+      completing the class implementation in this lab. Before starting the lab,
+      compile and run the <code>FaceTest</code> program to see how the face
+      works.
+    </p>
+
+    <p>
+      Notice that there are several methods in the <code>Face</code> interface
+      that are stubs in the <code>FunnyFace</code> class. A <code>stub</code> is
+      a method that exists, but does nothing. The test program actually calls
+      the stub methods, but you don't see them working because they don't change
+      the appearance of the face. In this lab, you will modify the
+      <code>FunnyFace</code> class so that it implements the stub methods.
+    </p>
+
+    <p>
+      The methods that you have to implement all change the appearance of the
+      face in some way. As the programmer, you can modify the appearance of an
+      object by moving it, resizing it, or replacing it with a different shape.
+      Moving the eyes or the mouth will probably not give the appearance of
+      closing or smiling or frowning, so let's leave that option aside. (Moving
+      the eyes up could be used to express surprise, but that's not what you're
+      working on today.)
+    </p>
+
+    <p>
+      The easier process is to re-size an object. Consider closing the eyes:
+      they need to change from (relatively) large ovals to something the same
+      width, but not very tall. Ideally, closed eyes would look like a downward
+      curve, but that shape isn't available to us. One the other hand, if you
+      change the dimensions of the eye so that it's a wide short oval, it will
+      probably look enough like a closed eye for our purposes. You can change
+      its shape with the <code>scale(sx, sy)</code> method, using 1.0 for
+      <code>sx</code> to keep the width the same and maybe 0.2 for
+      <code>sy</code> to make it one-fifth its former height. You can then scale
+      it back to open the eyes using the inverse scale factors. You'll probably
+      need to move the eyes down when you close them and back up when you open
+      them. Try this out before you go on.
+    </p>
+
+    <p>
+      Making the mouth smile or frown is not so simple, because the mouth must
+      actually change shape. The general process for changing a shape is first
+      to remove the object (<code>this.remove(mouth);</code> in this case), then
+      to create the new shape and assign it to the appropriate variable, and
+      finally to add the new shape. The best shape for a smiling or frowning
+      mouth is probably a <code>GArc</code>. Look in the documentation for this
+      shape. The first constructor listed in the documentation allows you to
+      specify the width and height of its bounding rectangle, and the angles
+      that control the curve of the arc. The first two parameters should
+      probably be the same as for the neutral mouth (oval). The <em>start</em>
+      angle for the frown will be a somewhere around 0&deg; and the
+      <em>sweep</em> angle should be 180&deg; minus twice the <em>start</em>
+      angle. For example, if the start angle is -25&deg;, then the sweep angle
+      should be 130&deg;, unless you want a crooked frown. Try this out, and
+      experiment with the parameters until you get the smile and frown you want.
+      If you want to get fancy, you can overlay the first arc with a second arc
+      in the face fill color to get a crescent shape. You should add the new
+      mouth at the same location that the original mouth was added.
+    </p>
+
+    <p>
+      Show your work to the TA or lab instructor at the beginning of lab.
+    </p>
+  </body>
+</html>

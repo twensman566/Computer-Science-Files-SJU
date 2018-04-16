@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Lab 3: Turtle and Hare</title>
+  </head>
+  
+  <body style="color: rgb(0, 0, 102); background-color: rgb(255, 247, 215);">
+    <h2>
+      Lab 3: Graphical programs &amp; simple computation&#8212;the Turtle and
+      the Hare
+    </h2>
+
+    <h3>
+      Objectives
+    </h3>
+
+    <ul>
+      <li>
+        To write programs using graphics objects
+      </li>
+      <li>
+        To become familiar with the use of random numbers.
+      </li>
+    </ul>
+
+    <p>
+      In this lab, you will write a Java program that displays a race between
+      two different objects, an oval and a rectangle, representing a turtle and
+      a hare, respectively. With each mouse click, each racer should move a
+      random distance to the right until one of the racers crosses the finish
+      line. You will do this by modifying the file <code>Race.java</code>.
+    </p>
+
+    <h3>
+      Setup
+    </h3>
+
+    <p>
+      Using a terminal window, copy the directory
+      <code>/usr/people/classes/CS160/labs/Lab03</code> into your
+      <code>CS160</code> directory. Use the <code>ls</code> command to verify
+      that the directory is there and that it contains one Java file, namely
+      <code>Race.java</code> and a directory called <code>solution</code>.
+      Inside the <code>solution</code> directory, you should find a Java class
+      file named <code>Race.class</code>.
+    </p>
+
+    <h3>
+      Testing a completed version of the program
+    </h3>
+
+    <p>
+      To see how the program for this lab should work, go into your terminal
+      window, change into directory <code>CS160/labs/Lab03/solution</code> and
+      enter the command <code>java Race</code>, which causes the JVM to run the
+      program <code>Race.class</code>. You may have to resize the window that
+      comes up to see the whole race course. Then click away until the race is
+      run. The program you create in this lab will do the same thing.
+    </p>
+
+    <h3>
+      Pre-lab exercise
+    </h3>
+
+    <p>
+      For the pre-lab, you will set up the initial race with the starting line,
+      finish line, turtle (oval) and hare (rectangle). You accomplish this by
+      declaring instance variables for each of the objects in the scene and then
+      creating and setting up the objects in the <code>init()</code> method.
+    </p>
+
+    <p>
+      You can place all constant and instance variable declarations in the area
+      above the <code>init()</code> method.
+    </p>
+
+    <p>
+      The <code>init()</code> method should place the objects on the canvas for
+      the beginning of the race, including a vertical start line near the left
+      edge, a vertical finish line near the right edge, a gray square to
+      represent the hare and a green circle to represent the turtle, both placed
+      just to the left of the start line, one a bit above the other.
+    </p>
+    
+    <p>
+      Notice that the program already has the following declaration:
+    </p>
+
+    <pre>
+    private GOval turtle;</pre>
+
+    <p>
+      We can create the turtle in the <code>init()</code> method after the first
+      statement as follows:
+    </p>
+
+    <pre>
+    this.turtle = new GOval(30, 20);
+    this.add(this.turtle, 10, 10);</pre>
+
+    <p>
+      Compile and run this code. You should see the outline of a black oval in
+      the upper-left corner. The turtle looks like this because the constructor
+      call <code>new GOval(30, 20)</code>, followed by
+      <code>this.add(this.turtle, 10, 10)</code>. Together these specify that an
+      oval which is 30 pixels wide and 20 pixels high should be placed 10 pixels
+      left and 10 pixels down from the upper-left corner; the default color for
+      any graphical object is black, and it is also drawn as an outline by
+      default. Experiment with changing the position and size of the oval by
+      varying the parameters to the constructor call until you are satisfied
+      that it looks about the same as the one in the Race program.
+    </p>
+
+    <p>
+      Now, change the color of the oval and set it so it's filled in. You can
+      change the color with the <code>setColor()</code> method using the
+      statement <code>this.turtle.setColor(Color.GREEN);</code> just between the
+      two statements you added from above. The <code>setFilled()</code> method:
+      <code>this.turtle.setFilled(true)</code> causes the oval to be filled
+      instead of an outline. Compile and run the program to see the effect of
+      adding these statements.
+    </p>
+
+    <p>
+      You can create the hare in a similar way, but use a different shape,
+      location and color for the hare. You'll essentially repeat the four
+      statements you used to create the turtle, with the following changes:
+      instead of the <em>GOval</em> constructor, call the <em>GRect</em>
+      constructor, which takes the same two parameters; use a different location
+      for the hare, but you can probably use the same width and height; choose a
+      different color.
+    </p>
+
+    <p>
+      Finally, you need to create the start and finish lines, which are both
+      objects in the <em>GLine</em> class. The <em>GLine</em> constructor takes
+      four parameters. The first two parameters are the <em>x-</em> and
+      <em>y-coordinates</em> in pixels of the starting point of the line
+      relative to the upper-left corner of the canvas; the last two parameters
+      are the coordinates of the ending point of the line. Create the two lines
+      and add them to the canvas, experimenting with the start and end points
+      until you have them where you want them. (A little arithmetic and geometry
+      might be helpful.) You can change the color of the lines with the same
+      named <code>setColor()</code> method, but the <code>setFilled()</code>
+      method does not apply to lines.
+    </p>
+
+    <p>
+      Work on this program until it produces a display similar to the one in the
+      Race program, but feel free to be a little creative. Show your working
+      program (complete this far) to the instructor or TA at the beginning of
+      lab.
+    </p>
+  </body>
+</html>

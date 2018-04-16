@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:light" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:light" rel="stylesheet">
+    <style>
+      * {color: #93a1a1; font-family: "Roboto Condensed", sans-serif;}
+      body {background-color: #eee8d5;}
+      h2,h3,h4 {color: #073642;}
+      a,a:active,a:visited {color: #d33682;}
+      pre,kbd,code {font-family: "Roboto Mono", sans-serif; font-size: 85%;}
+      kbd {color: #d33682;}
+      pre,code {color: #6c71c4;}
+    </style>
+    <title>Assignment 4: Computational recrusion</title>
+  </head>
+
+  <body>
+    <h2>
+      Assignment 4: Computational recursion
+    </h2>
+
+    <h3>
+      Problem 1&#8212;Tree
+    </h3>
+
+    <p>
+      Write a Java class <code>Tree</code> that is a Java implementation of the
+      GNU utility <kbd>tree</kbd>, which you should be familiar with from
+      prelabs.
+      The class should define the following:
+    </p>
+
+    <ul>
+      <li>
+        Private static methods
+        <ul>
+          <li>
+            <code>tree(String, String)</code> &#8212; takes two
+            <code>String</code> reference variables as parameters. The first
+            <code>String</code> will be the path, i.e.,
+            <kbd>/usr/people/...</kbd>, for which we are creating the tree. The
+            second <code>String</code> will be a line prefix, i.e., the prefix
+            that will be added to each line to indicate the level in the file
+            hierarchy to which it belongs
+          </li>
+          <br>
+          A sample algorithm for the <code>tree(String, String)</code> method
+          might look something like:
+          <ul>
+            <li>
+              Get a list of files/directories contained in the path that was
+              passed as an argument
+            </li>
+            <li>
+              For each of those, do the following:
+              <ul>
+                <li>
+                  Print some prefix, indicating its depth in the file hierarchy,
+                  followed by <code>&quot;|-- &lt;name&gt; &quot;</code>, where
+                  <code>&lt;name&gt;</code> should be replaced with its name
+                </li>
+                <li>
+                  After printing its name, generate the tree for the
+                  files/directories that it contains by calling
+                  <code>tree(String, String)</code> recursively. You should
+                  append its name to the path that was passed as a parameter, as
+                  well as adjust the prefix appropriately to indicate that the
+                  subsequent tree is at a deeper level in the file hierarchy
+                </li>
+              </ul>
+            </li>
+            <li>
+              If you really want to get fancy, do the above two steps for all
+              but the last file/directory. For the last, print the prefix
+              followed by <code>&quot;`-- &lt;name&gt;&quot;</code>
+          </ul>
+        </ul>
+      </li>
+      <br>
+      <li>
+        Public static methods
+        <ul>
+          <li>
+            <code>tree(String)</code> &#8212; takes a single <code>String</code>
+            reference variable as a parameter. The parameter is the path, i.e.,
+            <kbd>/usr/people/...</kbd>, for which we are creating the tree. This
+            method is the entry point for the recursive method
+            <code>tree(String, String)</code> described above. It will simply
+            call the recursive <code>tree</code> method, passing its parameter
+            as the first parameter and the empty string
+            <code>&quot;&quot;</code> as the second parameter.
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <p>
+      Your program should include the ability to be invoked (run) from the
+      command line. If it is invoked without any arguments, then it should
+      create a tree for the directory <code>&quot;.&quot;</code>. If it is
+      invoked with any number of arguments greater than zero, then it should
+      create a tree for each of those.
+    </p>
+
+    <h4>
+      Be sure to include JavaDoc comments for each of the methods that you
+      create!!
+    </h4>
+
+    <p>
+      Example inputs/outputs:
+    </p>
+
+    <pre style="color: #d33682;">
+      :> java Tree
+      .
+      |-- Assignment.html
+      |-- solution
+      |    `-- Tree.class
+      |-- Tree.class
+      `-- Tree.java
+
+      :> java Tree ~/CS160/labs/Lab02 ~/CS160/labs/Lab03
+      /home/&lt;username&gt;/CS160/labs/Lab02
+      |-- Lab.docx
+      `-- Lab.pdf
+      /home/&lt;username&gt;/CS160/labs/Lab03
+      |-- Lab.html
+      |-- Prelab.html
+      |-- Race.java
+      |-- Race.class
+      `-- solution
+           |-- Race.class
+           `-- Race.java
+    </pre>
+
+    <h3>
+      Submitting your assignment
+    </h3>
+
+    <p>
+      Copy the folder <kbd>LastName_FirstName_Asg4</kbd> containing
+      <kbd>Tree.java</kbd> into <kbd>/usr/people/handins/CS160</kbd> before the
+      due date.
+    </p>
+  </body>
+</html>

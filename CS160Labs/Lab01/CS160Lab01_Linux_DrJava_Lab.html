@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<head>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+  <meta name="generator" content="Bluefish 2.0.3" >
+  <title>CSCI 160 Lab 1&mdash;Linux and Dr. Java</title>
+</head>
+
+<body style="color: rgb(0, 0, 102); background-color: rgb(255, 247, 215);"
+      alink="#ff0000" link="#0000ee" vlink="#551a8b">
+
+<h1>CSCI 160&mdash;Object-Oriented Programming and Problem-Solving</h1>
+<h2>Lab 1: Using the Linux Desktop and DrJava</h2>
+
+
+<h3>Part 1: Managing files from the Linux command line</h3>
+
+<p>
+In this part, you will be creating new files and directories and adding them to the
+Mammals file hierarchy in your Lab01 directory.
+Here is a drawing of the directory hierarchy you will be starting with:</p>
+
+<p align="center">
+<img style="width: 576px; height: 265px;"
+     alt="Original directory structure"
+     src="Images/CS160_Linux_DrJava_OriginalHierarchy.jpg">
+</p>
+
+<p>
+To start, make sure that you have a terminal window open.
+Everything you do in this section will be done from that window.
+You should also open a new text file in a text editor&mdash;you
+can choose <em>New</em> from the File menu in DrJava
+or open a new file in gedit.
+Save the file now (and often as you work) as
+&ldquo;&lt;your&nbsp;last&nbsp;name&gt;&lt;your&nbsp;first&nbsp;name&gt;Lab01Report.txt&rdquo;.
+(For example, Juanita Doe would name the file &ldquo;DoeJuanitaLab01Report.txt&rdquo;.</p>
+
+<p>
+For your reference, the table below summarizes all the
+Linux commands we will use in this lab assignment.
+Don't try to execute any of the example instructions in the figure as
+some are irreversible and may mess up your files;
+just look through them before continuing.
+Refer back to the pre-lab write-up for detailed information
+on the Linux commands you need to complete this exercise.</p>
+
+<p align="center">
+<img style="width: 863px; height: 376px;"
+     alt="linux commands"
+     src="Images/CS160_Linux_DrJava_LinuxCommands.png">
+</p>
+
+<p>
+Complete each of the following exercises using the terminal window.
+As you complete each exercises, copy the contents of the terminal window for
+that part into your lab report file.
+You might use directory windows to help visualize the effects of your commands.
+In order to see the changes, however, you may need to
+click the refresh button (circular arrows) after doing the command.
+Again, you should be using the command line for all actions.</p>
+
+<p>
+If at any time you do not see the files and directories you expected to see,
+stop and figure out where you have gone wrong&mdash;it could be you've entered
+the wrong commands, or it could just as well be that your expectations were off.
+As you complete each command, you need to understand what it does.
+If you need help, remember to ask a TA or a professor.</p>
+
+<ol>
+  <li>Start by using the <em>pwd</em> command to make sure you are in the
+     <em>Lab01</em> directory.
+     If you are not in this directory,
+     get there by using the <em>cd</em> command.
+     You can get there with one command if you recognize that
+     &ldquo;~/CS160/Lab01&rdquo; is one of the names
+     of the directory.</li><br>
+  <li>Use <em>ls</em> to see what files and directories are in the directory.
+     Next use the <em>tree</em> command to see the subdirectory structure.
+     Compare the resulting diagram to the structure of the
+     <em>Mammals</em> hierarchy above.</li><br>
+  <li>Use <em>mkdir</em> to create a subdirectory of
+     <em>Lab01</em> called <em>Hal</em>.
+     Verify that the new directory was created by using
+     the <em>ls</em> command.</li><br>
+  <li>Use <em>cd</em> to change to the directory <em>Mammals</em>,
+     and verify that you're in the <em>Mammals</em> directory
+     using <em>pwd</em>.</li><br>
+  <li>List the files and directories in <em>Mammals</em> using <em>ls</em>;
+     then lists the contents of the <em>Cats</em> subdirectory by typing
+     <kbd>ls Cats</kbd>.</li><br>
+  <li>Change to the Cats directory using <em>cd</em>
+     and display the contents of the directory.
+     (By now you should begin to know which commands do what.)</li><br>
+  <li>List only the files with names containing the string &ldquo;cat&rdquo;
+     by typing the command <kbd>ls *cat*</kbd>.
+     The &lsquo;*&rsquo; character is a wildcard that can stand
+     for any sequence of zero or more characters.
+     Compare the filtered file list with the complete list.
+     Which files were eliminated by the filter and why?</li><br>
+  <li>Display the contents of the file kittycat by typing
+     <kbd>more kittyCat</kbd>.</li><br>
+  <li>Change to the directory above the current working directory
+     by typing <kbd>cd ..</kbd>&nbsp;.
+     (Recall that &ldquo;..&rdquo; is a name for the parent of the
+     current directory.)</p>
+  <li>Copy the <em>2cats</em> file to the <em>Hal</em>directory
+     using a single <em>cp</em> command.
+     Work out names relative to the current working directory
+     for the file to be copied and the directory it is to be copied to
+     before actually typing the command.
+     (Hint: Assuming the current working directory is <em>Mammals</em>,
+     <em>2cats</em> is in the <em>Cats</em> sub-directory, and <em>Hal</em>
+     is a sub-directory of the working directory's parent directory.)
+     Verify that the file has been copied correctly by listing the contents
+     of both the <em>Hal</em> and <em>Cats</em> directories.
+     </li><br>
+  <li>Change the working directory back to <em>Lab01</em>,
+     and verify the command with <em>pwd</em>.</li><br>
+  <li>Create a new <em>Puppy</em>directory as a sub-directory of the
+     <em>Hal</em> directory without changing the working directory.
+     (The name of the new directory is &ldquo;Hal/Puppy&rdquo;
+     relative to the working directory.)</li><br>
+  <li>Copy all of the files from <em>Dogs</em> into the <em>Puppy</em>
+     directory using a single <em>cp</em> command.
+     (&ldquo;Mammals/Dogs/*&rdquo; names all the files in <em>Dogs</em>
+     directory by using the wildcard character.)
+     List the files in the <em>Puppy</em> directory to verify the copy.</li><br>
+  <li>Move the <em>Puppy</em> directory from <em>Hal</em>to the
+     <em>Mammals/Dogs</em> directory using the <em>mv</em> command.
+     List the contents of the <em>Hal</em> and <em>Dogs</em> directories
+     to verify that <em>Puppy</em> is now in <em>Dogs</em> and not in
+     <em>Hal</em>.</li><br>
+  <li>Now that you have had a chance to use some Linux commands in action,
+     build the following directory structure (just the <em>Critters</em>
+     branch) using your own sequence of terminal commands.
+     Verify that you have built the structure correctly using the
+     <em>tree</em> command.</li>
+</ol>
+
+<p align="center">
+<img style="width: 576px; height: 291px;"
+     alt="desired directory structure"
+     src="Images/CS160_Linux_DrJava_DesiredHierarchy.jpg">
+</p>
+
+<p>
+Complete your report for Part 1 and save it one last time.
+Verify that the name of this file begins with your last name and
+first name.
+Show your report to the instructor or TA before you go on to Part 2.</p>
+
+
+<h3>Part 2: Completing a simple Java program</h3>
+
+<p>
+Open a terminal window if you don't already have one.
+If necessary, change the current working directory to
+<em>CS160/Lab01</em>.
+Verify that you have a file named <em>MouseIndicator.class</em>
+in the directory;
+if not, you can copy it from the directory
+<code>/usr/people/classes/CS160/labs/Lab01</code>
+into the current directory, using &ldquo;.&rdquo; as the
+second argument to <em>cp</em>.
+We'll run this program from the terminal instead of from inside DrJava.
+Type <kbd>java MouseIndicator</kbd> at the prompt.
+Press and release the mouse a few times in the window that pops up.
+Notice what this program does: 
+when you press the mouse button in the window, the word &ldquo;up&rdquo;
+becomes black and the word &ldquo;down&rdquo; becomes red;
+when you release the mouse button, the &ldquo;up&rdquo; becomes red
+and the &ldquo;down&rdquo; becomes black.</p>
+
+<p>
+You are given in incomplete version of this program that you are to
+complete so that it works just like the original.
+Your assignment here is to complete a program that works in this way.
+Open the file <em>MyMouseIndicator.java</em> in DrJava and add appropriate
+statements to make it work as specified.
+Your instructor will give you information about the statements you need
+to use either in the class before the lab or in the lab itself.</p>
+
+<p>
+If you don't finish during the lab time and need help
+completing this assignment, there
+are TAs available every evening except Friday and Saturday in Peter
+Engel Room 212 (this lab) and in the Clemens Library at St Ben's.
+Check the TA website
+<a href="https://sharepoint.csbsju.edu/computerscience/Pages/labhours.aspx">https://sharepoint.csbsju.edu/computerscience/Pages/labhours.aspx</a>
+for hours.</p>
+
+<p>
+Show your completed program to the instructor or TA before you leave
+today's lab or at the <em>beginning</em> of the next lab to receive full
+credit.</p>
+
+</body>
+</html>

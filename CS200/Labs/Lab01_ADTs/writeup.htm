@@ -1,0 +1,1040 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+h3
+	{mso-style-link:"Heading 3 Char";
+	margin-right:0in;
+	margin-left:0in;
+	font-size:13.5pt;
+	font-family:"Times New Roman",serif;
+	font-weight:bold;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:#954F72;
+	text-decoration:underline;}
+p
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+code
+	{font-family:"Courier New";}
+pre
+	{mso-style-link:"HTML Preformatted Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Courier New";}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:.5in;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:.5in;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+span.apple-converted-space
+	{mso-style-name:apple-converted-space;}
+span.HTMLPreformattedChar
+	{mso-style-name:"HTML Preformatted Char";
+	mso-style-link:"HTML Preformatted";
+	font-family:"Courier New";}
+span.Heading3Char
+	{mso-style-name:"Heading 3 Char";
+	mso-style-link:"Heading 3";
+	font-family:"Times New Roman",serif;
+	font-weight:bold;}
+p.Default, li.Default, div.Default
+	{mso-style-name:Default;
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:"Calibri",sans-serif;
+	color:black;}
+.MsoChpDefault
+	{font-family:"Calibri",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:107%;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:.7in .7in .7in .7in;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link=blue vlink="#954F72">
+
+<div class=WordSection1>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><b><span style='font-size:16.0pt;color:black'>Lab 1 </span></b><b><span
+style='font-size:16.0pt;color:black'>– </span></b><b><span style='font-size:
+16.0pt;color:black'>Implementing and Testing Simple ADTs in Java</span></b><span
+style='font-size:12.0pt;color:black'> </span><span style='color:black'><br>
+<br>
+This lab is a review of creating programs in Java and an introduction to JUnit
+testing</span><span style='color:black'>. You will document a Java interface and
+create a fully documented Java class, which together implement a&nbsp;simple
+abstract data type (ADT), the <i>Tank</i>. You will then complete a JUnit test class
+and use it to test your class implementation. You will then repeat a similar
+process for another ADT, the <i>Fraction</i>.<br>
+&nbsp;<br>
+<b><i>Objectives</i></b><b><i>:</i></b></span></p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-top:0in;margin-right:0in;
+margin-bottom:0in;margin-left:.25in;margin-bottom:.0001pt;text-indent:-.25in;
+line-height:normal'><span style='font-size:10.0pt;font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='color:black'>to become re-acquainted with DrJava</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+margin-bottom:0in;margin-left:.25in;margin-bottom:.0001pt;text-indent:-.25in;
+line-height:normal'><span style='font-size:10.0pt;font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='color:black'>to construct simple but complete ADTs</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+margin-bottom:0in;margin-left:.25in;margin-bottom:.0001pt;text-indent:-.25in;
+line-height:normal'><span style='font-size:10.0pt;font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='color:black'>to use Junit to test Java classes&nbsp;</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin:0in;margin-bottom:.0001pt;
+line-height:normal'><span style='color:black'>                                                                                                                                                                               </span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin:0in;margin-bottom:.0001pt;
+line-height:normal'><b><i><span style='color:black'>Preliminaries</span></i></b><b><i><span
+style='color:black'>:</span></i></b></p>
+
+<p class=MsoListParagraphCxSpLast style='margin-top:0in;margin-right:0in;
+margin-bottom:0in;margin-left:.25in;margin-bottom:.0001pt;text-indent:-.25in;
+line-height:normal'><span style='font-size:10.0pt;font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='color:black'>If you don't have a&nbsp;<b><i>CS200</i></b>&nbsp;folder
+in your Linux <i>home</i> (not your <i>desktop</i>), create one and place two new
+sub-folders inside of it; name them <b><i>examples</i></b><i> </i>and<i> <b>labs</b></i>.
+Create two sub-folders in the <b><i>examples</i></b><i> </i>folder; name them <b><i>complete</i></b>
+and <b><i>incomplete</i></b>. Use the sub-folders inside <b><i>CS200/examples</i></b><i>
+</i>to store complete examples and incomplete exercises from class,
+respectively.</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'>&nbsp;</p>
+
+<p class=MsoListParagraph style='margin-top:0in;margin-right:0in;margin-bottom:
+0in;margin-left:.25in;margin-bottom:.0001pt;text-indent:-.25in;line-height:
+normal'><span style='font-size:10.0pt;font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='color:black'>Copy folder <b><i>/usr/people/classes/CS200/labs/Lab01_ADTs</i></b>
+into your <b><i>CS200/labs</i></b><i> </i>folder. For each new lab, copy the folder
+for that lab from <b><i>/usr/people/classes/CS200/labs&nbsp;</i></b>into your <b><i>CS200/labs</i></b>.</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'>&nbsp;</p>
+
+<p class=MsoListParagraph style='margin-top:0in;margin-right:0in;margin-bottom:
+0in;margin-left:.25in;margin-bottom:.0001pt;text-indent:-.25in;line-height:
+normal'><span style='font-size:10.0pt;font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='color:black'>If you do not have a&nbsp;<b><i>JavaPackages</i></b>&nbsp;folder
+in your Linux <i>home</i> directory, create one now. Be sure to spell the
+folder name exactly as specified here (case sensitive). We will use this folder
+throughout the course to store classes and packages we develop that can be
+reused in multiple applications.</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'>&nbsp;</p>
+
+<p class=Default style='margin-left:.25in;text-indent:-.25in'><span
+style='font-size:10.0pt;font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:11.0pt'>Move the <i>fraction </i>and <i>tank
+</i>folders from your <b><i>Lab01_ADTs</i></b><i> </i>folder into your <i>JavaPackages
+</i>folder</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'>&nbsp;</p>
+
+<p class=Default style='margin-left:.25in;text-indent:-.25in'><span
+style='font-size:10.0pt;font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:11.0pt'>Launch DrJava from </span><i><span
+style='font-size:11.0pt'>Applications</span></i><span style='font-size:11.0pt'>&#8594;<i>CSBSJU</i>&#8594;<i>Computer
+Science </i></span><span style='font-size:11.0pt'>to configure it properly:
+&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-bottom:0in;margin-bottom:.0001pt;
+text-indent:-.25in;line-height:normal'><span style='font-size:10.0pt;
+font-family:Wingdings'>ü<span style='font:7.0pt "Times New Roman"'>&nbsp; </span></span><span
+style='color:black'>Choose the &quot;<i>Preferences</i>&quot; option from the
+&quot;<i>Edit</i>&quot; pull-down menu</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-bottom:0in;margin-bottom:
+.0001pt;text-indent:-.25in;line-height:normal'><span style='font-size:10.0pt;
+font-family:Wingdings'>ü<span style='font:7.0pt "Times New Roman"'>&nbsp; </span></span><span
+style='color:black'>Select the &quot;<i>Resource</i> <i>Locations</i>&quot;</span><span
+style='color:black'> category on the left. This allows us to identify resources
+that DrJava needs to compile and run our programs</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-bottom:0in;margin-bottom:
+.0001pt;text-indent:-.25in;line-height:normal'><span style='font-size:10.0pt;
+font-family:Wingdings'>ü<span style='font:7.0pt "Times New Roman"'>&nbsp; </span></span><span
+style='color:black'>Enter (or select) the <b><i>tools.jar</i></b> location to
+let DrJava know where to find it: <b><i>/opt/java-jdk/lib/tools.jar</i> </b></span>if
+there is not already an entry there or if the entry is Java 1.6 or lower. When
+you enter this file, it will change to the current default on the system, which
+will be somewhat longer and more mysterious</p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-bottom:0in;margin-bottom:
+.0001pt;text-indent:-.25in;line-height:normal'><span style='font-size:10.0pt;
+font-family:Wingdings'>ü<span style='font:7.0pt "Times New Roman"'>&nbsp; </span></span><span
+style='color:black'>If not there already, add each of the following paths to
+your &quot;<i>Extra</i> <i>ClassPath</i>&quot; by clicking the &quot;<i>Add</i>&quot;
+button just below the area next to&nbsp; &quot;<i>Extra</i> <i>Classpath</i>&quot;:<br>
+<b><i>                </i></b>(1)<b><i>          /usr/people/classes/Java/</i></b>&nbsp;</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-bottom:0in;margin-bottom:
+.0001pt;text-indent:.5in;line-height:normal'><span style='color:black'>(2) <b><i>         ~/JavaPackages                                              </i></b>(
+~ in Linux represents your home directory)<b><i> </i></b></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-bottom:0in;margin-bottom:
+.0001pt;text-indent:-.25in;line-height:normal'><span style='font-size:10.0pt;
+font-family:Wingdings'>ü<span style='font:7.0pt "Times New Roman"'>&nbsp; </span></span><span
+style='color:black'>Click the &quot;<i>Javadoc</i>&quot; category and set
+&quot;<i>Access Level</i>&quot; to &quot;<i>package</i>&quot;&nbsp;</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+margin-bottom:0in;margin-left:.25in;margin-bottom:.0001pt;text-indent:-.25in;
+line-height:normal'><span style='font-size:10.0pt;font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='color:black'>Dismiss the &quot;<i>Preferences</i>&quot;
+window by pressing <i>Apply</i> and then <i>OK</i></span></p>
+
+<p class=MsoListParagraphCxSpLast style='margin-bottom:0in;margin-bottom:.0001pt;
+line-height:normal'>&nbsp;</p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'>You will be assigned to work in pairs for the next 4 labs following the
+“<i>Pair Programming</i>” technique&nbsp;where two&nbsp;<a
+href="https://en.wikipedia.org/wiki/Computer_programmer"
+title="Computer programmer"><span style='color:windowtext;text-decoration:none'>of</span></a>
+you&nbsp;work together using a SINGLE COMPUTER. One of you, “the&nbsp;driver,
+writes code while the other, the&nbsp;observer&nbsp;or&nbsp;navigator, <a
+href="https://en.wikipedia.org/wiki/Code_review" title="Code review"><span
+style='color:windowtext;text-decoration:none'>reviews</span></a> each line of
+code as it is typed in”; switch roles after <i>every part</i>. Please continue
+to work in pairs after lab is over; you will demo and explain your solution AT
+THE START OF THE next time. Lab partners will receive the same grade.</p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'>&nbsp;</p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'>&nbsp;</p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'>&nbsp;</p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'>&nbsp;</p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'>&nbsp;</p>
+
+<p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+text-align:center;line-height:normal'><b><i><span style='font-size:12.0pt;
+color:black'>Problem 1: The Tank ADT</span></i></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><b><i><span style='color:black'>&nbsp;</span></i></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><b><i><span style='color:black'>Part 1.1: Completing the javadoc
+documentation for an interface<br>
+</span></i></b><span style='color:black'>***Read this entire section before starting***&nbsp;<br>
+<br>
+</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='color:black'>Your task for this part is to complete the
+javadoc comments for the&nbsp;<i>Tank</i>&nbsp;interface in the&nbsp;<i>tank/Tank.java</i>&nbsp;file,
+using the guidelines discussed in class. You can think of the&nbsp;<i>Tank</i>&nbsp;as
+simulating a large container that holds some unspecified contents, such as
+water, oil, gasoline or salt pellets. The&nbsp;<i>Tank</i>&nbsp;has a <i>capacity</i>
+that specifies the maximum amount it may contain; of course, the minimum amount
+it may contain is 0.0.&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='color:black'>Using a UML diagram format for an interface,
+the <i>Tank</i> looks like:&nbsp;<br>
+</span><span style='font-family:"Courier New";color:black'>&nbsp;&nbsp; &nbsp;<b>&lt;interface&gt;
+Tank</b>&nbsp;<br>
+&nbsp;&nbsp; &nbsp;+ isEmpty &nbsp;&nbsp;&nbsp; ( ) : boolean&nbsp;<br>
+&nbsp;&nbsp; &nbsp;+ isFull &nbsp;&nbsp;&nbsp;&nbsp; ( ) : boolean&nbsp;<br>
+&nbsp;&nbsp; &nbsp;+ getCapacity ( ) : double&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-family:"Courier New";color:black'>&nbsp;&nbsp;
+&nbsp;+ getLevel &nbsp;&nbsp; ( ) : double&nbsp;<br>
+&nbsp;&nbsp; &nbsp;+ add&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; (amount :
+double) : void&nbsp;<br>
+&nbsp;&nbsp; &nbsp;+ remove &nbsp; &nbsp;&nbsp; (amount : double) : void</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='color:black'>The operating specifications for the&nbsp;<i>Tank</i>&nbsp;interface
+are:&nbsp;</span></p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-top:0in;margin-right:0in;
+margin-bottom:0in;margin-left:.25in;margin-bottom:.0001pt;text-indent:-.25in;
+line-height:normal'><span style='font-size:10.0pt;font-family:Symbol;
+color:black'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:"Courier New";color:black'>isEmpty</span><span
+style='color:black'>&nbsp;and&nbsp;</span><span style='font-family:"Courier New";
+color:black'>isFull</span><span style='color:black'>&nbsp;check and return a </span><span
+style='font-family:"Courier New";color:black'>boolean</span><span
+style='color:black'> appropriate to the condition being checked; your javadoc
+should specify under what condition they return <i>true</i></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+margin-bottom:0in;margin-left:.25in;margin-bottom:.0001pt;text-indent:-.25in;
+line-height:normal'><span style='font-size:10.0pt;font-family:Symbol;
+color:black'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:"Courier New";color:black'>getCapacity </span><span
+style='color:black'>returns the maximum level the contents of the&nbsp;<i>Tank</i>&nbsp;can
+reach</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+margin-bottom:0in;margin-left:.25in;margin-bottom:.0001pt;text-indent:-.25in;
+line-height:normal'><span style='font-size:10.0pt;font-family:Symbol;
+color:black'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:"Courier New";color:black'>getLevel</span><span
+style='color:black'>&nbsp;returns the current level of the contents of the&nbsp;<i>Tank</i></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+margin-bottom:0in;margin-left:.25in;margin-bottom:.0001pt;text-indent:-.25in;
+line-height:normal'><span style='font-size:10.0pt;font-family:Symbol;
+color:black'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:"Courier New";color:black'>add</span><span
+style='color:black'>&nbsp;increases the level of the tank by </span><span
+style='font-family:"Courier New";color:black'>amount</span><span
+style='color:black'>, unless the resulting amount would exceed the <i>capacity</i>.
+</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-bottom:0in;margin-bottom:
+.0001pt;text-indent:-.25in;line-height:normal'><span style='font-size:10.0pt;
+font-family:Wingdings;color:black'>ü<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span><span style='color:black'>Use the precondition part of the
+comment to specify the corresponding restriction on the value of </span><span
+style='font-family:"Courier New";color:black'>amount</span><span
+style='color:black'>. </span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-bottom:0in;margin-bottom:
+.0001pt;text-indent:-.25in;line-height:normal'><span style='font-size:10.0pt;
+font-family:Wingdings;color:black'>ü<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span><span style='color:black'>Use the <i>@throws</i>&nbsp;tag to
+specify that the method throws an<i> IllegalArgumentException</i>&nbsp;if the
+precondition is not met</span></p>
+
+<p class=MsoListParagraphCxSpLast style='margin-top:0in;margin-right:0in;
+margin-bottom:0in;margin-left:.25in;margin-bottom:.0001pt;text-indent:-.25in;
+line-height:normal'><span style='font-size:10.0pt;font-family:Symbol;
+color:black'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:"Courier New";color:black'>remove</span><span
+style='color:black'>&nbsp;reduces the level in an analogous way to <i>add()</i>
+and has similar preconditions and&nbsp;<i>@throws</i>&nbsp;clause</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='color:black'>Note that the&nbsp;<i>Tank.java</i>&nbsp;(and
+later on&nbsp;<i>DoubleTank.java</i>) file includes the statement &quot;</span><span
+style='font-family:"Courier New";color:black'>package tank;</span><span
+style='color:black'>&quot; at the very top. Recall that packages are used to
+put together groups of related classes in Java. Java files that belong to a
+package must begin with a <i>package</i> statement that gives the name of the
+package and must be located in a folder structure that mirrors the package
+name. In Java, package names begin with a lower-case letter. Other programs can
+use the <i>tank</i> package by including the statement “</span><span
+style='font-family:"Courier New";color:black'>import tank.*;</span><span
+style='color:black'>“ with the other import statements at the top. &nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='color:black'>Please show the complete javadoc documentation
+for <i>Tank.java</i> to your lab TA or instructor before you proceed.</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='color:black'><br>
+<b><i>Part 1.2: Implementing the DoubleTank class</i></b></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='color:black'>Create a new <i>DoubleTank</i> Java class
+inside folder&nbsp;<i>tank</i>&nbsp;; this class must be defined inside package&nbsp;<i>tank&nbsp;</i>(like
+<i>Tank.java</i>, you should include a &quot;</span><span style='font-family:
+"Courier New";color:black'>package tank;</span><span style='color:black'>&quot;&nbsp;statement
+at the top of the file)&nbsp;and must implement the <i>Tank</i> interface given
+to you in file <i>Tank.java</i>. You can use the interface file as the starting
+point in writing the <i>DoubleTank</i> class. Copy the body of the interface
+file,&nbsp;<i>Tank.java</i>, and paste it inside&nbsp;<i>DoubleTank.java</i>&nbsp;to
+get started. The interface file contains method headers for most methods, but
+does not include instance variables or constructors. Discuss the design of the <i>DoubleTank&nbsp;</i>class
+with your pair partner then complete the class design and put in the
+appropriate javadoc comments using the UML diagram of the&nbsp;<i>DoubleTank&nbsp;</i>class
+and the specifications above (for <i>Tank.java</i>) and below to assist you.
+The class is called <i>DoubleTank</i>&nbsp;because it uses two instance
+variables of type&nbsp;double <i>level</i>&nbsp;and&nbsp;<i>capacity</i>.&nbsp;<br>
+&nbsp;The UML diagram for the&nbsp;<i>DoubleTank</i>&nbsp;class is:&nbsp;&nbsp;&nbsp;
+&nbsp;<br>
+</span><span style='font-family:"Courier New";color:black'>&nbsp;&nbsp; &nbsp;<b>&lt;class&gt;&nbsp;DoubleTank</b>&nbsp;<br>
+&nbsp;&nbsp; &nbsp;- level     : double&nbsp;<br>
+&nbsp;&nbsp; &nbsp;- capacity  : double&nbsp;<br>
+&nbsp;&nbsp; &nbsp;&nbsp;<br>
+&nbsp;&nbsp; &nbsp;+ DoubleTank ( )&nbsp;<br>
+&nbsp;&nbsp; &nbsp;+ DoubleTank (capacity : double)&nbsp;<br>
+&nbsp;&nbsp; &nbsp;+ toString&nbsp;&nbsp; ( )  : String&nbsp;<br>
+&nbsp;&nbsp; &nbsp;+ add&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (amount :
+double) : void<br>
+&nbsp;&nbsp; &nbsp;+ remove&nbsp;&nbsp;&nbsp;&nbsp; (amount : double)&nbsp;:
+void<br>
+&nbsp;&nbsp; &nbsp;+ getLevel&nbsp;&nbsp; ( )  : double&nbsp;<br>
+&nbsp;&nbsp; &nbsp;+ getCapacity( )  : double&nbsp;<br>
+&nbsp;&nbsp; &nbsp;+ isFull&nbsp;&nbsp;&nbsp;&nbsp; ( )  : boolean&nbsp;<br>
+&nbsp;&nbsp; &nbsp;+ isEmpty&nbsp;&nbsp;&nbsp; ( )  : boolean</span><span
+style='color:black'>&nbsp;<br>
+&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='color:black'>Additional specifications for the&nbsp;<i>DoubleTank</i>&nbsp;are
+listed below</span> (<i>Do not add/remove any methods and/or fields</i>)</p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-top:0in;margin-right:0in;
+margin-bottom:0in;margin-left:.25in;margin-bottom:.0001pt;text-indent:-.25in;
+line-height:normal'><span style='font-size:10.0pt;font-family:Symbol;
+color:black'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='color:black'>the default constructor sets the </span><span
+style='font-family:"Courier New";color:black'>level</span><span
+style='color:black'> to 0.0 and the&nbsp;</span><span style='font-family:"Courier New";
+color:black'>capacity</span><span style='color:black'>&nbsp;to a reasonable
+default value which is specified in the class as a&nbsp;</span><span
+style='font-family:"Courier New";color:black'>static final double</span><span
+style='color:black'>&nbsp;value, and following Java conventions is named using
+all caps and underscores (e.g.: </span><span style='font-family:"Courier New";
+color:black'>DEFAULT_CAPACITY</span><span style='color:black'>)</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+margin-bottom:0in;margin-left:.25in;margin-bottom:.0001pt;text-indent:-.25in;
+line-height:normal'><span style='font-size:10.0pt;font-family:Symbol;
+color:black'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='color:black'>the second constructor sets the
+internal </span><span style='font-family:"Courier New";color:black'>capacity</span><span
+style='color:black'> to parameter </span><span style='font-family:"Courier New";
+color:black'>capacity </span><span style='color:black'>and the </span><span
+style='font-family:"Courier New";color:black'>level</span><span
+style='color:black'> to 0.0.&nbsp;</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+margin-bottom:0in;margin-left:.25in;margin-bottom:.0001pt;text-indent:-.25in;
+line-height:normal'><span style='font-size:10.0pt;font-family:Symbol;
+color:black'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='color:black'>the overridden&nbsp;</span><span
+style='font-family:"Courier New";color:black'>toString</span><span
+style='color:black'>&nbsp;method should return a string containing both the </span><span
+style='font-family:"Courier New";color:black'>level</span><span
+style='color:black'> and the </span><span style='font-family:"Courier New";
+color:black'>capacity</span><span style='color:black'> along with some
+appropriate labelling text, beginning with the class name. For example, for a
+tank with level 20 and capacity 100, it might return &quot;</span><span
+style='font-family:"Courier New";color:black'>DoubleTank--level: 20.00,
+capacity: 100.00</span><span style='color:black'>&quot;</span></p>
+
+<p class=MsoListParagraphCxSpLast style='margin-top:0in;margin-right:0in;
+margin-bottom:0in;margin-left:.25in;margin-bottom:.0001pt;text-indent:-.25in;
+line-height:normal'><span style='font-size:10.0pt;font-family:Symbol;
+color:black'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='color:black'>the second constructor as well as
+methods </span><span style='font-family:"Courier New";color:black'>remove</span><span
+style='color:black'> and </span><span style='font-family:"Courier New";
+color:black'>add</span><span style='color:black'> should throw&nbsp;new <i>IllegalArgumentException
+(&quot;INCLUDE A DESCRIPTIVE ERROR MESSAGE HERE FOR THE USER”) if</i> their
+preconditions aren't met &nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.25in;margin-bottom:.0001pt;line-height:normal'><span
+style='color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='color:black'>Be sure to modify the header javadoc comments
+in your <i>DoubleTank&nbsp;</i>class appropriately and add similar comments to
+the two constructors and the&nbsp;<i>toString</i>&nbsp;method.&nbsp;<br>
+&nbsp;<br>
+When you have finished implementing the&nbsp;<i>DoubleTank</i>&nbsp;class, be
+sure that it compiles without errors or warnings. Run DrJava’s <i>javadoc</i>
+utility for files <i>Tank.java</i> and <i>DoubleTank.java</i>&nbsp;by selecting
+the </span><b>Javadoc All Documents </b>item from the <b>Javadoc </b>submenu of
+the <b>Tools </b>menu in DrJava <span style='color:black'>while the two files
+(AND THESE ONLY) are open. Verify in a web browser that you have generated
+valid javadoc pages.&nbsp;<br>
+<br>
+<b><i>Part 1.3:&nbsp; Testing the DoubleTank class with a JUnit test class</i></b></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='color:black'>One of the best ways to test a class is to
+write a simple program that runs a set of tests on class objects and then
+verifies whether those test results match the expected results. One tool for
+doing this that has become very popular is the JUnit testing suite. With JUnit,
+you just write a simple testing class consisting of test methods. Each method
+performs a few simple tests and after each test, asserts what the result should
+be. DrJava already has JUnit built in, so once you have the test class written,
+all you have to do is click the test button.&nbsp;<br>
+&nbsp;<br>
+We have included the start for a JUnit test program called&nbsp;<i>TankTest</i>&nbsp;for
+you to use. Keep it in your lab folder OUTSIDE package&nbsp;<i>tank</i>. This
+class must access the tested class i.e.,&nbsp;<i>DoubleTank.java </i>and<i>
+Tank.java</i>, which is accomplished via the &quot;</span><span
+style='font-family:"Courier New";color:black'>import tank.*</span><span
+style='color:black'>&quot; statement at the very top. It contains three instances
+of the class to be tested. You will add appropriate methods to test the&nbsp;<i>DoubleTank</i>.
+Test methods needed to test the two constructors of class <i>DoubleTank</i> are
+already given for you; for the remaining tests, you will need to supply test
+methods that accomplish the strategy given below. The&nbsp;provided <i>init()</i>&nbsp;method
+is preceded with <i>@Before</i> which makes it re-execute before each test
+method; as a result, each test method starts with two brand new <i>Tank</i>
+objects in the initialized states.&nbsp;<br>
+&nbsp;<br>
+Note that you can run your tests by clicking the &quot;<i>Test</i>&quot; button
+with the test file open in the edit window. Do not forget to annotate each of your
+test methods with <i>@Test</i>.</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='color:black'>Before you writing a JUnit test class,
+consider your testing strategy. Accessor methods (</span><span
+style='font-family:"Courier New";color:black'>isEmpty</span><span
+style='color:black'>, </span><span style='font-family:"Courier New";color:black'>isFull</span><span
+style='color:black'>, </span><span style='font-family:"Courier New";color:black'>getLevel</span><i><span
+style='color:black'>,  </span></i><span style='font-family:"Courier New";
+color:black'>getCapacity</span><span style='color:black'>,&nbsp;and&nbsp;</span><span
+style='font-family:"Courier New";color:black'>toString</span><span
+style='color:black'>) are simple enough, that they don't need separate testing.
+We can test them by using them in the tests of other methods. For the
+constructors and&nbsp;</span><span style='font-family:"Courier New";color:black'>add</span><i><span
+style='color:black'>&nbsp;</span></i><span style='color:black'>and&nbsp;</span><span
+style='font-family:"Courier New";color:black'>remove</span><i><span
+style='color:black'>&nbsp;</span></i><span style='color:black'>methods use the
+following strategy:&nbsp;</span></p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-top:0in;margin-right:0in;
+margin-bottom:0in;margin-left:.25in;margin-bottom:.0001pt;text-indent:-.25in;
+line-height:normal'><span style='font-size:10.0pt;font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='color:black'>Test the initial state of newly
+constructed tanks </span>(<i>NOTE: test methods here are already completed for
+you</i>):&nbsp;</p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+margin-bottom:0in;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-9.0pt;
+line-height:normal'><span style='color:black'>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='color:black'>test that a tank created using the
+default constructor is empty (this implicitly tests a 0 level) and has the
+expected default capacity</span></p>
+
+<p class=MsoListParagraphCxSpLast style='margin-top:0in;margin-right:0in;
+margin-bottom:0in;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-9.0pt;
+line-height:normal'><span style='color:black'>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='color:black'>test that a tank created using the non-default
+constructor is also empty (this implicitly tests a 0 level) but has the provided
+capacity</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='color:black'>&nbsp;</span></p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-top:0in;margin-right:0in;
+margin-bottom:0in;margin-left:.25in;margin-bottom:.0001pt;text-indent:-.25in;
+line-height:normal'><span style='font-size:10.0pt;font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='color:black'>Test the&nbsp;</span><span
+style='font-family:"Courier New";color:black'>add</span><i><span
+style='color:black'> </span></i><span style='color:black'>method under ordinary
+conditions (create a <b><i>separate,</i></b> <b><i>clearly-named</i></b> test
+method for each case; when writing test methods here or elsewhere, please follow
+naming conventions used below)</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+margin-bottom:0in;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-9.0pt;
+line-height:normal'><span style='color:black'>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:"Courier New";color:black'>testAddToEmptyTank</span><span
+style='color:black'>: adding to an empty tank gives the expected level; tank
+should no longer be empty</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+margin-bottom:0in;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-9.0pt;
+line-height:normal'><span style='color:black'>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:"Courier New";color:black'>testAddToNonEmptyTank</span><span
+style='color:black'>:<i> </i>adding to a non-empty tank gives the expected
+level</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+margin-bottom:0in;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-9.0pt;
+line-height:normal'><span style='color:black'>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:"Courier New";color:black'>testAddToCapacity</span><span
+style='color:black'>: adding to capacity produces a full tank </span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+margin-bottom:0in;margin-left:27.0pt;margin-bottom:.0001pt;line-height:normal'><span
+style='color:black'>&nbsp;</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+margin-bottom:0in;margin-left:.25in;margin-bottom:.0001pt;text-indent:-.25in;
+line-height:normal'><span style='font-size:10.0pt;font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='color:black'>Test the&nbsp;</span><span
+style='font-family:"Courier New";color:black'>remove</span><span
+style='color:black'>&nbsp;method under ordinary conditions (create a <b><i>separate</i></b>,
+<b><i>clearly-named</i></b> test method for each case)</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+margin-bottom:0in;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-9.0pt;
+line-height:normal'><span style='color:black'>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:"Courier New";color:black'>testRemoveFromANonEmptyTank</span><span
+style='color:black'>: removing from a non-empty tank gives the expected
+level&nbsp;and removing from a full tank produces a tank that is not full </span></p>
+
+<p class=MsoListParagraphCxSpLast style='margin-top:0in;margin-right:0in;
+margin-bottom:0in;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-9.0pt;
+line-height:normal'><span style='color:black'>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:"Courier New";color:black'>testRemoveToEmptyATank</span><span
+style='color:black'>: removing all contents of a non-empty or a full tank produces
+an empty tank &nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='color:black'>&nbsp;</span></p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-top:0in;margin-right:0in;
+margin-bottom:0in;margin-left:.25in;margin-bottom:.0001pt;text-indent:-.25in;
+line-height:normal'><span style='font-size:10.0pt;font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='color:black'> Test failure conditions (see note
+below on how these are done) --- </span>create a <b><i><span style='color:black'>separate</span></i></b><span
+style='color:black'>, <b><i>clearly-named</i></b> </span>test method for each
+operation that might throw an exception in order to determine which operation
+actually causes the exception</p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+margin-bottom:0in;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-9.0pt;
+line-height:normal'><span style='color:black'>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:"Courier New";color:black'>testAddFailsWhenExceedingCapacity</span><span
+style='color:black'>: adding more than remaining capacity throws an exception</span></p>
+
+<p class=MsoListParagraphCxSpLast style='margin-top:0in;margin-right:0in;
+margin-bottom:0in;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-9.0pt;
+line-height:normal'><span style='color:black'>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:"Courier New";color:black'>testRemoveFailsWhenExceedingLevel</span><span
+style='color:black'>: removing more than current level throws an exception&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='color:black'>Remember that to test the failure conditions,
+put the operation that should produce an exception in a test method preceded by
+an </span><span style='font-family:"Courier New";color:black'>@Test(expected=DesiredException.class)</span><span
+style='color:black'>  annotation.</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt;line-height:normal'><span
+style='color:black'>&nbsp;</span></p>
+
+<p class=MsoListParagraph style='margin-top:0in;margin-right:0in;margin-bottom:
+0in;margin-left:.25in;margin-bottom:.0001pt;text-indent:-.25in;line-height:
+normal'><span style='font-size:10.0pt;font-family:Symbol;color:black'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='color:black'>Test unanticipated conditions: These
+are the tricky ones. What have we failed to consider in the above tests? Are
+there any situations that will fail that we haven't tested? Are there any
+situations that should fail, but don't? There are three specification
+deficiencies (errors) somewhere in the&nbsp;<i>Tank</i>&nbsp;interface and
+the&nbsp;<i>DoubleTank</i>&nbsp;class (unless you had already discovered and
+corrected them). You won't find these problems with the JUnit tests described
+above; you need to figure out what the unanticipated conditions are. Consider
+what kind of values you haven't tested and add tests for what happens if you
+use those values. (There's a hint at the end of this writeup, but don't cheat
+and look at the hint before you try to figure it out for yourselves.) When you
+find the errors, go back and correct the interface and class specifications and
+add code to handle these situations. After you've made your corrections, revise
+the test class so that it adds tests for these conditions as well.&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'>&nbsp;</p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><i>Once you complete the implementation and testing of the Tank ADT, show
+it to the TA or lab instructor.</i></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+text-align:center;line-height:normal'><b><i><span style='font-size:12.0pt;
+color:black'>Problem 2: The Fraction ADT</span></i></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><b><i><span style='color:black'>Part 2.1:&nbsp; Building and testing a
+Fraction ADT</span></i></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='color:black'>Create a fully javadoc-documented <i>IntFraction</i>&nbsp;class
+that implements the&nbsp;<i>Fraction</i>&nbsp;interface, found in the&nbsp;<i>fraction</i>&nbsp;folder.
+(Think about why it is in a folder with that name.) Use the <i>Fraction </i>interface
+as a template for the&nbsp;<i>IntFraction</i>&nbsp;class and place your class
+in the same <i>fraction</i>&nbsp;folder.</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='color:black'>In addition to the
+methods specified in the <i>Fraction</i> interface, the <i>IntFraction</i>
+class has two <i>private</i> <i>int</i> instance variables, <i>numerator</i>
+and <i>denominator</i>, as well as three constructors: a default constructor
+that creates a zero <i>Fraction</i> (<i>numerator</i>=0, <i>denominator</i>=1),
+a one parameter constructor that creates a <i>Fraction</i> representing an
+integer (<i>numerator</i> = parameter, <i>denominator</i> = 1) and a two parameter
+constructor that sets the <i>Fraction’s </i>fields to the specified <i>numerator</i>
+and <i>denominator</i>.</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='color:black'>Note that fractions
+cannot have a zero denominator and division by zero is not allowed. Thus, the
+third constructor should throw an <i>IllegalArgumentException</i> if the
+denominator is 0.  Similarly, the <i>divideThisBy</i> method throws an  <i>ArithmeticException</i>
+if the divisor is a zero Fraction.</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='color:black'>Consult
+with your lab partner, other students in the lab and/or the Internet to get the
+correct formulas for arithmetic on fractions. Note that two fractions may be
+equal even if they have different numerators and denominators (e.g. 2/3 == 4/6),
+so your <i>equals</i> method must take this into account. Again, use
+appropriate resources to determine the correct way to test fractions for
+equality.</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='color:black'>Here is
+a shell for implementing the <i>equals</i> method:</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:10.0pt;font-family:"Courier New"'>  <b>public</b>
+<b>boolean</b> equals(Object other) <b>{</b></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:10.0pt;font-family:"Courier New"'>    <b>try</b>
+<b>{</b></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:10.0pt;font-family:"Courier New"'>      Fraction
+otherFraction = (Fraction) other;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:10.0pt;font-family:"Courier New"'>      // rest
+of your code here</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:10.0pt;font-family:"Courier New"'>    <b>}</b> <b>catch</b>
+(ClassCastException cce) <b>{</b></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><b><span style='font-size:10.0pt;font-family:"Courier New"'>     
+return false;</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><b><span style='font-size:10.0pt;font-family:"Courier New"'>    }</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><b><span style='font-size:10.0pt;font-family:"Courier New"'>  }</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='color:black'>Once your <i>IntFraction</i>
+class compiles properly, complete class <i>TestFraction</i> located OUTSIDE
+PACKAGE <i>fraction</i>. </span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><b><i><span style='color:black'>Part 2.2:&nbsp;Improving
+our Fraction ADT<br>
+</span></i></b><i><span style='color:black'>IntFraction</span></i><span
+style='color:black'> class will perform better if we put the fractions in
+simplified form; that is, the numerator and denominator should have no common
+divisor greater than one, and the denominator should always be positive. (If
+you've already done some of the simplification you have a head start.)</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='color:black'>The first two constructors already put
+fractions in simplified form, but the third constructor doesn't, so that's
+where the main changes need to go.<br>
+<br>
+</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='color:black'>Factoring out the greatest common divisor
+will be easier if you have a method to compute it, so add a helper method with
+the prototype:</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:10.0pt;font-family:"Courier New";color:#000066'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:10.0pt;font-family:"Courier New";color:#000066'>   
+</span><b><span style='font-size:10.0pt;font-family:"Courier New"'>private</span></b><span
+style='font-size:10.0pt;font-family:"Courier New"'> <b>int</b> gcd(<b>int</b>
+m, <b>int</b> n)</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:10.0pt;font-family:"Courier New";color:#000066'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='color:black'>Use Euclid's recursive algorithm to complete
+the function as follows:</span></p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-top:0in;margin-right:0in;
+margin-bottom:0in;margin-left:.25in;margin-bottom:.0001pt;text-indent:-.25in;
+line-height:normal'><span style='font-size:10.0pt;color:black'>1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='color:black'>if&nbsp;m&nbsp;&lt; 0, return&nbsp;</span><span
+style='font-family:"Courier New";color:black'>gcd(-m,&nbsp;n)</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+margin-bottom:0in;margin-left:.25in;margin-bottom:.0001pt;text-indent:-.25in;
+line-height:normal'><span style='font-size:10.0pt;color:black'>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='color:black'>if&nbsp;n&nbsp;&lt; 0, return&nbsp;</span><span
+style='font-family:"Courier New";color:black'>gcd(m, -n)</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+margin-bottom:0in;margin-left:.25in;margin-bottom:.0001pt;text-indent:-.25in;
+line-height:normal'><span style='font-size:10.0pt;color:black'>3.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='color:black'>if&nbsp;m&nbsp;= 0, return&nbsp;n</span></p>
+
+<p class=MsoListParagraphCxSpLast style='margin-top:0in;margin-right:0in;
+margin-bottom:0in;margin-left:.25in;margin-bottom:.0001pt;text-indent:-.25in;
+line-height:normal'><span style='font-size:10.0pt;color:black'>4.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='color:black'>otherwise, return&nbsp;</span><span style='font-family:
+"Courier New";color:black'>gcd(n&nbsp;%&nbsp;m,&nbsp;m)</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='color:black'>Now,
+the third constructor can just compute the greatest common divisor and divide
+both the <i>numerator</i> and <i>denominator</i> by that value. If the <i>denominator</i>
+is negative, it changes the sign of both the <i>numerator</i> and <i>denominator</i>.</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='color:black'>In
+simplified form, there is less likely to be an overflow on the arithmetic
+operations, although it can still occur. Also, simplifying fractions eliminates
+multiple forms for each fraction. (For example, -4/-6 gets simplified to 2/3.)
+With simplified form, two fractions are equal if and only if they have the same
+numerator and denominator, so the <i>equals</i> method can be simpler.</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='color:black'>Repeat your testing process on your revised <i>IntFraction</i>
+class. Note that the same test class should still work. Why? </span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='color:black'>Once you have completed the implementation
+and testing of the <i>Fraction</i> ADT, show it to the TA or lab instructor.</span></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:12.0pt;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:12.0pt;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:12.0pt;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:12.0pt;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:12.0pt;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:12.0pt;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:12.0pt;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:12.0pt;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:12.0pt;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:12.0pt;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:12.0pt;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:12.0pt;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:12.0pt;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:12.0pt;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:12.0pt;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:12.0pt;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:12.0pt;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:12.0pt;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:12.0pt;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:12.0pt;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:12.0pt;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:12.0pt;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:12.0pt;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:12.0pt;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:12.0pt;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:12.0pt;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:12.0pt;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:12.0pt;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><span style='color:black'>(Hint for the testing:&nbsp; the problems are
+in the <i>add()</i> and <i>remove()</i> methods and in the second constructor
+when used with negative values.)&nbsp;</span></p>
+
+</div>
+
+</body>
+
+</html>

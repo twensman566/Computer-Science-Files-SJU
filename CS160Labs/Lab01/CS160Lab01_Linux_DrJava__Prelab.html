@@ -1,0 +1,727 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+
+
+
+
+  <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+  <meta name="generator" content="Bluefish 2.0.3"><title>CSCI 160 Lab 1&#8212;Linux and Dr. Java</title></head><body style="color: rgb(0, 0, 102); background-color: rgb(255, 247, 215);" alink="#ff0000" link="#0000ee" vlink="#551a8b">
+
+<h1>CSCI 160&#8212;Object-Oriented Programming and Problem-Solving</h1>
+<h2>Lab 1: Using the Linux Desktop and DrJava&#8212;Pre-lab</h2>
+
+This pre-lab exercise is a tutorial on using Linux and the DrJava program.
+You need to complete it at a Linux machine, following and trying the instructions.
+You will be asked to show the TA or lab instructor the work you did in this
+tutorial at the beginning of Lab 1.
+
+<h3>Part 1: The Linux desktop</h3>
+
+<p>
+The screen setup you have on the Linux workstation is called <i>Gnome</i>.
+<i>Gnome</i> is similar to other Graphical User Interfaces (GUIs) like Windows.
+The main <i>Gnome</i> menu can be accessed by clicking the left-most icon on the
+menu bar at the top (or bottom) of the screen,
+a gray footprint followed by the word &#8220;Applications&#8221;.
+This is like the start button in Windows and it has many sub-menus allowing the
+user to configure the system as well as run various applications.
+You can get to most of the applications that will be used in this course
+by going to the <em>CSBSJU&#8594;Computer Science</em> choice on the main menu.</p>
+
+<br>
+
+<div style="text-align: center;">
+<img style="width: 555px; height: 323px;" alt="menu" src="Images/CS160_Linux_DrJava_ApplicationMenu.jpg">
+</div>
+
+<br>
+<p>
+In the <i>CSBSJU</i> sub-menu you will see, among other things, option for changing
+your password, opening internet applications (including <em>Chromium</em>,
+<em>Firefox</em> and <i>Skype</i>),
+and a full office suite (called <em>LibreOffice</em>) that's similar to
+<em>MicroSoft Office</em>.
+Next note that if you choose <em>Computer Science</em> from the <em>CSBSJU</em> sub-menu,
+another list of applications appears, including the <i>DrJava</i> application you wil be
+using this term.</p>
+
+<p>
+There are several other buttons and icons on the menu bar possibly including
+a web browser, a clock, and your user ID.
+The green running-person icon is for logging off or logging in a different user.
+A task bar at the bottom of the screen currently holds
+boxes with labeled icons for any applications running
+in the current desktop (lower left), a trash bucket and 
+boxes for multiple Desktop indicators (lower right corner).
+On the desktop (large window), you can see several other icons,
+including a trash bucket, a link to your home directory,
+a link to the computer's file system and possibly a few others.</p>
+
+
+<h4>The terminal window</h4>
+
+<p>Much of your work will be done using a terminal window.
+This is a window from which you can issue commands to
+the Linux operating system.
+The window may have automatically appeared when you logged in.
+If not, you can create a new terminal window by selecting
+<em>Terminal</em> from the <em>System Tools</em> sub-menu of the
+<em>Applications</em>-menu or by clicking the Terminal icon on the tools bar
+(the gray screen with a &#8220;&gt;_&#8221; in it).</p>
+
+<p>
+The terminal window has a prompt, which generally ends in a percent sign (%)
+or a dollar sign ($) followed by a cursor, which is a solid black box
+the size of one character when the window is active or an outline box
+when the window is not active.
+When the cursor follows the prompt in a terminal window, you can type
+commands to the operating system, and they will appear at the cursor position.
+However, the command you type will not work until you press the Enter key,
+at which time the computer will execute your command.</p>
+
+<p>
+Go to the terminal window and type <kbd>ls</kbd>
+(the <em>letters</em> &#8216;l&#8217; and &#8216;s&#8217;),
+followed by the Enter key.
+This command tells Linux to show a <em>l</em>i<em>s</em>t of the files
+in the current working directory.
+(Note that Linux is case sensitive; you must use the correct case&#8212;usually
+lower&#8212;in all Linux commands.)
+In this case, you will probably see something like the following:</p>
+
+<p>
+<kbd>
+[jdoe@lin3 1 ~]$ ls<br>
+Desktop&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Music&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Templates<br>
+Documents&nbsp;&nbsp;&nbsp;&nbsp;Pictures&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Videos<br>
+Downloads&nbsp;&nbsp;&nbsp;&nbsp;Public<br>
+[jdoe@lin3 2 ~]$</kbd> </p>
+
+<p>
+Your prompt and file list will probably be different the what is illustrated here.
+Try to account for why your prompt looks as it does before you go on.</p>
+
+
+<h4>Directories</h4>
+
+<p>
+Like most modern operating systems,
+Linux systems arrange files hierarchically using directories.
+A <em>directory</em> is a type of file that conceptually contains files,
+and since directories are themselves files,
+directories can contain directory files as well.
+Directories are also called <i>folders</i> after
+the common icon used to represent them.
+</p>
+
+<p>
+In order to access a file, you need to know what directory it's in,
+and since a directory is also a file, you need to know which directory 
+contains the directory, and so on.
+Fortunately, there is one directory not contained in any other directory
+called the <em>root</em> directory, but named &#8220;/&#8221;.
+Files in the root directory can be accessed by a name starting with the
+slash character followed by file name.
+For example, there is a directory in the root directory named &#8220;usr&#8221;;
+it can be accessed by the name &#8220;/usr&#8221;.
+Files in other directories can be named by following the name of the containing
+directory with another slash and then the file name.
+Consider the following directory name:</p>
+
+<p>
+&nbsp;&nbsp;&nbsp;<kbd>/usr/people/faculty/cs/foobar/CS160</kbd></p>
+
+<p>
+This long name refers to a file or directory named &#8220;CS160&#8221; in a
+directory named &#8220;foobar&#8221; in a directory named &#8220;cs&#8221; in a
+directory named &#8220;faculty&#8221; in a directory named &#8220;people&#8221;
+in a directory named &#8220;usr&#8221; in the root directory. Such a directory
+name, starting with the slash character, is refered to as the <i>fully qualified
+  domain name</i> or <i>absolute path</i> of a file; The sequence of directories
+and sub-directories from the root directory to the desired file is called the
+<i>path</i>. Any file in the Linux file system can be named in this way. Note
+that Linux and other flavors of Unix use the <em>slash</em> character
+(&#8216;/&#8217;) to separate directories in a file name; Microsoft Windows uses
+the <em>backslash</em> character (&#8216;\&#8217;) instead. URLs for the
+Internet also use the slash character. Be careful to distinguish the two
+characters; you will often hear people use the wrong character name. Note also,
+that Unix has no concept of separate drive (A:, C:, M:, etc.) as in Windows,
+although the Unix file system is typically spread over multiple devices; it's
+just that all that is usually transparent to the user.</p>
+
+<p>
+Every directory automatically contains two special directories.
+You generally won&#8217;t see these, but they are sometimes useful.
+You can see them if you type <kbd>ls -a</kbd> (<i>list all</i>)
+at a terminal prompt.</p>
+
+<ul>
+  <li>
+      A directory named &#8220;.&#8221; (i.e., a single period character) that
+      refers to the containing directory containing itself.
+      It's a convenient way to name the current directory without specifying
+      the full path name.
+  </li>
+  <li>
+      A directory named &#8220;..&#8221; (i.e., two periods together)
+      refers to the parent directory of the containing directory.
+  </li>
+</ul>
+
+<p>
+There may be other files and directories with names beginning with the period
+character in a directory.
+Collectively, these files are referred to as hidden files, because they're
+usually invisible;
+this is the difference between the plain <kbd>ls</kbd> command and the
+<kbd>ls -a</kbd> command;
+the first doesn't show the hidden files;
+the latter does.</p>
+
+<p>
+Another useful directory shortcut to know about is the &#8220;~&#8221;
+symbol, which is shorthand for a home directory.
+(&#8216;~&#8221; is the <em>tilde</em> character, 
+which is pronounced <em>till-dee</em>;
+it is usually found at the upper left corner of the keyboard.)
+Used alone, the tilde character is shorthand for the user's home directory
+path;
+used with another user's ID (e.g. ~jqpublic), it is shorthand for the
+home directory of that user.
+For example, if a user named <em>jqpublic</em> has a home directory with
+the path <kbd>/usr/people/home/jqpublic</kbd>, we can refer to the user's
+<i>www-docs</i> file by the name &#8220;~jqpublic/www-docs&#8221;.</p>
+
+<p>
+There's also the concept of the <em>current working directory</em>;
+when you name a file without an initial slash or tilde character, the
+computer (usually) computes the path relative to the current working
+directory.
+You can see the current working directory with the <kbd>pwd</kbd> command;
+when you first open a terminal, the current working directory is your
+home directory.
+You can change the current working directory with the <kbd>cd</kbd> command;
+we'll explore that further below.
+Suppose the current directory is <kbd>/usr/people/home/jqpublic</kbd>
+and that directory contains a file named <em>foobar</em>;
+we can refer to the file by its fully qualified domain name
+<kbd>/usr/people/home/jqpublic/foobar</kbd>;
+we can refer to it directly as <kbd>foobar</kbd> since it's in the
+current working directory; or, assuming <i>jqpublic</i> is a user,
+we can refer to it as <kbd>~jqpublic/foobar</kbd>.
+Similarly, we can refer to the parent directory of the current directory
+<kbd>/usr/people/home</kbd> as &#8220;..&#8221;,
+and if that directory contains a directory named <em>qjprivate</em>,
+we can refer to it as <kbd>../qjprivate</kbd> rather than typing
+<kbd>/usr/people/home/qjprivate</kbd>.</p>
+
+
+<h4>Desktop file access</h4>
+
+<p>
+Your home directory is represented on the desktop by an icon of a folder
+and the image of a house with your user name under it.
+Double-click it now to open a graphical
+window displaying the contents of your home directory.
+As with Windows and MacOS computers, you can use a graphical interface
+to view your file structure, but you can also view it using
+a terminal window and command line statements.
+(Did you even know you could do that with PCs and Macs?)</p>
+
+<p>
+For the sake of organization, let's create a folder in your home directory
+called &#8220;CS160&#8221; to store all work related to this course.
+We'll do this using a terminal and the command line.
+First, verify that you still have a terminal window open;
+if not, open a new one.
+On the command line, type <kbd>pwd</kbd> (for <em>p</em>rint
+<em>w</em>orking <em>d</em>irectory,
+and verify that the current working directory is your home directory.
+If you're not sure whether this is your home directory, type the command:</p>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<kbd>cd</kbd>
+
+<p>
+and then repeat the <kbd>pwd</kbd> command.
+The <kbd>cd</kbd> command with no other arguments always returns you to
+your home directory, so you can use it as a homing command.
+If you haven't already done so, type the <kbd>ls</kbd> command to see what files
+you currently have.</p>
+
+<p>
+Next type the following with <i>exactly</i> the same capitalization:</p>
+
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<kbd>mkdir CS160</kbd></p>
+
+<p>
+After entering this command, list your files again to to see
+what this command does.
+<kbd>mkdir</kbd> stands for <em>m</em>a<em>k</em>e <em>dir</em>ectory,
+so it should have added a new directory named <em>CS160</em>.
+Use this directory from now on to put files for this course.</p>
+
+<p>
+In the file window displaying the contents of your home directory you
+should now see an additional icon for the directory you just created.
+(You may need to re-load the window first; use either the circular arrows
+on the tool bar or the <em>Reload</em> option in the <em>View</em> menu.)
+Double-click the the new folder's icon to show its contents,
+which should be empty at this point.</p>
+
+<p>
+Now you need to copy the files needed for the rest of today's lab into
+your <em>CS160</em> directory.
+To do this, go back to the terminal window and enter the command
+<kbd>cd&nbsp;CS160</kbd>.
+(<kbd>cd</kbd> stands for <em>c</em>hange <em>d</em>irectory.)
+Now use the <kbd>pwd</kbd> command to verify that the current
+working directory is <em>~/CS160</em>.
+If not, make sure you're in your home directory (using the <kbd>cd</kbd>
+and <kbd>pwd</kbd> commands) and then try the <kbd>cd&nbsp;CS160</kbd> again.
+If you're still not in the right place, check the spelling on the
+directory name, to be sure you've spelled it the same with the same
+upper-case letters.</p>
+
+<p>
+Once you are ready, type the following, <em>exactly</em> as written,
+or copy it from here and paste it into the terminal window,
+being sure to include the final space and period characters:
+</p>
+
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<kbd>cp -R
+/usr/people/classes/CS160/labs/Lab01 .</kbd><br>
+</p>
+
+<p>
+<kbd>cp</kbd> stands for <em>c</em>o<em>p</em>y, which will
+copy the specified directory <em>Lab01</em>, stored in
+<kbd>/usr/people/classes/CS160/labs</kbd>
+into the directory <em>~/CS160</em> that you created above.
+The <kbd>-R</kbd> option tells Linux to copy the contents of the directory
+along with all its sub-directories.
+In this case, <em>~/CS160</em> is the current working directory, so we
+use the &#8220;.&#8221; name for it.</p>
+
+<p>
+Use the command <kbd>ls&nbsp;Lab01</kbd> to verify that there
+is now a <em>Mammals</em> directory along with two Java files and a class file
+in the <em>Lab01</em> directory.
+(This assumes CS160 is still your current working directory.)
+Next use the command <kbd>ls&nbsp;Lab01/Mammals</kbd>
+to see what's in the <em>Mammals</em> sub-directory;
+you should see three sub-directories with appropriate names there.</p>
+
+<p>
+Again, you should keep all your computer files for this
+course in your <em>CS160</em> directory;
+keep separate directories inside this directory for each lab.
+As you use computers more and more you will find that organizing
+your files into well-named directories is extremely useful.
+It makes it much easier to find your files.
+For each of the coming labs, you will be copying or creating
+a directory for that lab
+and keeping the additional files you create for that lab there.
+You will create additional directories for programming projects outside
+the labs.</p>
+
+<p>
+You can also use the file window to manage your files and directories.
+The process is essentially the same as with Windows or MacOS.
+You can practice this on your own, if you wish.
+It's important, however, to learn to use the Linux command line interface,
+so most lab instructions will be given for the command line.</p>
+
+
+<h4>Creating, saving and deleting files</h4>
+
+<p>
+In your previous computing work, you have learned to create, save and
+delete files using several different applications.
+The process in Linux is pretty much the same as in Windows or MacOS, but
+the applications are a little different.
+Most of our work in this course will be working with Java program files,
+and we'll use an application called <em>DrJava</em> most of the time.
+DrJava contains a text editor that can be used to manage both Java
+program files and ordinary text files.
+If you want to use a stand-alone text editor, we recommend <em>gedit</em>,
+which you can find in the <em>Applications&#8594;CSBSJU&#8594;Text Editors</em>
+menu.
+For word-processing and spreadsheets, it's probably best to use Microsoft Office
+via Citrix, which is discussed briefly at the end of this tutorial.</p>
+
+
+<h3>Part 2: DrJava</h3>
+
+<p>
+<em>DrJava</em> is an easy to use software development
+environment for writing Java programs.
+It was created by members of the Computer Science Department
+at Rice University, and is currently under active
+development by the <em>JavaPLT</em> group at Rice.
+DrJava is designed primarily for student use and provides an interactive facility
+for developing Java code.
+It includes an editor and debugger, and it
+incorporates the <em>JUnit</em> testing framework and
+the <em>javadoc</em> documentation generating tool.</p>
+<p>
+You can download DrJava for use on your home or dorm room system from
+<a href="http://drjava.sourceforge.net/">http://drjava.sourceforge.net/</a>.</p>
+
+<p>
+Start DrJava by choosing <em>CSBSJU&#8594;Computer Science&#8594;DrJava</em> from
+the Applications menu.
+DrJava's main window is divided into three panels:
+The largest area to the right is the definitions pane;
+you write and edit Java programs in the definitions pane.
+The narrower panel on the left is the open document list;
+it displays a list of open documents.
+You can view and edit a particular document by selecting it from the list;
+when you click on a document in the list,
+it will be displayed in the definitions pane.
+The bottom panel contains several tabbed panes;
+clicking the tab displays the corresponding pane.
+For the present, we will be concerned with the interactions pane
+and the compiler output pane.
+You can enter and evaluate java statements and expressions
+in the interactions pane;
+compilation results are displayed in the compiler output pane.</p>
+
+
+<h4>Configuring DrJava</h4>
+
+<p>
+DrJava should be configured correctly for you automatically, but it's
+a good idea to check its options before you go on.
+If the options aren't set correctly, you can have serious problems with
+compiling your programs.
+The following steps will insure that DrJava is configured correctly for you.</p>
+
+<ul>
+  <li>Choose the <em>Preferences</em> option from the <em>Edit</em> pull-down menu;
+     this action will bring up the <em>Preferences</em> window.</li>
+  <li>If it is not already chosen, select the <em>Resource Locations</em> item
+     in the <em>Categories</em> pane on the left.
+     This item allows us to identify resources that DrJava needs
+     to compile and run our programs.</li>
+  <li>Check the text box associated with <em>Tools.jar Location</em>, which
+     is used to let DrJava know where to find the Java program.
+     Verify that it contains a string beginning with <kbd>/opt/jdk-1.8</kbd>
+     and ending with <kbd>/lib/tools.jar</kbd>.
+     If not, erase the contents of the text box and enter the string
+     <kbd>/opt/java-jdk/lib/tools.jar</kbd>, which will resolve to the correct
+     path.</li>
+  <li>Next, check the text area associated with <em>Extra Classpath</em>.
+     It should contain several directory paths;
+     be sure that it contains the following four,
+     not necessarily in that order:
+     <ul><kbd>
+        </kbd><li>/usr/people/classes/Java</li>
+        <li>/usr/people/classes/Java/acm</li>
+      <li>/usr/people/classes/Java/Javabook/<br>
+      </li>
+<li>&lt;<em>your home directory path</em>&gt;/JavaPackages</li>
+     </ul>
+     If any of those paths is missing, use the <em>Add</em> button to add them
+     or ask the instructor or TA for help at the beginning of lab.
+     If there are other paths there, leave them alone.</li>
+
+  <li>If you made any changes in the previous two steps,
+     click the <em>Apply</em> button to effect the changes.</li>
+  <li>Select the category <em>Miscellaneous</em>.
+     Verify that the item <em>Automatically Close Block Comments</em> is checked.
+     If not, click its check box and then click <em>Apply</em>.</li>
+  <li>Select the category <em>Display Options</em>.
+     Note that there is a check box labeled <em>Show All Line Numbers</em>.
+     If this box is checked, any document displayed in the definitions pane
+     will be shown with numbered lines, which is useful for finding errors;
+     if it is not checked, check it and click <em>Apply</em>.</li>
+  <li>If you wish, click each of the remaining categories
+     to get an idea of the options that can be set.</li>
+  <li>Dismiss the Preferences window by clicking <em>OK</em>.</li>
+</ul>
+
+<p>
+You don't need to set the options every time you run DrJava.
+Once you set them, DrJava will remember them the next time you run
+the application.</p>
+
+
+<h4>The Definitions Pane</h4>
+
+<p>
+Click <em>Open</em> on the DrJava tool bar, and navigate to your
+<em>Lab01</em> sub-directory.
+There should be a file namded <em>TouchyWindow.java</em> in this directory.
+Select this file and open it.
+The contents of the file will appear in the definitions pane.</p>
+
+<p>
+There are several things you should notice about this program.
+First, the text is displayed in several different colors.
+Each color denotes a different kind of <i>lexical component</i>.
+For instance, words like <kbd>public</kbd> and <kbd>class</kbd>
+are keywords, which are special words that are predefined in a 
+programming language; 
+DrJava displays all keywords in a unique color.
+Text in quotes is shown in a different color
+and numeric values in yet another color.
+The color coding can help you recognize keying mistakes when you
+create a program of your own.</p>
+
+<p>
+Second, the text is indented in a uniform way.
+This indenting reflects the
+structure of the program and makes it easier to read.
+When you key in a program, DrJava automatically indents for you.
+If the indenting is not what you expect,
+it is often a sign that you have made a syntactic mistake.
+Try the following to see how DrJava helps you with indenting:</p>
+
+<ul>
+  <li>Click at the beginning of the line that begins
+     <kbd>public void init</kbd> and enter a few spaces
+     by pressing on the space bar on your keyboard.
+     Do the same with the next couple of lines.</li>
+  <li>Select those lines by dragging the mouse across them
+     so they're highlighted.</li>
+  <li>Press the <em>Tab</em> key.
+     Notice that the original indenting is restored and is once
+     again correct according to Java style standards.
+     (Unlike Python, indenting has no programmatic meaning in Java.)</li>
+</ul>
+
+<p>
+In DrJava, you can use the <em>Tab</em> key to correct the indenting
+of the current line or of a group of selected lines.
+This behavior is unlike most text editors, which insert a <em>Tab</em>
+character if you press the <em>Tab</em> key.
+You should also take care not to rely too much on DrJava's indenting
+prowess;
+if there are syntax errors in the program, DrJava may not be able to
+indent it correctly, although that in itself is a good indication that
+a syntax error is present, usually a mismatched parenthesis or brace.</p>
+
+<p>
+Third, DrJava will show matching parentheses, braces, and brackets
+by highlighting the text they enclose.</p>
+
+<ul>
+   <li>Find the line that begins <kbd>public void mousePressed</kbd>
+      and select the following left parenthesis or click just after it.
+      Notice that the entire string <kbd>(MouseEvent e)</kbd></li>
+   <li>Find the line that begins <kbd>public void mousePressed</kbd>
+      and select the following left parenthesis or click just after it.
+      Notice that the entire string <kbd>(MouseEvent e)</kbd> becomes
+      highlighted, indicating a pair of matching parentheses.</li>
+   <li>Try again by selecting or clicking after the right parenthesis;
+      you should get the same result.</li>
+   <li>Now select or click after the left curly brace at the end of the line;
+      it will show you the corresponding matching right curly brace
+      two lines below.</li>
+</ul>
+
+<p>
+This is another feature that can help you find and avoid
+mistakes when you key a program.</p>
+
+
+<h4>Navigating</h4>
+
+<p>
+Notice that each line in the display pane is now numbered,
+since we set this option earlier.
+Error messages often mention a line number.
+You can navigate to line by number by choosing the <em>Go To Line</em>&#8230;
+option from the <em>Edit</em> menu, or by keying <kbd>Ctrl-G</kbd>.
+(That is, hold the <em>Control</em> or <em>Ctrl</em> key down and key
+the <em>G</em> key.)</p>
+
+<ul>
+  <li>Type <kbd>Ctrl-G</kbd>, enter <em>10</em> in the field labeled
+     <em>What line would you like to go to?</em> and click <em>OK</em>.</li>
+</ul>
+
+<p>
+Your cursor should now be at the start of line 10 in the definitions pane.</p>
+
+<p>
+You can also navigate to a specific string in the definitions pane by choosing
+<em>Find/Replace</em> from the <em>Edit</em> menu
+or by keying <kbd>Ctrl-F</kbd>.
+This action opens the <em>Find/Replace</em> tab in the bottom panel, which has
+a <em>Find Next</em> text area, a <em>Replace With</em> text area, several
+check boxes for controlling its behavior and buttons for its actions.
+It's an enhanced version of the find and replace function available in most
+text editors and word processors and in many other applications.
+The usual keyboard short-cuts also work for copy, cut and paste.</p>
+
+<ul>
+  <li>Open the <em>Find/Replace</em> tab by one of the methods above.</li>
+  <li>Key <kbd>public</kbd> into the <em>Find Next</em> text area,
+     and try the various find buttons to see all the places this string
+     occurs in the program.</li>
+  <li>Click the <em>X</em>-button in the upper-right corner of the pane created
+     by the <em>Find All</em> operation to close it;
+     you can close other tabs in the bottom panel the same way.</li>
+</ul>
+
+
+<h4>Compiling a program</h4>
+
+<p>You will notice that the document name <em>TouchyWindow.java</em> is
+followed by an asterisk (*) in the open document list.
+(You may need to scroll the window or make it wider to see the asterisk.)
+This symbol means that the document has been modified in
+the definitions pane but the changes have not been saved to disk.
+(You modified the document when you added and removed the spaces.)</p>
+
+<ul>
+  <li>Click the <em>Save</em> button on the tool bar to write the changes to disk.
+     You can also save by choosing <em>Save</em> from the <em>File</em> menu;
+     the <em>Save As</em> choice allows you to save a copy under a different name.</li>
+</ul>
+
+<p>
+Next, you will compile the class definition; that is, you will invoke
+a program called a compiler that will translate the Java text program into
+machine level code that can be interpreted by the Java interpreter.
+(The interpreter is called the <em>Java Virtual Machine</em> or <em>JVM</em>.)
+If successful, the compilation process will produce
+a new file named the same as the Java file but with the extension
+<em>.class</em>, saved in the current working directory.</p>
+
+<ul>
+  <li>Click the <em>Compile</em> button on the tool bar.</li>
+</ul>
+
+<p>
+Something is wrong.
+Notice that the <em>Compiler Output</em> tabbed pane
+at the bottom of the window is selected, and it indicates that several errors
+have been found.
+The first error is highlighted along with the line in the definitions pane
+that caused the error.</p>
+
+<p>
+Let's look carefully at the first error.
+The error message is at the end of the highlighted part of the 
+<em>Compiler Output</em> pane;
+it states &#8220;class, interface, or enum expected.&#8221;
+That's a pretty cryptic message, and it doesn't really tell you much about
+what's wrong.
+(More often, the actual error message states the problem quite clearly.)
+In this case the problem is pretty obvious;
+the word &#8220;import&#8221; is misspelled.
+Let's correct this problem before going on to the remaining errors.</p>
+
+<ul>
+  <li>Correct the spelling error in Line 4.</li>
+  <li>Click the <em>Compile</em> button again;
+     (DrJava saves the file automatically when you compile it).</li>
+</ul>
+
+<p>
+The first error should be gone now, and you'll see two errors in Line
+33, followed by two in Line 34;
+notice also that the indenting appears odd in Lines 34 and 34;
+(at least they do for the lab writer).
+It's almost always best to work errors from first to last, because
+later errors may turn out not to be errors at all, but just fall-out
+from an earlier error.
+Let's see if that's the case here.
+The first error message says &#8220;unclosed string literal&#8221;,
+which is a very helpful error message if you know a little Java.
+Now compare Line 33 that has the error with Line 30 that doesn't have
+an error.
+Both lines have very similar syntax, but they're colored differently.
+How can you account for the difference?
+In Line 30, the text &#8220;Click in this window&#8221; is enclosed
+in straight double-quote characters (not in left and right double
+quotes as in this write-up);
+in Line 33, the second quote character is not there.
+That's what the error message means:
+text enclosed in double-quote character is called a <em>string literal</em>
+in Java;
+the first quote mark opens the literal and the second closes it.
+We need to add that second quote mark.</p>
+
+<ul>
+  <li>Add a double-quote character between the &#8216;!&#8217;
+     and the &#8216;,&#8217; in Line 33.
+     Notice how the color changes and now matches Line 30.</li>
+  <li>Click the <em>Compile</em> button again.</li>
+</ul>
+
+<p>
+Now you should still see several errors, but they are different errors
+that before.
+This is progress, even if it doesn't seems like it.</p>
+
+<p>
+One by one we need to correct the errors in the file.
+The remaining errors in this program should all be
+fairly easy to figure out,
+even without much knowledge of Java.</p>
+
+<ul>
+  <li>Find and correct each of the errors in the file.
+     Keep a separate note of each error as you find it to show
+     when you submit the pre-lab.
+     You should click on the compile button after
+     correcting each error to see if it eliminates other errors
+     that were listed as well.</li>
+  <li>Once you have all of the errors corrected, you should
+     be able to click on the compile all button and get a message in the
+     Compiler Output pane at the bottom of the screen something like:
+     &#8220;Last compilation completed successfully&amp;#rdquo;.
+     Copy that message into your lab notes.</li>
+</ul>
+
+
+<h4>Running a program from DrJava</h4>
+
+<p>
+Java programs are classes that contain a method declared as
+<kbd>public static void main</kbd>, which you can see in Line 54
+of the <em>TouchyWindow</em> program.
+In DrJava, we can run programs with this method by clicking the
+<em>Run</em> button on the DrJava toolbar.
+If the program has compiled successfully, the program will now
+run, although it may or may not run correctly.
+Programs that don't run correctly is a problem we'll save for another
+lab!</p>
+
+<ul>
+  <li>If your program compiles successfully, click the <em>Run</em>
+     button on the DrJava toolbar.
+     Doing this should cause the <em>Interactions</em> pane to appear
+     with the command &#8220;run TouchyWindow&#8220;, and it should
+     launch a new window containing the text
+     &#8220;Click in this window&#8221;.</li>
+  <li>Play with the program by following the onscreen directions.
+     Try pressing and releasing the mouse slow in separate action
+     and in different places.
+     Look over the Java program code and see if you can begin to
+     understand how this program causes the behavior you see in the
+     window.</li>
+  <li>When you are finished with the program, close the window by
+     clicking the close-box or selecting <em>Quit</em> from the
+     <em>File</em>menu.
+     Note that doing this causes a message box to appear in the DrJava
+     window and resets the <em>Interactions</em> pane.</li>
+</ul>
+
+<p>
+Be prepared to show the instructor or TA the folders you created
+in this tutorial along with your working <em>TouchyWindow</em> program
+at the beginning of the lab session.
+If you're having trouble with this exercise and need help
+completing it, there
+are TAs available every evening except Friday and Saturday in Peter
+Engel Room 212 (this lab) and in the Clemens Library at St Ben's.
+Check the TA website
+<a href="https://sharepoint.csbsju.edu/computerscience/Pages/labhours.aspx">https://sharepoint.csbsju.edu/computerscience/Pages/labhours.aspx</a>
+for hours.</p>
+</body></html>

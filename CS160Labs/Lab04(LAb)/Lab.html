@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:light" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:light" rel="stylesheet">
+    <style>
+      * {color: #93a1a1; font-family: "Roboto Condensed", sans-serif;}
+      body {background-color: #eee8d5;}
+      h2,h3 {color: #073642;}
+      a,a:active,a:visited {color: #d33682;}
+      pre,kbd,code {font-family: "Roboto Mono", sans-serif; font-size: 85%;}
+      kbd {color: #d33682;}
+      pre,code {color: #6c71c4;}
+    </style>
+    <title>Lab 4: Making choices&#8212;doing laundry</title>
+  </head>
+
+  <body>
+    <h2>
+      Lab 4: Making choices&#8212;doing laundry
+    </h2>
+
+    <h3>
+      Objectives
+    </h3>
+
+    <ul>
+      <li>
+        to learn more about the use of Graphics objects and mouse events
+      </li>
+      <li>
+        to write programs using <code>if</code>-statements and Boolean
+        expressions.
+      </li>
+    </ul>
+
+    <h3>
+      Preliminaries
+    </h3>
+
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Note: JavaDocs can be found for
+      standard Java classes and libraries at: <a href="http://docs.oracle.com/javase/8/docs/api/">http://docs.oracle.com/javase/8/docs/api/</a>
+    </p>
+
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JavaDocs for the acm classes can
+      be found at: <a href="http://www-cs-faculty.stanford.edu/%7Eeroberts/jtf/javadoc/student/index.html">http://www-cs-faculty.stanford.edu/~eroberts/jtf/javadoc/student/index.html</a>
+    </p>
+
+    <h3>
+      Part 1: A laundry-sorting simulation
+    </h3>
+
+    <p>
+      Open the file <kbd>LaundrySorter.java</kbd> in DrJava.
+    </p>
+
+    <p>
+      As college students, it is important to learn the proper way to sort
+      laundry. In this part of the lab, you will write a Java program that
+      simulates sorting laundry. The initial display should display a
+      rectangle&#8212;the hamper&#8212;that is white, black, or red,
+      representing a white, dark, or colored item of clothing at the top of the
+      hamper. Next to this rectangle should be three rectangles that represent
+      three tubs of laundry, <em>Whites</em>, <em>Darks</em>, and
+      <em>Colors</em> and have appropriate colors and text labels. The user is
+      to look at the color of the &#8220;clothing item&#8221; (colored
+      rectangle) in the hamper and click on the appropriate tub. Each time the
+      user correctly selects a tub, the item of clothing will be randomly
+      replaced by another black, white, or other-colored item. If the user
+      selects the wrong tub, the program should display an error message, and
+      the clothing item should be unchanged; the error message should be hidden
+      when the user selects a tub correctly.
+    </p>
+
+    <p>
+      You will need to use the <code>getColor()</code> and <code>equals()</code>
+      methods as well as an <code>if</code>-statement to determine if the colors
+      match. The following code fragment should get you started:
+    </p>
+
+    <pre>
+    GObject objectClicked = this.getElementAt(e.getX(), e.getY()); // objectClicked is now the object that the mouse was clicked on
+    Color binColor        = objectClicked.getColor();
+    Color hamperColor     = this.hamper.getColor();
+
+    if (binColor.equals(hamperColor))
+    {</pre>
+
+    <p>
+      When you are successful in creating the basic laundry game, show your lab
+      instructor or TA.
+    </p>
+
+
+    <h3>
+      Part 2: Keeping count of events
+    </h3>
+
+    <p>
+      Change the laundry program so that it counts and displays the number of
+      correct and incorrect choices the user has made. Your can do this by
+      adding two <code>int</code> instance variables <code>correct</code> and
+      <code>wrong</code>, both initialized to 0, adding the statement
+      <code>this.correct++;</code> wherever you detect a correct choice and
+      adding the statement <code>this.wrong++;</code> wherever you detect an
+      incorrect choice. Use <code>GLabel</code>s on the canvas to display the
+      current values of <code>correct</code> and <code>wrong</code>; use the
+      <code>setLabel()</code> method to change the text value of the label.
+    </p>
+
+    <p>
+      Show your finished program to the lab instructor or TA.
+    </p>
+  </body>
+</html>

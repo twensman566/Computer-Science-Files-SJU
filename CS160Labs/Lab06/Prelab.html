@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:light" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:light" rel="stylesheet">
+    <style>
+      * {color: #93a1a1; font-family: "Roboto Condensed", sans-serif;}
+      body {background-color: #eee8d5;}
+      h2,h3 {color: #073642;}
+      a,a:active,a:visited {color: #d33682;}
+      pre,kbd,code {font-family: "Roboto Mono", sans-serif; font-size: 85%;}
+      kbd {color: #d33682;}
+      pre,code {color: #6c71c4;}
+    </style>
+    <title>Lab 6: Manipulating numeric data&#8212;a Cannon</title>
+  </head>
+  
+  <body>
+    <h2>
+      Lab 6: Computing with numbers&#8212;a Cannon
+    </h2>
+
+    <p>
+      The very first application for the first electronic computer was to
+      compute artillery tables for cannons in World War II. In this lab, we'll
+      implement a couple of programs that compute a simple version of this
+      problem.
+    </p>
+
+    <h3>
+      Preliminaries
+    </h3>
+
+    <p>
+      Using a terminal window, copy the directory named <kbd>Lab06</kbd> from
+      <kbd>/usr/people/classes/CS160/labs</kbd> into your <kbd>CS160</kbd>
+      directory. Use the <kbd>tree</kbd> command to verify that the directory
+      structure for your local copy of <kbd>Lab06</kbd> matches the following:
+    </p>
+
+    <pre style="color: #d33682;">
+    Lab06
+    |-- Cannon.java
+    |-- Cannon.jpg
+    |-- Prelab.html
+    `-- solution
+        <!-- `-- Cannon.class -->
+    </pre>
+
+    <h3>
+      Pre-lab exercise: Some simple numeric computations
+    </h3>
+
+    <p>
+      Suppose that a cannon ball is shot from a cannon at an angle <em>A</em> as
+      pictured below. The ball will shoot out at that angle and will eventually
+      drop to earth some distance away from the starting point. If the ball
+      shoots at an initial velocity of
+      <em>v</em><sub style="font-size: 50%;">0</sub>, and if the vertical
+      acceleration due to gravity <em>g</em> is &#8722;9.80665 meters per second
+      per second, then the vertical component of the initial velocity
+      <em>v<sub style="font-size: 70%;">vert</sub></em> will be, as shown in the
+      diagram below,
+      <em>v</em><sub style="font-size: 50%;">0</sub> <em>sin&#8201;A</em>,
+      and the horizontal component,
+      <em>v<sub style="font-size: 70%;">horiz</sub></em> will be
+      <em>v</em><sub style="font-size: 50%;">0</sub> <em>cos&#8201;A</em>.
+      The formula for the height of the cannon ball after <em>t</em> seconds,
+      assuming no friction will be:
+    </p>
+
+    <pre style="font-size: 100%;">
+    <em>height(v<sub style="font-size: 50%;">0</sub> , A, t) = v<sub style="font-size: 70%;">vert</sub> t + g&#8201;t<sup style="font-size: 50%;">&nbsp;2</sup> &#8260; 2</em></pre>
+
+    <p>
+      Similarly, the formula for the horizontal distance the cannon ball has
+      moved after <em>t</em> seconds is:
+    </p>
+
+    <pre style="font-size: 100%;">
+    <em>dist(v<sub style="font-size: 50%;">0</sub> , A, t) = v<sub style="font-size: 70%;">horiz</sub> t</em></pre>
+
+    <p>
+      provided that <em>t</em> isn't past the time when the cannonball hits the
+      ground.
+    </p>
+
+    <p style="text-align: center;">
+      <img style="width: 381px; height: 316px;" alt="cannon" src="Cannon.jpg" />
+    </p>
+
+    <p>
+      Using the supplied <kbd>Cannon.java</kbd> template, complete the
+      <em>height(v<sub style="font-size: 50%;">0</sub> , A, t)</em> method and
+      add the <em>dist(v<sub style="font-size: 50%;">0</sub> , A, t)</em> method
+      using the formulas above. Note that it uses the name <code>GRAVITY</code>
+      for the constant <em>g</em>. The <code>Math</code> class has public static
+      methods <code>Math.sin(theta)</code> and <code>Math.cos(theta)</code> that
+      will compute the trigonometric functions you need. These functions
+      require, however that the angle be in radians, so the range of valid
+      angles runs from 0 to &#960;/2 radians, which is equivalent to 0 to 90
+      degrees. The <code>Math</code> class also defines a constant
+      <code>Math.PI</code>, which is the closest approximation to &#960;
+      possible in the double type; you should always use <code>Math.PI</code>
+      rather than your own approximation of &#960;. You can use this constant as
+      part of the formula to convert degrees to radians, or you can use the
+      <code>toRadians()</code> method of the <code>Math</code> class.
+    </p>
+
+    <p>
+      Test your program to assure yourself that it works correctly. Add
+      appropriate comments if you have not already done so. Show your working
+      program and code to the lab instructor or TA at the <em>beginning</em> of
+      lab.
+    </p>
+  </body>
+</html>

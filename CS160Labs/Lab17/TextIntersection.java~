@@ -1,0 +1,81 @@
+/**
+ * Interface for an intersection with traffic signals in four directions
+ */
+public class TextIntersection implements Intersection
+{
+  /**
+   * Get the current state of a directional signal in this intersection
+   *
+   * @param  direction the direction of the signal to get the state of
+   * @return the current state of the specified signal
+   */
+  private TrafficSignal northBound, southBound, westBound, eastBound;
+  
+  public TextIntersection()
+  {
+    this.northBound = TrafficSignalState.OFF; 
+    this.southBound = TrafficSignalState.OFF;
+    this.westBound = TrafficSignalState.OFF; 
+    this.eastBound = TrafficSignalState.OFF; 
+  }
+  public TrafficSignalState getState(Direction direction)
+  {
+    
+  }
+  
+  /**
+   * Turn this Intersection ON with an initial state of FLASHING_RED
+   * in all directions
+   */
+  public void turnOn()
+  {
+    
+  }
+  
+  
+  /**
+   * Turn OFF all four traffic signals in this Intersection
+   */
+  public void turnOff()
+  {
+    
+  }
+  
+  
+  /**
+   * Advance this Intersection to its next state (N, E, S, W):
+   *  R, G, R, G   -> R, Y, R, Y;
+   *  R, Y, R, Y   -> G, R, G, R;
+   *  G, R, G, R   -> Y, R, Y, R;
+   *  Y, R, Y, R   -> R, G, R, G;
+   *  FR, FR, FR, FR -> R, G, R, G;
+   *  OFF     -> OFF;
+   *  any other states -> FR, FR, FR, FR (something went wrong)
+   */
+  public void advance()
+  {
+    
+  }
+  
+  
+  /**
+   * Set all the signals of this Intersection to FLASHING_RED
+   */
+  public void setFlashing()
+  {
+    
+  }
+  
+  
+  /**
+   * Returns a string representation of this Intersection. For classes
+   * implementing this interface, it should return the name of the class,
+   * followed by '.' and then by the current state of each signal.
+   *
+   * @return a string representation of this Intersection
+   */
+  public String toString()
+  {
+    
+  }
+}

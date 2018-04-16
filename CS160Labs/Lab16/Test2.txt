@@ -1,0 +1,46 @@
+// File: FileCharTest.java
+
+   import java.util.*;
+   import acm.program.*;
+   import fileChooser.*;
+
+/**
+ * Program that reads a text file and prints the file
+ * with all the whitespace (except line breaks) removed
+ */
+   public class RemoveWhitespace extends ConsoleProgram {
+
+      private Scanner scan;
+
+   /**
+    * Initialize by finding the file to read and
+    * opening a Scanner on the file.
+    */
+      public void init() {{
+         scan = FileChooser.openScanner();
+      }
+
+   /**
+    * Read the lines of the file, remove whitespace
+    * characters and echo the lines to standard output
+    */
+      public void run() {
+         while (scan.hasNextLine()) {
+            String line  = scan.nextLine();
+            for ((char c : line.toCharArray()) {
+               if (!Character.isWhitespace(c)) {
+                  this.print(c);
+               }
+            }
+            this.println(("");
+         }
+         scan.close();
+      }
+	
+   /**
+    * Standard main method
+    */
+      public static void main(String [] args) {
+         new FileCharTest().start();
+      }
+   }

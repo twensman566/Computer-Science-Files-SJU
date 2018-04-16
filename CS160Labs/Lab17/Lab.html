@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:light" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:light" rel="stylesheet">
+    <style>
+      * {color: #93a1a1; font-family: "Roboto Condensed", sans-serif;}
+      body {background-color: #eee8d5;}
+      h2,h3 {color: #073642;}
+      a,a:active,a:visited {color: #d33682;}
+      pre,kbd,code {font-family: "Roboto Mono", sans-serif; font-size: 85%;}
+      kbd {color: #d33682;}
+      pre,code {color: #6c71c4;}
+    </style>
+    <title>Classes using classes&#8212;Traffic Signals</title>
+  </head>
+  
+  <body>
+    <h2>
+      Classes using classes&#8212;Traffic Signals
+    </h2>
+
+    <p>
+      In this lab, you will explore building new classes upon existing classes,
+      where the classes are specified by interfaces. The general problem is to
+      build a class that models a signal-controlled, four-way intersection. For
+      today, we'll do a text-based model. The intersection will be built with
+      four traffic signals for the four directions of travel, and the signal
+      will be built with three lights, labeled by color. We'll implement the
+      classes from the bottom up.
+    </p>
+
+    <h3>
+      Preliminaries
+    </h3>
+
+    <p>
+      Using a terminal window, copy the directory named <kbd>Lab17</kbd> from
+      <kbd>/usr/people/classes/CS160/labs</kbd> into your <kbd>CS160</kbd>
+      directory. Use the <kbd>tree</kbd> command to verify that the directory
+      structure for your local copy of <kbd>Lab17</kbd> matches the following:
+    </p>
+
+    <pre style="color: #d33682;">
+    Lab17
+    |-- Direction.java
+    |-- Intersection.java
+    |-- IntersectionTester.java
+    |-- Lab.html
+    |-- Light.java
+    |-- LightState.java
+    |-- LightTester.java
+    |-- SignalTester.java
+    |-- solution
+    |    |-- Direction.class
+    |    |-- Intersection.class
+    |    |-- IntersectionTester.class
+    |    |-- Light.class
+    |    |-- LightTester.class
+    |    |-- SignalTester.class
+    |    |-- TextIntersection$1.class
+    |    |-- TextIntersection.class
+    |    |-- TextLight.class
+    |    |-- TextTrafficSignal$1.class
+    |    |-- TextTrafficSignal.class
+    |    |-- TrafficSignal.class
+    |    `-- TrafficSignalState.class
+    |-- TrafficSignal.java
+    `-- TrafficSignalState.java
+    </pre>
+
+    <h3>
+      Part 1: Creating a TextLight class that implements the Light interface
+    </h3>
+
+    <p>
+      The first task is to complete a class implementing the <code>Light</code>
+      interface. The class must have a different name than the interface, and
+      the usual Java convention is to end the class name with the interface
+      name, starting it with something that briefly describes the way the class
+      is implemented. Since this will be a text-based implementation, it makes
+      sense to call the class <code>TextLight</code>. To begin this class, open
+      a new Java document in DrJava and copy the entire contents of
+      <kbd>Light.java</kbd> into the document. Save the file in your lab folder
+      as <kbd>TextLight.java</kbd>. This gives you an interface that can serve
+      as an accurate template for the class. Before you go on, modify the class
+      JavaDoc comments to reflect the change from interface to class.
+    </p>
+
+    <p>
+      Here are the general steps to convert an interface into a class:
+      <ul>
+        <li>
+          Change the interface declaration to a class declaration
+        </li>
+        <li>
+          Declare instance variables
+        </li>
+        <li>
+          Declare and implement constructor methods
+        </li>
+        <li>
+          Implement all declared methods
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      The only instance variable we need for a <code>TextLight</code> object is
+      one to determine whether the light is on or off. We could use a boolean
+      variable for this purpose, but instead, we'll use the
+      <code>LightState</code> <em>enum</em>. Declare the instance variable after
+      the class declaration as follows:
+      <br>
+    </p>
+
+    <pre>
+    private LightState state;</pre>
+
+    <p>
+      The enum declaration effectively creates two distinct <code>static final
+      int</code> values: <code>LightState.OFF</code> and
+      <code>LightState.ON</code>. We can now use these names directly in our
+      programs.
+    </p>
+
+    <p>
+      We only need one constructor for the <code>TextLight</code> class. We
+      could design a constructor that would take a <code>LightState</code>
+      parameter to set the initial state of the <code>TextLight</code>, but
+      that's really more complicated than what we need. Instead, implement a
+      constructor with no parameters, and set the initial value of
+      <code>state</code> to <code>LightState.OFF</code>. This design better
+      matches real world lights which don't come on until they're installed and
+      supplied with electricity.
+    </p>
+
+    <p>
+      Finally, implement the methods specified by the <code>Light</code>
+      interface. All of these should be no more than a few lines.
+      For the <code>toString()</code> method, you need to construct one of two
+      strings: <code>&#8220;TextLight.OFF&#8221;</code> or
+      <code>&#8220;TextLight.ON&#8221;</code>. You can do that either using an
+      <code>if</code>-statement or by concatenating the <code>state</code>
+      variable to the string <code>&#8220;TextLight.&#8221;</code>. The latter
+      method will probably construct a slightly different string, but that's
+      alright if you prefer to do it that way. Return the result string.
+    </p>
+
+    <p>
+      Use the included <code>LightTester</code> program to test your class and
+      show it to the lab instructor or TA before moving on to Part 2.
+    </p>
+
+    <h3>
+      Part 2: Creating a TextTrafficSignal class that implements the
+      TrafficSignal interface
+    </h3>
+
+    <p>
+      Follow the same steps to implement the <code>TextTrafficSignal</code>
+      class that implements the <code>TrafficSignal</code> interface. There are
+      a few differences, however. First, in addition to the instance variable
+      for the state of the signal (type <code>TrafficSignalState</code>, in this
+      case), there should be three <code>Light</code> instance variables for the
+      three colored lights. The constructor can again have no parameters and set
+      the initial <code>state</code> to <code>TrafficSignalState.OFF</code>; it
+      must also create the three <code>Light</code> objects with the
+      <code>new</code> operator and assign them to the appropriate instance
+      variables. They will all be off initially, so it isn't necessary to change
+      their values in the constructor. The mutator methods should correctly
+      change both the signal state and the light states to reflect the overall
+      state of the signal. Finally, the <code>toString()</code> method should
+      display both the internal state value and the state values of the three
+      lights. That is, it should return a string that looks something like:
+      <br>
+    </p>
+    
+    <pre>
+    TrafficSignal: state.RED, red.ON, yellow.OFF, green.OFF</pre>
+    
+    <p>
+      Use the included <code>SignalTester</code> program to test your class and
+      show it to the lab instructor or TA before moving on to Part 3.
+    </p>
+
+    <h3>
+      Part 3: Creating a TextIntersection class that implements the Intersection
+      interface
+    </h3>
+
+    <p>
+      Once again, follow the same steps to implement a
+      <code>TextIntersection</code> class that implements the
+      <code>Intersection</code> interface. For this class, there's no state
+      variable. (The states begin to get too complicated to enumerate.) Instead,
+      the state is determined by the state of four
+      <code>TrafficSignal</code> objects, one each for northbound, eastbound,
+      southbound and westbound traffic. The constructor and other methods are
+      quite similar to the previous class, but the implementation will be a
+      little more complicated. You should probably insert newline
+      (<code>'\n'</code>) characters in the output of the
+      <code>toString()</code> method to make display a little more readable.
+      Maybe something like:
+    </p>
+
+    <pre>
+    TextIntersection:
+      north.TrafficSignal: state.RED, red.ON, yellow.OFF, green.OFF
+      east.TrafficSignal: state.RED, red.ON, yellow.OFF, green.OFF
+      south.TrafficSignal: state.RED, red.ON, yellow.OFF, green.OFF
+      west.TrafficSignal: state.RED, red.ON, yellow.OFF, green.OFF</pre>
+
+    <p>
+      Use the included <code>IntersectionTester</code> program to test your
+      class and show it to the lab instructor or TA.
+    </p>
+  </body>
+</html>

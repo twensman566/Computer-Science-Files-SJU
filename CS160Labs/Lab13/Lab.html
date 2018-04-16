@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:light" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:light" rel="stylesheet">
+    <style>
+      * {color: #93a1a1; font-family: "Roboto Condensed", sans-serif;}
+      body {background-color: #eee8d5;}
+      h2,h3 {color: #073642;}
+      a,a:active,a:visited {color: #d33682;}
+      pre,kbd,code {font-family: "Roboto Mono", sans-serif; font-size: 85%;}
+      kbd {color: #d33682;}
+      pre,code {color: #6c71c4;}
+    </style>
+    <title>Lab 13: Manipulating Text&#8212;Pig Latin</title>
+  </head>
+  
+  <body>
+    <h2>
+      Lab 13: Manipulating Text&#8212;Pig Latin
+    </h2>
+
+    <p>
+      Perhaps you remember trying to speak in “Pig Latin” as a child. Words
+      starting with consonants (all of the consonants before the first vowel)
+      have the starting consonants removed from the front of a word and added to
+      the end of the word followed by “ay” so that, for example, “way” becomes
+      “ayway”, “java” becomes “avajay”, “theme” becomes “emethay", and so on.
+      Words starting with a vowel stay the same with a “way” appended to their
+      end so that “elated” becomes “elatedway”, “after” becomes “afterway” etc.
+      In particular, if you had “awesome Pig Latin” it would become “awesomeway
+      igPay atinLay”. If you need to refresh your memory more on Pig Latin,
+      check out this website:
+      <a href="http://users.snowcrest.net/donnelly/piglatin.html">English to Pig
+      Latin Translator</a>.
+    </p>
+
+    <h3>
+      Preliminaries
+    </h3>
+
+    <p>
+      Using a terminal window, copy the directory named <kbd>Lab13</kbd> from
+      <kbd>/usr/people/classes/CS160/labs</kbd> into your <kbd>CS160</kbd>
+      directory. Use the <kbd>tree</kbd> command to verify that the directory
+      structure for your local copy of <kbd>Lab13</kbd> matches the following:
+    </p>
+
+    <pre style="color: #d33682;">
+    Lab13
+    |-- GraphicsPigLatin.java
+    |-- Lab.html
+    |-- PigLatin.java
+    `-- solution
+         |-- FilePigLatin.class
+         |-- GraphicsPigLatin.class
+         |-- PigLatin.class
+         |-- test-piglatin.txt
+         `-- test.txt
+    </pre>
+
+    <h3>
+      Part 1: A method that translates one word into Pig Latin
+    </h3>
+
+    <p>
+      You will be completing a program that can take any string of zero or more
+      words and convert it to a string of equivalent words in Pig Latin. You
+      have been given a complete main program, <code>GraphicsPigLatin</code>
+      that provides the user interface for the converter and a
+      <code>PigLatin</code> class that contains static methods for converting
+      English to Pig Latin. The user interface uses Java GUI components that we
+      haven't studied yet, but you won't need to work with those parts of the
+      program. The only part you need to complete is the
+      <code>convertWord()</code> method in the <code>PigLatin</code> class. The
+      rules for how the method should work are in the class comment at the top
+      of the file.
+    </p>
+
+    <p>
+      Show your work to the TA or lab instructor before you go on.
+    </p>
+
+    <h3>
+      Part 2: Correcting the capitalization
+    </h3>
+
+    <p>
+      The <code>convertWord()</code> method doesn't work correctly for words
+      beginning with a capital consonant. Modify this method so that it handles
+      this case correctly; for example, “Pig Latin” will become “Igpay Atinlay”
+      instead of “igPay atinLay.” The <code>Character</code> and
+      <code>String</code> classes should provide methods appropriate for
+      accomplishing this task.
+    </p>
+
+    <p>
+      Show your work to the TA or lab instructor before you go on.
+    </p>
+
+    <h3>
+      Part 3: Translating text files into Pig Latin
+    </h3>
+
+    <p>
+      Write a new <code>Program</code> that opens a <code>Scanner</code> on a
+      text file (using a <code>FileChooser</code>), reads and converts each line
+      of the file to Pig Latin, and writes each converted line to another file
+      using a <code>PrintWriter</code> (also opened with a
+      <code>FileChooser</code>.) Use the same methods in the
+      <code>PigLatin</code> class for this program.
+    </p>
+
+    <p>
+      Show your completed program to the TA or lab instructor.
+    </p>
+  </body>
+</html>

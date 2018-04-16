@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:light" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:light" rel="stylesheet">
+    <style>
+      * {color: #93a1a1; font-family: "Roboto Condensed", sans-serif;}
+      body {background-color: #eee8d5;}
+      h2,h3 {color: #073642;}
+      a,a:active,a:visited {color: #d33682;}
+      pre,kbd,code {font-family: "Roboto Mono", sans-serif; font-size: 85%;}
+      kbd {color: #d33682;}
+      pre,code {color: #6c71c4;}
+    </style>
+    <title>Assignment 2: Java classes and objects</title>
+  </head>
+
+  <body>
+    <h2>
+      Assignment 2: Java classes and objects
+    </h2>
+
+    <h3>
+      Problem 1&#8212;Library
+    </h3>
+
+    <p>
+      Write a Java class <code>Student</code> that represents a student. The
+      class should define the following:
+    </p>
+
+    <ul>
+      <li>
+        Private instance variables
+      </li>
+      <ul>
+        <li>
+          <code>studentName</code>
+        </li>
+        <li>
+          <code>studentEmail</code>
+        </li>
+      </ul>
+      <li>
+        Public constructors
+      </li>
+      <ul>
+        <li>
+          a single constructor that takes no parameters and assigns instance
+          variables the literal string <code>&quot;UNASSIGNED&quot;</code>
+        </li>
+      </ul>
+      <li>
+        Public instance methods
+      </li>
+      <ul>
+        <li>
+          provide accessor and mutator methods for both of the instance
+          variables
+        </li>
+      </ul>
+    </ul>
+
+    <p>
+      Write another Java class <code>LibraryCard</code> that represents a
+      library card for a student. The class should define the following:
+    </p>
+
+    <ul>
+      <li>
+        Private instance variables
+      </li>
+      <ul>
+        <li>
+          <code>owner</code> &#8212; representing the student owning the card
+        </li>
+        <li>
+          <code>borrowedBookCount</code> &#8212; the number of books checked out
+          by the student
+        </li>
+      </ul>
+      <li>
+        Public constructors
+      </li>
+      <ul>
+        <li>
+          a single constructor that takes no parameters and assigns the value
+          <code>null</code> to owner and 0 to the borrowed books count
+        </li>
+      </ul>
+      <li>
+        Public instance methods
+      </li>
+      <ul>
+        <li>
+          provide accessor and mutator methods for both of the instance
+          variables
+        </li>
+        <li>
+          override the <code>toString()</code> &#8212; this method will return a
+          string representation of the <code>LibraryCard</code> object that it
+          is called on; this string should have the following format:<br>
+          <code>Owner name: &lt;card owner's name&gt;</code><br>
+          <code>email: &lt;card owner's email&gt;</code><br>
+          <code>Books borrowed: &lt;card owner's borrowed book count&gt;</code>
+        </li>
+      </ul>
+    </ul>
+
+    <p>
+      Write a third Java class <code>LibraryCardTester</code> that is the main
+      class for the program, i.e., it extends the ACM <code>Program</code>
+      class. The <code>run()</code> method for this class should do the
+      following:
+    </p>
+
+    <ul>
+      <li>
+        Create two <code>Student</code> objects and assign them to two
+        <em>local</em> reference variables <code>student1</code> and
+        <code>student2</code>, respectively. The students should have the
+        following details:
+      </li>
+      <ul>
+        <li>
+          <code>student1</code> &#8212; name: John Doe, email:
+          johndoe@csbsju.edu
+        </li>
+        <li>
+          <code>student2</code> &#8212; name: Dawn Wise, email:
+          dawnwise@csbsju.edu
+        </li>
+      </ul>
+      <li>
+        Create three <code>LibraryCard</code> objects and assign them to three
+        <em>local</em> reference variables <code>card1</code>,
+        <code>card2</code>, and <code>card3</code>, respectively.
+        <code>card1</code> and <code>card2</code> are owned by John and
+        <code>card3</code> is owned by Dawn.
+      </li>
+      <li>
+        Check out three books using <code>card1</code>, two books using
+        <code>card2</code>, and five books using <code>card3</code>
+      </li>
+      <li>
+        Print the card information for all three cards &#8212; you can do this
+        by implicitly or explicitly calling the <code>toString()</code> method
+        from the <code>LibraryCard</code> class.
+      </li>
+    </ul>
+
+    <p>
+      Example input/output:
+    </p>
+
+    <img style="height: 250px;" alt="Problem1" src="Problem1.png" />
+
+    <h3>
+      Submitting your assignment
+    </h3>
+
+    <p>
+      Copy the folder <kbd>LastName_FirstName_Asg2</kbd> containing
+      <kbd>Student.java</kbd>, <kbd>LibraryCard.java</kbd>, and
+      <kbd>LibraryCardTester.java</kbd> into
+      <kbd>/usr/people/handins/CS160</kbd> before the due date.
+    </p>
+  </body>
+</html>

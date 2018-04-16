@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:light" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:light" rel="stylesheet">
+    <style>
+      * {color: #93a1a1; font-family: "Roboto Condensed", sans-serif;}
+      body {background-color: #eee8d5;}
+      h2,h3 {color: #073642;}
+      a,a:active,a:visited {color: #d33682;}
+      pre,kbd,code {font-family: "Roboto Mono", sans-serif; font-size: 85%;}
+      kbd {color: #d33682;}
+      pre,code {color: #6c71c4;}
+    </style>
+    <title>Assignment 3: Java classes and objects</title>
+  </head>
+
+  <body>
+    <h2>
+      Assignment 3: Java classes and objects
+    </h2>
+
+    <h3>
+      Problem 1&#8212;Fractions
+    </h3>
+
+    <p>
+      Write a Java class <code>Fraction</code> that represents a mathematical
+      fraction such as 1/2 or 3/5. The class should define the following:
+    </p>
+
+    <ul>
+      <li>
+        Private instance variables
+      </li>
+      <ul>
+        <li>
+          <code>numerator</code>
+        </li>
+        <li>
+          <code>denominator</code>
+        </li>
+      </ul>
+      <li>
+        Public constructors
+      </li>
+      <ul>
+        <li>
+          a two parameter constructor that accepts a numerator and a denominator
+          as parameters &#8212; the method parameters should be used to
+          initialize the like named instance variables
+        </li>
+        <li>
+          a one parameter constructor that accepts only a numerator as a
+          parameter &#8212; the method parameter should be used to initialize
+          the like named instance variable and the denominator instance variable
+          should be initialized to 1; this constructor should call the two
+          parameter variant with the correct values
+        </li>
+        <li>
+          a no parameter constructor &#8212; the numerator instance variable
+          should be initialized to 0 and the denominator instance variable
+          should be initialized to 1, i.e., creating the fraction 0/1; this
+          constructor should call the two parameter variant with the correct
+          values
+        </li>
+      </ul>
+      <li>
+        Public instance methods
+        <ul>
+          <li>
+            provide accessor methods only for both of the instance variables
+          </li>
+          <li>
+            <code>add()</code> &#8212; takes a single <code>Fraction</code> object
+            as a parameter and add it the <code>Fraction</code> object upon which
+            this method is called
+          </li>
+          <li>
+            <code>multiply()</code> &#8212; takes a single <code>Fraction</code>
+            object as a parameter and multiply it by the <code>Fraction</code>
+            object upon which this method is called
+          </li>
+          <li>
+            <code>negate()</code> &#8212; takes no parameters, just make the
+            <code>Fraction</code> object upon which this method is called negative
+          </li>
+          <li>
+            <code>inverse()</code> &#8212; takes no parameters, just invert the
+            <code>Fraction</code> object upon which this method is called, i.e.,
+            the numerator becomes the denominator and vice-versa
+          </li>
+          <li>
+            override the <code>toString()</code> &#8212; this method will return a
+            string representation of the <code>Fraction</code> object that it is
+            called on; this string should have the following format:<br>
+            <code>&lt;numerator&gt; / &lt;denominator&gt;</code>
+          </li>
+        </ul>
+        <br>
+        For the <code>add()</code>, <code>multiply()</code>,
+        <code>negate()</code>, and <code>inverse()</code> methods, the return
+        type should be <code>Fraction</code>. What this means for these methods
+        is that they should not modify the <code>Fraction</code> objection on
+        which they were called; they should merely construct a new
+        <code>Fraction</code> object with the values calculated based on the
+        method functionality, and return a reference to it.
+        <br>
+        <br>
+        The <code>add()</code> and <code>multiply()</code> methods should work
+        for fractions that do not have the same denominator.
+      </li>
+    </ul>
+
+    <p>
+      Write a second Java class <code>FractionMath</code> that is the main class
+      for the program, i.e., it extends the ACM <code>Program</code> class. The
+      <code>run()</code> method for this class should do the following:
+    </p>
+
+    <ul>
+      <li>
+        Create two <code>Fraction</code> objects using numerators and
+        denominators input by the user. Each fraction input by the user will be
+        a single string, i.e., &quot;3/5&quot;. It is up to you to parse
+        the string to find the numerator and the denominator, then create the
+        <code>Fraction</code> objects using the two parameter constructor. The
+        objects should be assigned to <em>local</em> reference variables
+        <code>fraction1</code> and <code>fraction2</code>, respectively.
+      </li>
+      <li>
+        Calculate and print the following:
+        <ul>
+          <li>
+            sum, difference, product, and division of <code>fraction1</code> and
+            <code>fraction2</code>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <p>
+      Example input/output:
+    </p>
+
+    <img style="height: 175px;" alt="Problem1" src="Problem1.png" />
+
+    <h3>
+      Submitting your assignment
+    </h3>
+
+    <p>
+      Copy the folder <kbd>LastName_FirstName_Asg3</kbd> containing
+      <kbd>Fraction.java</kbd> and <kbd>FractionMath.java</kbd> into
+      <kbd>/usr/people/handins/CS160</kbd> before the due date.
+    </p>
+  </body>
+</html>

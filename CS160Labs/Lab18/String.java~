@@ -1,0 +1,9 @@
+
+
+public class String
+{
+  public replaceAll(String match, String replacement)
+  {
+    
+  }
+}

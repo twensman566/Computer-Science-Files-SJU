@@ -1,0 +1,34 @@
+// DialogProgram
+import acm.program.DialogProgram;
+
+
+/**
+ * Program that generates an array of random double values with the specified
+ * size and range
+ * 
+ * @author  J. A. W. H.
+ * @author revised by J Schnepf
+ * @version 2014
+ */
+public class RandomFileMaker extends DialogProgram
+{
+  public void run()
+  {
+    // prompt the user for the following values
+    int numDoubles = this.readInt();
+    double low     = this.readDouble();
+    double high    = this.readDouble();
+   
+    // generate a random double array 
+    double [] doubleArray = DoubleUtilities.generateValues(numDoubles, low, high);
+
+   for(int i=0; i<numDoubles; i++)
+   {
+    double number = doubleArray[i];
+    System.out.println(number);
+   }
+    // write random double array to file
+    DoubleUtilities.writeFile(doubleArray);
+    DoubleUtilities.readFile();
+  }
+}

@@ -1,0 +1,100 @@
+// File, FileNotFoundException
+import java.io.*;
+
+// Scanner
+import java.util.*;
+
+
+/**
+ * Program that reads a text file and prints the file with all the whitespace
+ * (except line breaks) removed.
+ */
+
+
+public class MatchParentheses
+{
+  //public Stack stack;
+  /**
+   * Read the lines of the file, remove whitespace characters and echo the lines
+   * to standard output.
+   */
+  public static void run(String path) throws FileNotFoundException
+  {
+    Scanner scanner = new Scanner(new File(path));
+    Stack<Character> stack = new Stack<Character>();
+    /* Modify scanner delimiter so that the hasNext() and next() method return
+     * chars instead of strings. */
+    scanner.useDelimiter("");
+    
+    while (scanner.hasNext())
+    {
+      char c = scanner.next().charAt(0);
+      System.out.println(c);
+      
+      if (c == '(')
+      {
+        //System.out.print("Hello \n");
+        stack.push(c);
+      }
+      else if (c == ')')
+      {
+        if(stack.isEmpty())
+        {
+          System.out.println("The Stack is empty");
+          scanner.close();
+          return;
+        }
+        else if(c == ')')
+        {
+          stack.pop();
+        }
+        else if(c != stack.peek())
+        {
+          System.out.println("The types do not match");
+          scanner.close();
+          return;
+        }
+        else
+        {
+          System.out.println("asfda");
+        }
+      }
+    }
+    if(stack.isEmpty())
+    {
+      System.out.println("They all have a match"); 
+    }
+    else
+    {
+      System.out.println("Unmatched left parathesis");
+    }
+    
+    scanner.close();
+  }
+  
+  
+  /**
+   * Entry point for program.
+   */
+  public static void main(String [] args)
+  {
+    if (args.length > 0)
+    {
+      for (String arg : args)
+      {
+        try
+        {
+          MatchParentheses.run(arg);
+        }
+        catch (FileNotFoundException e)
+        {
+          System.out.println("Could not fine file '" + arg + "'");
+        }
+      }
+    }
+    else
+    {
+      System.out.println("You must provide at least one file name to process");
+    }
+  }
+}

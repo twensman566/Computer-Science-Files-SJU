@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:light" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:light" rel="stylesheet">
+    <style>
+      * {color: #93a1a1; font-family: "Roboto Condensed", sans-serif;}
+      body {background-color: #eee8d5;}
+      h2,h3 {color: #073642;}
+      a,a:active,a:visited {color: #d33682;}
+      pre,kbd,code {font-family: "Roboto Mono", sans-serif; font-size: 85%;}
+      kbd {color: #d33682;}
+      pre,code {color: #6c71c4;}
+    </style>
+    <title>Stacks and queues&#8212;matching parens and waiting clients</title>
+  </head>
+  
+  <body>
+    <h2>
+      Stacks and queues&#8212;matching parens and waiting clients
+    </h2>
+
+    <p>
+      In this lab, you will write two programs, one that matches parentheses
+      using a stack and one that manages a queue of waiting clients.
+    </p>
+
+    <h3>
+      Preliminaries
+    </h3>
+
+    <p>
+      Using a terminal window, copy the directory named <kbd>Lab16</kbd> from
+      <kbd>/usr/people/classes/CS160/labs</kbd> into your <kbd>CS160</kbd>
+      directory. Use the <kbd>tree</kbd> command to verify that the directory
+      structure for your local copy of <kbd>Lab16</kbd> matches the following:
+    </p>
+
+    <pre style="color: #d33682;">
+    Lab16
+    |-- LabelSample.java
+    |-- Lab.html
+    |-- RemoveWhitespace.java
+    |-- solution
+    |    |-- ClientQueue.class
+    |    `-- MatchParentheses.class
+    |-- Test1.txt
+    |-- Test2.txt
+    |-- Test3.txt
+    `-- Test4.txt
+    </pre>
+
+    <h3>
+      Part 1: Matching parentheses
+    </h3>
+
+    <p>
+      In this part you will create a program called
+      <code>MatchParentheses</code>, that reads a text file (probably a computer
+      code file) and determines whether the parentheses (&#8216;{&#8217;,
+      &#8216;}&#8217;; &#8216;(&#8217;, &#8216;)&#8217;; &#8216;[&#8217;,
+      &#8216;]&#8217;) match properly. There are three ways parentheses can fail
+      to match:
+      <ol>
+        <li>
+          there can be right parentheses with no matched left parentheses
+        </li>
+        <li>
+          there can be an improper match, such as &#8216;(&#8217; with
+          &#8216;}&#8217;
+        </li>
+        <li>
+          there can be left parentheses with no matched right parentheses
+        </li>
+      </ol>
+    </p>
+
+    <p>
+      Using the original <code>RemoveWhitespace</code> program as a template,
+      create the new program, first changing the name of the class to
+      <code>MatchParentheses</code>. Add an instance variable of type
+      <code>Stack</code>, and initialize it in the <em>constructor</em> method.
+      You can find the documentation for the <code>Stack</code> class in the
+      JavaDocs.
+    </p>
+
+    <p>
+      Remove the <code>print()</code> and <code>println()</code> statements from
+      the program. Next, replace the <code>if</code> statement in the
+      <code>run()</code> method with a new <code>if</code> (or
+      <code>switch</code>) statement that works as follows:
+      <ol>
+        <li>
+          if <code>c</code> is a left paren, push it onto the stack
+          (<code>stack.push(c)</code>)
+        </li>
+        <li>
+          if <code>c</code> is a right paren, first determine if the stack is
+          empty; if so, print an error message that there is an unmatched right
+          parenthesis, close <code>scanner</code> and return; otherwise, compare
+          <code>c</code> to the character on the top of the stack using
+          <code>stack.peek()</code>; if the parentheses types match, pop the
+          left paren from the stack (<code>stack.pop()</code>); if the
+          parentheses types don't match, print an error message that there is a
+          mismatch (including the mismatched parens and the line number), close
+          <code>scanner</code> and return
+        </li>
+        <li>
+          for any other kind of character there is nothing to do
+        </li>
+      </ol>
+    </p>
+
+    <p>
+      When (and if) the program exits the <code>while</code>-loop, check to see
+      if the stack is empty. If so, print a message that all the parentheses
+      match; otherwise, print an error message that there is an unmatched left
+      parenthesis.
+    </p>
+
+    <p>
+      Test your program on the included test files and on one of your finished
+      Java files. The Java file will probably have no errors. Why? Can you think
+      a situation where a Java program could compile without errors but still
+      not pass your program's test? Show your completed program to the TA or lab
+      instructor before you continue.
+    </p>
+
+    <h3>
+      Part 2: Managing a queue of clients
+    </h3>
+   
+    <p> 
+      Look at the <code>LabelSample</code> program in your directory. Run the
+      program and be sure you understand how it works. You may use this as a
+      model for creating the <code>Queue</code> program as described below.
+    </p>
+
+    <p>
+      Write a <code>GraphicsProgram</code> that manages a queue of clients for a
+      business. The program will have two operations: a new client can be added
+      to the queue and a client can be served from the queue. The program will
+      have two &#8220;buttons&#8221; for the two operations and will display
+      those waiting in the queue graphically.
+    </p>
+
+    <p>
+      The <code>init()</code> method does several things: It sets up the canvas
+      with two <code>GRoundRect</code> objects one on the left and one on the
+      right with space in the middle to display the queue. Each rectangle has a
+      <code>GLabel</code> on it, one saying &#8220;Add Client&#8221; and the
+      other saying &#8220;Serve Client&#8221;. Color the rectangles and labels
+      so that the rectangles contrast with the background, but the labels are
+      clearly readable. Each of the <code>GRoundRect</code>s should have its own
+      instance variable. There should also be an instance variable for the queue
+      of type <code>Queue</code>, which is initialized to be a new
+      <code>LinkedList</code>. Declare appropriate static constants for the
+      positions and spacing of all graphical objects.
+    </p>
+
+    <p>
+      The action takes place in the <code>mouseClicked()</code> method. If the
+      click is contained in the &#8220;Add Client&#8221; rectangle, the method
+      calls the <code>addClient()</code> method; if the click is contained in
+      the &#8220;Serve Client&#8221; rectangle, the method calls the
+      <code>serveClient()</code> method; otherwise, it does nothing.
+    </p>
+
+    <p>
+      The <code>addClient()</code> method gets the name of the new client from
+      the user. It creates a new <code>GLabel</code> from the name located at
+      the bottom of the queue display (top center for the first element),
+      enqueues the label and adds it to the canvas. To know where to put the
+      label, the program will need to keep track of the size of the queue since
+      the <code>Queue</code> class doesn't have a size method; so you'll also
+      need an instance variable for this value, and you should increment it
+      here.
+    </p>
+
+    <p>
+      The <code>serveClient()</code> method first checks to see if the queue is
+      empty; if so, it prints a message stating there is no one to serve. If the
+      queue is not empty, it dequeues the first label from the queue, removes it
+      from the canvas, moves the remaining queue elements up on the canvas using
+      the iterator and prints a message stating which client has been served.
+    </p>
+
+    <p>
+      Test your program thoroughly and then show it to the TA or lab instructor.
+    </p>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+
+
+  <meta content="text/html;charset=ISO-8859-1" http-equiv="Content-Type"><title>Lab 15: Using Swing Components&#8212;a Calculator</title></head><body>
+
+<h1>Lab 15: Using Swing Components&#8212;a Calculator</h1>
+<h2><span style="font-weight: bold;"></span>Part 1: A Simple Decimal Calculator</h2>
+
+
+
+
+<p>
+You have been give the start of a simple decimal calculator program,
+<em>Calculator.java</em>.
+Compile and run this program, experimenting with it until you
+understand how it works.
+Note that the program doesn't have a pull-down menu or &#8220;Quit&#8221;
+button, so you'll have to stop it manually, even if you close the window.</p>
+
+<p>
+In this part you will finish constructing the simple calculator.
+Modify the <em>Calculator.java</em> program to create a simple
+general purpose calculator that operates on two
+fields (First and Second) containing numeric values and puts the
+result in the Answer field.</p>
+
+<p>
+Follow the procedure suggested in the comments in file
+to add all the additional functionality.
+A wise approach would be to  create the button panel, add the 
+&#8216;+&#8217; button to it, and add that panel to the content
+pane (Swing-speak for canvas), instead of the button.
+Make sure the program works with this change before you go on.</p>
+
+<p>
+Now add a second button to the button panel, and add its
+functionality to the <code>ActionPerformed()</code> method.
+Once you have the second button working, go ahead and add the
+rest of the functions and check your work.</p>
+
+<p>
+For functions requiring two numbers, like &#8216;+&#8217;,
+&#8216;&#8722;&#8217;, &#8216;×&#8217; and &#8216;÷&#8217;,
+both  the <em>First</em> and <em>Second</em> fields are used;
+for functions requiring one number
+like &#8220;log&#8221; and &#8220;tan&#8221;,
+the operator works on the value in the <em>First</em> field
+and displays result in the <em>Answer</em> field.
+&#8220;+/&#8722; First&#8221; changes
+the sign of the number in the <em>First</em> field;
+other functions that specify one or more fields work similarly.
+Use the <em>Math</em> class for log and trig functions.</p>
+
+<p>
+Finally, add a &#8220;Quit&#8221; button that stops your program
+by executing the statement <code>System.exit(0)</code>;.</p>
+
+<p>
+Note: There are several parts of this program that use Java features
+we haven't studied very much yet.
+Just leave them as they are, and your program should work fine.</p>
+
+
+</body></html>

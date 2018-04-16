@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Lab 4: Making choices&#8212;doing laundry</title>
+  </head>
+  
+  <body style="color: rgb(0, 0, 102); background-color: rgb(255, 247, 215);">
+    <h2>
+      Lab 4: Making choices&#8212;doing laundry
+    </h2>
+
+    <h3>
+      Objectives
+    </h3>
+    
+    <ul>
+      <li>
+        to learn more about the use of Graphics objects and mouse events
+      </li>
+      <li>
+        to write programs using <code>if</code>-statements and Boolean expressions
+      </li>
+    </ul>
+    
+    <h3>
+      Preliminaries
+    </h3>
+    
+    <p>
+      Using a terminal window, copy the directory named Lab04 from
+      <code>/usr/people/classes/CS160/labs</code> into your <code>CS160</code>
+      directory. Use the <code>ls</code> command to verify that the files
+      <code>LaundrySorter.java</code> and <code>RandomColor.java</code> have
+      been copied.
+    </p>
+    
+    <h3>
+      Pre-lab exercise: Drawing randomly-colored lines
+    </h3>
+    
+    <p>
+      The file <code>RandomColor.java</code> contains a program that generates
+      green lines on the canvas when the user drags the mouse around the canvas.
+      Open the file in DrJava. Compile and run the program, comparing the code
+      with the way the program works. When you are satisfied that you understand
+      how the program does what it does, begin working on modifying the program.
+    </p>
+    
+    <p>
+      Note: If you get stuck and need to start over, you can make a new copy of
+      the original program instead of trying to unwind all the changes you
+      made.
+    </p>
+    
+    <p>
+      You are to modify the program so that instead of drawing only green line,
+      the color for each line is selected randomly from red, green, blue, black,
+      and yellow. You can do this by using the random number generator as in Lab
+      3 to choose a number between 0.0 and 1.0 and then using an
+      <code>if</code>-statement to set the color based on the number that was
+      generated: 0.0&#8211;0.2 for red, 0.2&#8211;0.4 for green, etc.). This
+      selection statement could look something like this:
+    </p>
+    
+    <pre>
+    double selection = Math.random();
+    if (selection &lt;= 0.2)
+    {
+      currentColor = Color.RED;
+    }
+    else if (selection &lt;= 0.4)
+    {
+      currentColor = Color.GREEN;
+    }
+    &#8942;</pre>
+    
+    <p>
+      You'll need two more <code>else if</code>-clauses and an
+      <code>else</code>-clause
+    </p>
+    
+    <p>
+      Test your program to assure yourself that it works correctly. Add
+      appropriate comments if you have not already done so. Show your working
+      program and code to the lab instructor or TA at the <em>beginning</em> of
+      lab.
+    </p>
+  </body>
+</html>

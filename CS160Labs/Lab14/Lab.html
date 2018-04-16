@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Lab 14: Lists and iterators&mdash;managing a list of names</title>
+  </head>
+
+  <body style="color: rgb(0, 0, 102); background-color: rgb(255, 247, 215);">
+
+    <h2>
+      Lab 11: Lists and iterators&mdash;managing a list of names
+    </h2>
+
+    <p>
+      In this lab, you will create a simple list manager that allows you to
+      build and maintain a list of names.
+    </p>
+
+    <p>
+      As usual, begin by copying the folder for this lab from the common lab
+      directory into your own directory.
+    </p>
+
+    <h3>
+      Part 1: Extending the HTLUtilities class
+    </h3>
+
+    <p>
+      The program you'll be creating needs to be able to build a list of names,
+      add more names later, find names, remove names and display the list. In
+      order to do all this, the program will use a
+      <em>HeadTailList&lt;String&gt;</em>, supported by static methods in the
+      <em>HTLUtilities</em> class. Some of the methods you'll need are not yet
+      present in the class, so your first job is to implement them.
+    </p>
+
+    <p>
+      The first method you need is one that builds a list of names. The
+      <em>HTLUtilities</em> class already has two methods that build a list of
+      integers, but no methods for building a list of strings. For our purposes,
+      it's probably better to use the signal form, since we can pick a signal
+      string that won't represent a name. Use the <code>readIntListSig()</code>
+      method as a model for a <code>readStringListSig()</code> method; implement
+      the version with a prompt string parameter that is used in the call to
+      <code>readLine()</code>.
+    </p>
+
+    <p>
+      Adding names is almost trivial if you don't mind adding to the front of
+      the list. All you need to do is construct a new
+      <em>LinkedHeadTailList</em> with the new element as the <em>head</em> and
+      the existing list as the <em>tail</em>, so you don't need to add any new
+      methods to <em>HTLUtilities</em> for this function. <em>HTLUtilities</em>
+      already contains a <code>cull()</code> method that you can use to remove
+      an item from a list.
+    </p>
+
+    <p>
+      Finding a name in the list will require a new method. In this case, all we
+      want to do is determine whether a particular name is in the list or not.
+      You can implement a generic <code>find()</code> method on the same pattern
+      as the <code>count()</code> method, but this method two
+      parameters&mdash;the list and the element to be searched for&mdash;and it
+      returns a <em>boolean</em>. There are three cases: if the list is empty,
+      the method should return <em>false</em>; if the head element equals the
+      element being searched for, it should return <em>true</em>; otherwise, it
+      should return the result of searching the tail of the list for the
+      element. Note that this recursive method actually has two base cases; also
+      note that you must use the <code>equals()</code> method to compare
+      elements.
+    </p>
+
+    <p>
+      Finally, we need to be able to display the elements of a list. Implement a
+      generic method that prints the elements, one per line. If the list is
+      empty it should print the message &ldquo;EMPTY LIST&rdquo;; otherwise it
+      should print the head element and then recursively print the tail of the
+      list, <em>only if the tail is not empty</em>. (Why?)
+    </p>
+
+    <p>
+      You may write a simple test program for your methods if you wish, or you
+      may use the program in Part 2 to test the methods. Do show your code to
+      the TA or lab instructor before you go on.
+    </p>
+
+    <h3>
+      Part 2: A simple names manager
+    </h3>
+
+    <p>
+      Write a simple <em>ConsoleProgram</em> that builds and maintains a list of
+      names (<em>String</em>s). Use the <code>init()</code> method to initialize
+      any instance variables and put the code that operates the program in the
+      <code>run()</code> method. Any operations you do on the list should use
+      methods already available in the <em>HeadTailList</em> interface and the
+      <em>HTLUtilities</em> class.
+    </p>
+
+    <p>
+      The program should begin with an appropriate introductory message and then
+      build the initial list. Once the list is built, it enters a command
+      interpreter loop that continues until a &ldquo;quit&rdquo; command is
+      issued. The loop should have the following shape:
+    </p>
+
+    <p>
+      <code>
+        &nbsp;&nbsp;&nbsp;&nbsp;do {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//
+        statements comprising the body of the loop<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;while (!cmd.equals("quit"));
+      </code>
+    </p>
+
+    <p>
+      The body of the loop begins by displaying a menu of the available
+      commands. The allowed commands should be &ldquo;add&rdquo;,
+      &ldquo;find&rdquo;, &ldquo;remove&rdquo;, &ldquo;display&rdquo; and
+      &ldquo;quit&rdquo;. The user then enters a command. The program uses an
+      <code>if&ndash;else if&ndash;else</code> structure to execute the command,
+      comparing the entered command to the target command in each condition
+      part.
+    </p>
+
+    <p>
+      For the &ldquo;add&rdquo;, &ldquo;find&rdquo; and &ldquo;remove&rdquo;
+      commands, the program prompts the user for the associated name and then
+      executes the appropriate methods to accomplish the command. In the case of
+      the &ldquo;add&rdquo; command, the new name should only be added if it is
+      not already present, so you'll need to use the <code>find()</code> method
+      here; print a confirmation message stating either that the name was added
+      or that it was already present. The &ldquo;find&rdquo; command simply
+      determines whether the name is present or not and prints an appropriate
+      message. The &ldquo;remove&rdquo; command should first determine whether
+      the name is present or not, only calling the <code>cull()</code> method to
+      remove it if it is there; it should print a message indicating which of
+      the two cases occurred.
+    </p>
+
+    <p>
+      The remaining two commands are simple: the &ldquo;display&rdquo; command
+      just calls the appropriate method in the <em>HTLUtilities</em> class; the
+      &ldquo;quit&rdquo; command does nothing since it's only a signal to exit
+      the loop and end the program. The final <code>else</code> clause is
+      reached if the user enters a command that isn't recognized; in this case,
+      print a suitable error message.
+    </p>
+
+    <p>
+      Test your program thoroughly and then show it to the TA or lab instructor.
+    </p>
+  </body>
+</html>

@@ -1,0 +1,297 @@
+import worker.*;
+import java.util.*;
+import javax.swing.*;
+import java.io.*;
+import TJWstructures.*;
+import zhstructures.*;
+
+/**
+ * This class implements a program that manages a set of workers.
+ *
+ * @author J. Miller, J. A. Holey and Trevor Wensman, Zachary Vetter, Alexis Neas
+ * @version 7/13/17
+ */
+public class WorkerManager {
+  
+  private ZHBinarySearchTree<Worker> workers;
+  
+  public WorkerManager(){
+    System.out.println("Welcome to the Worker Manager");
+    workers = new TJWLinkedBinarySearchTree<Worker>();
+  }
+  
+  public void runManager() {
+    char cmd;
+    do
+    {
+      menu ();
+      cmd = acceptCommand ();
+      doCommand (cmd);
+    }
+    while ((cmd != 'q') && (cmd != 'Q'));
+  }
+  
+  private void menu() {
+    System.out.println();
+    System.out.println("\tA Add a new worker");
+    System.out.println("\tR Remove a worker");
+    System.out.println("\tM Manage an individual worker");
+    System.out.println("\tP rePort on workers");
+    System.out.println("\tS Save the current worker set");
+    System.out.println("\tL Load a worker set");
+    System.out.println("\tQ Quit the program");
+    System.out.println();
+  }
+  
+  private char acceptCommand() {
+    char cmd;
+    String s = JOptionPane.showInputDialog("Enter command: ");
+    cmd = s.charAt(0);
+    return cmd;
+  }
+  
+  private void doCommand(char cmd) {
+    switch (cmd)
+    {
+      case 'a': case 'A':
+        add();
+        break;
+      case 'r': case 'R':
+        remove();
+        break;
+      case 'm': case 'M':
+        manage();
+        break;
+      case 'p': case 'P':
+        report();
+        break;
+      case 's': case 'S':
+        save();
+        break;
+      case 'l': case 'L':
+        load();
+        break;
+      case 'q': case 'Q':
+        quit ();
+        break;
+      default:
+        System.out.println("Invalid command--try again");
+    }
+  }
+  
+  /** add
+    *
+    * Prompt the user for the type of worker to add, create the appropriate worker type
+    * and add the worker to the set.
+    *
+    */
+  private void add() {
+    System.out.println();
+    System.out.println("Which type of worker do you want to add?");
+    System.out.println();
+    System.out.println("\tV add a Volunteer");
+    System.out.println("\tH add an Hourly Employee");
+    System.out.println("\tS add a Salaried Employee");
+    System.out.println("\tC Cancel add worker");
+    System.out.println();
+    
+    String s = JOptionPane.showInputDialog("Enter worker type: ");;
+    char cmd = s.charAt(0);
+    
+    Worker newWorker;
+    switch (cmd)
+    {
+      case 'v': case 'V':
+        newWorker = newVolunteer();
+        if (!workers.add(newWorker)) {
+          System.out.println("This worker already exists in this set");
+        }
+        break;
+      case 'h': case 'H':
+        newWorker = newHourlyEmployee();
+        if (!workers.add(newWorker)) {
+          System.out.println("This worker already exists in this set");
+        }
+        break;
+      case 's': case 'S':
+        newWorker = newSalariedEmployee();
+        if (!workers.add(newWorker)) {
+          System.out.println("This worker already exists in this set");
+        }
+        break;
+      case 'c': case 'C':
+        System.out.println("Add worker cancelled");
+        break;
+      default:
+        System.out.println("Invalid command--try again");
+    }
+  }
+  
+  /** newVolunteer
+    * Method to get data for and create a new Volunteer
+    */
+  private Worker newVolunteer() {
+    // use the AcceptCommand method as a model to prompt for and get the data
+    // you need for a Volunteer (name and hours)
+    String name = JOptionPane.showInputDialog("Enter the name for the Volunteer: ");
+    int hours = Integer.parseInt(JOptionPane.showInputDialog("Enter the hours for the Volunteer: "));
+    return new Volunteer(name, hours);
+  } 
+  
+  /** newHourlyEmployee
+    * Method to get data for and create a new HourlyEmployee
+    */
+  private Worker newHourlyEmployee() {
+    // use the AcceptCommand method as a model to prompt for and get the data
+    // you need for an HourlyEmployee (name,  hours and hourly pay rate)
+    String name = JOptionPane.showInputDialog("Enter the name for the HourlyEmployee: ");
+    int hours = Integer.parseInt(JOptionPane.showInputDialog("Enter the hours for the HourlyEmployee: "));
+    double hourlyPayRate = Double.parseDouble(JOptionPane.showInputDialog("Enter the hourly pay rate for the HourlyEmployee: "));
+    return new HourlyEmployee(name, hours, hourlyPayRate);
+  } 
+  
+  /** newSalariedEmployee
+    * Method to get data for and create a new SalariedEmployee
+    */
+  private Worker newSalariedEmployee() {
+    // use the AcceptCommand method as a model to prompt for and get the data
+    // you need for a SalariedEmployee (name and salary)
+    String name = JOptionPane.showInputDialog("Enter the name for the SalariedEmployee: ");
+    double salary = Double.parseDouble(JOptionPane.showInputDialog("Enter the salary for the SalariedEmployee: "));
+    return new SalariedEmployee(name, salary);
+  } 
+  
+  /** remove 
+    * Prompt the user for a worker name and remove that worker from the set;
+    * report if the worker is not found
+    */
+  private void remove() {
+    // Fill in appropriate code
+    String name = JOptionPane.showInputDialog("Enter the name of a worker: ");
+    boolean found = false;
+    for (Worker w:workers)
+    {
+      if (w.getName().equals(name)) 
+      {
+        found = true;
+        workers.remove(w);
+        break;
+      }
+    }
+    if (!found)
+      System.out.println("Worker was not found.");
+  }
+  
+  /** manage 
+    * Prompt the user for a worker name and find the worker;
+    * if the worker is found, create a VolunteerManager, HourlyEmployeeManager or
+    * SalariedEmployeeManager on that worker and run it;
+    * otherwise report that the worker is not found
+    */
+  private void manage() {
+    //Fill in appropriate code
+    String name = JOptionPane.showInputDialog("Enter the name of a worker: ");
+    boolean found = false;
+    for (Worker w:workers)
+    {
+      if (w.getName().equals(name)) 
+      {
+        found = true;
+        
+        if(w instanceof Volunteer)
+        {
+          System.out.println("This is a Volunteer");
+          new VolunteerManager(w);
+        }
+        
+        if(w instanceof SalariedEmployee)
+        {
+         System.out.println("This is a Salaried Employee");
+          new SalariedEmployeeManager(w);
+        }
+        
+        if(w instanceof HourlyEmployee)
+        {
+         System.out.println("This is a Hourly Employee");
+          new HourlyEmployeeManager(w);
+        }
+        
+        break;
+      }
+    }
+    if (!found)
+    {
+      System.out.println("Worker was not found.");
+    }
+  }
+  
+  /** report
+    * Prompt the user for the type of report desired: all workers, hourly workers,
+    * all employees, volunteers, hourly employees or salaried employees;
+    * print a list of all the workers in the selected category.
+    */
+  private void report() {
+    // Fill in appropriate code
+    for(Worker worker : workers)
+    {
+      System.out.println(worker.getName());
+    }
+  }
+  
+  /** save
+    * Prompt the user for a file name and save the set to the 
+    * specified file using an ObjectOutputStream;
+    * report an error if an exception occured
+    */
+  private void save() {
+    // Fill in appropriate code
+    try {
+      String fileName = JOptionPane.showInputDialog("Enter the name of the file: ");
+      ObjectOutputStream file = new ObjectOutputStream(new FileOutputStream (fileName));
+      file.writeObject(workers);
+    }
+    catch(IOException ioe){
+      return;
+    }
+  }
+  
+  /** load
+    * Prompt the user for a file name and load a new set from the specified file
+    * using an ObjectInputStream;
+    * report an error if an exception occured
+    */
+  private void load() {
+    // Fill in appropriate code
+    try {
+      String fileName = JOptionPane.showInputDialog("Enter the name of the file: ");
+      ObjectInputStream input= new ObjectInputStream(new FileInputStream(fileName));
+      
+      Iterable line = (Iterable) input.readObject();
+      for(Object s : line)
+      {
+        workers.add((Worker)s);
+      }
+    }
+    catch(IOException ioe){
+      return;
+    }
+    catch(ClassNotFoundException cnf) {
+      return;
+    }
+  }
+  
+  /** quit
+    * Method to terminate the WorkerManager program
+    */
+  private void quit() {        
+    System.out.println("Now exiting the Worker Manager\n");
+  }
+  
+  /** Main program--creates and runs WorkerManager
+    * @param args the command line arguments (not used)
+    */
+  public static void main (String args[]) {
+    WorkerManager manager = new WorkerManager ();
+    manager.runManager();
+  }
+}

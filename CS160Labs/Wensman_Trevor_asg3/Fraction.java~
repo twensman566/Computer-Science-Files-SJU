@@ -1,0 +1,61 @@
+
+
+public class Fraction
+{
+ private int numerator, denominator;
+ 
+ public Fraction( int theNumerator, int theDenominator)
+ {
+  this.numerator = theNumerator;
+   this.denominator = theDenominator;
+  
+ }
+ public Fraction( int aNumerator)
+ {
+  this.numerator = aNumerator;
+  this.denominator = 1;
+ }
+ public Fraction ()
+ {
+  
+  this.numerator = 0;
+  this.denominator = 1;
+ }
+ 
+ public int getNumerator()
+ {
+  return numerator; 
+ }
+ 
+ public int getDenominator()
+ {
+  return denominator; 
+ }
+ public void add(Fraction theFraction)
+ {
+   this.denominator = theFraction.getDenominator() * this.denominator;
+   this.numerator = (theFraction.getNumerator() * this.denominator) + (this.numerator * theFraction.getDenominator());
+ }
+ 
+ public void multiply(Fraction theFraction)
+ {
+   this.denominator = this.denominator * theFraction.getDenominator();
+   this.numerator = this.numerator * theFraction.getNumerator();
+ }
+ public void negate()
+ {
+   this.numerator = -(this.numerator);
+   this.denominator = -(this.denominator);
+ }
+ 
+ public void inverse()
+ {
+  int number = this.denominator;
+  this.denominator = this.numerator;
+  this.numerator = number;
+ }
+ public String toString(Fraction theFraction)
+ {
+   return(theFraction.getNumerator() + " / " + theFraction.getDenominator());
+ }
+}

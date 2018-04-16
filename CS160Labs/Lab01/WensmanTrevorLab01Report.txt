@@ -1,0 +1,221 @@
+7. blackcat, fire, and kittyCat were eliminated from the directory because they did not contain the string 'cats'
+
+ch: cannot touch ‘/home/twensman001/.local/share/applications/mimeapps.list’: No such file or directory
+/usr/bin/xdg-mime: line 805: /home/twensman001/.local/share/applications/mimeapps.list.new: No such file or directory
+[twensman001@viewlincsci25 2 ~]$ pwd
+/net/home/twensman001
+[twensman001@viewlincsci25 3 ~]$ cd
+[twensman001@viewlincsci25 4 ~]$ cd 
+Desktop/   Downloads/ Pictures/  Templates/ 
+Documents/ Music/     Public/    Videos/    
+[twensman001@viewlincsci25 4 ~]$ cd Desktop
+[twensman001@viewlincsci25 5 ~/Desktop]$ CS\ 160\ labs/
+CS 160 labs/: Permission denied.
+[twensman001@viewlincsci25 6 ~/Desktop]$ CS\ 160\ labs/
+CS 160 labs/: Permission denied.
+[twensman001@viewlincsci25 7 ~/Desktop]$ pwd
+/net/home/twensman001/Desktop
+[twensman001@viewlincsci25 8 ~/Desktop]$ CS\ 160\ labs/
+CS 160 labs/: Permission denied.
+[twensman001@viewlincsci25 9 ~/Desktop]$ CS160Labs/
+CS160Labs/: Permission denied.
+[twensman001@viewlincsci25 10 ~/Desktop]$ CS160Labs/
+CS160Labs/: Permission denied.
+[twensman001@viewlincsci25 11 ~/Desktop]$ cd CS160Labs/
+[twensman001@viewlincsci25 12 ~/Desktop/CS160Labs]$ pwd
+/net/home/twensman001/Desktop/CS160Labs
+[twensman001@viewlincsci25 13 ~/Desktop/CS160Labs]$ cd Lab01/
+[twensman001@viewlincsci25 14 ~/Desktop/CS160Labs/Lab01]$ pwd
+/net/home/twensman001/Desktop/CS160Labs/Lab01
+[twensman001@viewlincsci25 15 ~/Desktop/CS160Labs/Lab01]$ ls
+ls                 lsdvd              lslogins           lsscsi
+lsattr             ls-F               lsmcli             lssubsys
+lsblk              lshw               lsmd               lstopo-no-graphics
+lsb_release        lshw-gui           lsmod              lsusb
+lscgroup           lsinitrd           lsns               lsusb.py
+lscpu              lsipc              lsof               
+lsdiff             lslocks            lspci              
+[twensman001@viewlincsci25 15 ~/Desktop/CS160Labs/Lab01]$ 
+[twensman001@viewlincsci25 15 ~/Desktop/CS160Labs/Lab01]$ 
+[twensman001@viewlincsci25 15 ~/Desktop/CS160Labs/Lab01]$ more
+Usage: more [options] file...
+
+Options:
+  -d        display help instead of ring bell
+  -f        count logical, rather than screen lines
+  -l        suppress pause after form feed
+  -p        do not scroll, clean screen and display text
+  -c        do not scroll, display text and clean line ends
+  -u        suppress underlining
+  -s        squeeze multiple blank lines into one
+  -NUM      specify the number of lines per screenful
+  +NUM      display file beginning from line number NUM
+  +/STRING  display file beginning from search string match
+  -V        output version information and exit
+[twensman001@viewlincsci25 16 ~/Desktop/CS160Labs/Lab01]$ ls 
+CS160Lab01_Linux_DrJava_Lab.html      Images/                               MouseIndicator.class                  TouchyWindow.class                    TouchyWindow.java                     
+CS160Lab01_Linux_DrJava__Prelab.html  Mammals/                              MyMouseIndicator.java                 TouchyWindow.java~                    WensmanTrevorLab01Report.txt          
+[twensman001@viewlincsci25 16 ~/Desktop/CS160Labs/Lab01]$ ls tree Mammals/
+ls: cannot access tree: No such file or directory
+Mammals/:
+Cats  Dogs  Other
+[twensman001@viewlincsci25 17 ~/Desktop/CS160Labs/Lab01]$ pwd
+/net/home/twensman001/Desktop/CS160Labs/Lab01
+[twensman001@viewlincsci25 18 ~/Desktop/CS160Labs/Lab01]$ mkdir Hal/
+[twensman001@viewlincsci25 19 ~/Desktop/CS160Labs/Lab01]$ ls
+CS160Lab01_Linux_DrJava_Lab.html  CS160Lab01_Linux_DrJava__Prelab.html  Hal  Images  Mammals  MouseIndicator.class  MyMouseIndicator.java  TouchyWindow.class  TouchyWindow.java  TouchyWindow.java~  WensmanTrevorLab01Report.txt
+[twensman001@viewlincsci25 20 ~/Desktop/CS160Labs/Lab01]$ cd Mammals/
+[twensman001@viewlincsci25 21 ~/Desktop/CS160Labs/Lab01/Mammals]$ pwd
+/net/home/twensman001/Desktop/CS160Labs/Lab01/Mammals
+[twensman001@viewlincsci25 22 ~/Desktop/CS160Labs/Lab01/Mammals]$ ls
+Cats  Dogs  Other
+[twensman001@viewlincsci25 23 ~/Desktop/CS160Labs/Lab01/Mammals]$ ls Cats/
+2cats  3cats  blackcat  fire  kittyCat
+[twensman001@viewlincsci25 24 ~/Desktop/CS160Labs/Lab01/Mammals]$ cd Cats/
+[twensman001@viewlincsci25 25 ~/Desktop/CS160Labs/Lab01/Mammals/Cats]$ pwd
+/net/home/twensman001/Desktop/CS160Labs/Lab01/Mammals/Cats
+[twensman001@viewlincsci25 26 ~/Desktop/CS160Labs/Lab01/Mammals/Cats]$ lls *cats*
+lls: Command not found.
+[twensman001@viewlincsci25 27 ~/Desktop/CS160Labs/Lab01/Mammals/Cats]$ ls *cats*
+2cats  3cats
+[twensman001@viewlincsci25 28 ~/Desktop/CS160Labs/Lab01/Mammals/Cats]$ more kittyCat
+Kitty is a mouser.
+[twensman001@viewlincsci25 29 ~/Desktop/CS160Labs/Lab01/Mammals/Cats]$ cd ..
+[twensman001@viewlincsci25 30 ~/Desktop/CS160Labs/Lab01/Mammals]$ pwd
+/net/home/twensman001/Desktop/CS160Labs/Lab01/Mammals
+[twensman001@viewlincsci25 31 ~/Desktop/CS160Labs/Lab01/Mammals]$ cp cats2 Hal
+cp: cannot stat ‘cats2’: No such file or directory
+[twensman001@viewlincsci25 32 ~/Desktop/CS160Labs/Lab01/Mammals]$ cp 2cats Hal
+cp: cannot stat ‘2cats’: No such file or directory
+[twensman001@viewlincsci25 33 ~/Desktop/CS160Labs/Lab01/Mammals]$ cd Cats/
+[twensman001@viewlincsci25 34 ~/Desktop/CS160Labs/Lab01/Mammals/Cats]$ pwd
+/net/home/twensman001/Desktop/CS160Labs/Lab01/Mammals/Cats
+[twensman001@viewlincsci25 35 ~/Desktop/CS160Labs/Lab01/Mammals/Cats]$ cp 2cats Hal
+[twensman001@viewlincsci25 36 ~/Desktop/CS160Labs/Lab01/Mammals/Cats]$ cd ../
+[twensman001@viewlincsci25 37 ~/Desktop/CS160Labs/Lab01/Mammals]$ pwd
+/net/home/twensman001/Desktop/CS160Labs/Lab01/Mammals
+[twensman001@viewlincsci25 38 ~/Desktop/CS160Labs/Lab01/Mammals]$ cp Cats/2cats Hal
+[twensman001@viewlincsci25 39 ~/Desktop/CS160Labs/Lab01/Mammals]$ cp Cats/2cats Hal
+[twensman001@viewlincsci25 40 ~/Desktop/CS160Labs/Lab01/Mammals]$ cd Hal/
+Hal/: No such file or directory.
+[twensman001@viewlincsci25 41 ~/Desktop/CS160Labs/Lab01/Mammals]$ cp Cats/2cats cd ../Hal
+cp: cannot stat ‘cd’: No such file or directory
+[twensman001@viewlincsci25 42 ~/Desktop/CS160Labs/Lab01/Mammals]$ cp Cats/2cats Hal
+[twensman001@viewlincsci25 43 ~/Desktop/CS160Labs/Lab01/Mammals]$ cp Cats/2cats ../Hal
+[twensman001@viewlincsci25 44 ~/Desktop/CS160Labs/Lab01/Mammals]$ cd ..
+[twensman001@viewlincsci25 45 ~/Desktop/CS160Labs/Lab01]$ pwd
+/net/home/twensman001/Desktop/CS160Labs/Lab01
+[twensman001@viewlincsci25 46 ~/Desktop/CS160Labs/Lab01]$ mkdir Hal/Puppy
+[twensman001@viewlincsci25 47 ~/Desktop/CS160Labs/Lab01]$ mv Hal/Puppy Mammals/Dogs
+[twensman001@viewlincsci25 48 ~/Desktop/CS160Labs/Lab01]$ cp Mammals/Dogs/** Mammals/Dogs/Puppy
+cp: omitting directory ‘Mammals/Dogs/Puppy’
+[twensman001@viewlincsci25 49 ~/Desktop/CS160Labs/Lab01]$ cp Mammals/Dogs/** Mammals/Dogs/Puppy
+cp: omitting directory ‘Mammals/Dogs/Puppy’
+[twensman001@viewlincsci25 50 ~/Desktop/CS160Labs/Lab01]$ cp Mammals/Dogs/** Mammals/Dogs/Puppy
+cp: omitting directory ‘Mammals/Dogs/Puppy’
+[twensman001@viewlincsci25 51 ~/Desktop/CS160Labs/Lab01]$ mkdir Critters
+[twensman001@viewlincsci25 52 ~/Desktop/CS160Labs/Lab01]$ pwd
+/net/home/twensman001/Desktop/CS160Labs/Lab01
+[twensman001@viewlincsci25 53 ~/Desktop/CS160Labs/Lab01]$ ls
+ls                 lsb_release        lsdiff             lshw               lsipc              lsmcli             lsns               lsscsi             lsusb              
+lsattr             lscgroup           lsdvd              lshw-gui           lslocks            lsmd               lsof               lssubsys           lsusb.py           
+lsblk              lscpu              ls-F               lsinitrd           lslogins           lsmod              lspci              lstopo-no-graphics 
+[twensman001@viewlincsci25 53 ~/Desktop/CS160Labs/Lab01]$ ls
+Critters                          CS160Lab01_Linux_DrJava__Prelab.html  Images   MouseIndicator.class   TouchyWindow.class  TouchyWindow.java~            WensmanTrevorLab01Report.txt~
+CS160Lab01_Linux_DrJava_Lab.html  Hal                                   Mammals  MyMouseIndicator.java  TouchyWindow.java   WensmanTrevorLab01Report.txt
+[twensman001@viewlincsci25 54 ~/Desktop/CS160Labs/Lab01]$ tree
+.
+├── Critters
+├── CS160Lab01_Linux_DrJava_Lab.html
+├── CS160Lab01_Linux_DrJava__Prelab.html
+├── Hal
+│   └── 2cats
+├── Images
+│   ├── CS160_Linux_DrJava_ApplicationMenu.jpg
+│   ├── CS160_Linux_DrJava_DesiredHierarchy.jpg
+│   ├── CS160_Linux_DrJava_LinuxCommands.png
+│   └── CS160_Linux_DrJava_OriginalHierarchy.jpg
+├── Mammals
+│   ├── Cats
+│   │   ├── 2cats
+│   │   ├── 3cats
+│   │   ├── blackcat
+│   │   ├── fire
+│   │   ├── Hal
+│   │   └── kittyCat
+│   ├── Dogs
+│   │   ├── collie
+│   │   ├── germanShepherd
+│   │   └── Puppy
+│   │       ├── collie
+│   │       └── germanShepherd
+│   └── Other
+│       ├── People
+│       │   ├── me
+│       │   └── you
+│       └── Whales
+│           ├── big
+│           ├── blue
+│           └── killer
+├── MouseIndicator.class
+├── MyMouseIndicator.java
+├── TouchyWindow.class
+├── TouchyWindow.java
+├── TouchyWindow.java~
+├── WensmanTrevorLab01Report.txt
+└── WensmanTrevorLab01Report.txt~
+
+10 directories, 29 files
+[twensman001@viewlincsci25 55 ~/Desktop/CS160Labs/Lab01]$ mv Other/People Critters/
+mv: cannot stat ‘Other/People’: No such file or directory
+[twensman001@viewlincsci25 56 ~/Desktop/CS160Labs/Lab01]$ mv Other/Mammals/Other/People Critters
+mv: cannot stat ‘Other/Mammals/Other/People’: No such file or directory
+[twensman001@viewlincsci25 57 ~/Desktop/CS160Labs/Lab01]$ Mammals/Other/People/ Critters/
+Mammals/Other/People/: Permission denied.
+[twensman001@viewlincsci25 58 ~/Desktop/CS160Labs/Lab01]$ mv Mammals/Other/People/ Critters/
+[twensman001@viewlincsci25 59 ~/Desktop/CS160Labs/Lab01]$ tree
+.
+├── Critters
+│   └── People
+│       ├── me
+│       └── you
+├── CS160Lab01_Linux_DrJava_Lab.html
+├── CS160Lab01_Linux_DrJava__Prelab.html
+├── Hal
+│   └── 2cats
+├── Images
+│   ├── CS160_Linux_DrJava_ApplicationMenu.jpg
+│   ├── CS160_Linux_DrJava_DesiredHierarchy.jpg
+│   ├── CS160_Linux_DrJava_LinuxCommands.png
+│   └── CS160_Linux_DrJava_OriginalHierarchy.jpg
+├── Mammals
+│   ├── Cats
+│   │   ├── 2cats
+│   │   ├── 3cats
+│   │   ├── blackcat
+│   │   ├── fire
+│   │   ├── Hal
+│   │   └── kittyCat
+│   ├── Dogs
+│   │   ├── collie
+│   │   ├── germanShepherd
+│   │   └── Puppy
+│   │       ├── collie
+│   │       └── germanShepherd
+│   └── Other
+│       └── Whales
+│           ├── big
+│           ├── blue
+│           └── killer
+├── MouseIndicator.class
+├── MyMouseIndicator.java
+├── TouchyWindow.class
+├── TouchyWindow.java
+├── TouchyWindow.java~
+├── WensmanTrevorLab01Report.txt
+└── WensmanTrevorLab01Report.txt~
+
+10 directories, 29 files
+[twensman001@viewlincsci25 60 ~/Desktop/CS160Labs/Lab01]$ 
+[twensman001@viewlincsci25 60 ~/Desktop/CS160Labs/Lab01]$ 
+

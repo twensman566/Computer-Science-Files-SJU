@@ -1,0 +1,120 @@
+<!DOCTYPE>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:light" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:light" rel="stylesheet">
+    <style>
+      * {color: #93a1a1; font-family: "Roboto Condensed", sans-serif;}
+      body {background-color: #eee8d5;}
+      h2,h3 {color: #073642;}
+      a,a:active,a:visited {color: #d33682;}
+      pre,kbd,code {font-family: "Roboto Mono", sans-serif; font-size: 85%;}
+      kbd {color: #d33682;}
+      pre,code {color: #6c71c4;}
+    </style>
+    <title>Lab 10: Structural Recursion&#8212;the Segmented Worm</title>
+  </head>
+
+  <body style="color: rgb(0, 0, 102); background-color: rgb(255, 247, 215);">
+    <h2>
+      Lab 10: Structural Recursion&#8212;the Segmented Worm
+    </h2>
+
+    <p>
+      In this lab, you'll complete a group of classes that combine to create a
+      <code>GObject</code> that looks (somewhat) like a segmented worm
+      (earthworm). The segments are linked together and are built using
+      recursion. After completing and testing the classes, you'll extend their
+      capabilities.
+    </p>
+
+    <h3>
+      Preliminaries
+    </h3>
+
+    <p>
+      Using a terminal window, copy the directory named <kbd>Lab10</kbd> from
+      <kbd>/usr/people/classes/CS160/labs</kbd> into your <kbd>CS160</kbd>
+      directory. Use the <kbd>tree</kbd> command to verify that the directory
+      structure for your local copy of <kbd>Lab10</kbd> matches the following:
+    </p>
+
+    <pre style="color: #d33682;">
+    Lab10
+    |-- HeadSegment.java
+    |-- Lab.html
+    |-- solution
+    |   |-- HeadSegment.class
+    |   |-- WormSegment.class
+    |   |-- WormTester.class
+    |   `-- BullseyeTester.class
+    |-- WormSegment.java
+    `-- WormTester.java
+    </pre>
+
+    <h3>
+      Part 1: Completing the segmented worm.
+    </h3>
+
+    <p>
+      The supplied Java files for this lab include a tester program
+      (<kbd>WormTester.java</kbd>) which should remain unchanged for Part 1. The
+      remaining two Java files (<kbd>WormSegment.java</kbd> and
+      <kbd>HeadSegement.java</kbd>) implement the actual worm segments and need
+      to be completed. Note the inheritance structure of these classes. A head
+      segment is a modified worm segment; the only difference between them is
+      that the head segment has eyes. Each of these segments has a
+      <code>nextSegment</code> instance variable for the next segment in the
+      worm.
+    </p>
+
+    <p>
+      The directions are in the files as comments, all beginning
+      &ldquo;//***&rdquo;. Follow these directions carefully to complete the two
+      classes; once you have this working correctly, you can remove the
+      instructional comments.
+    </p>
+
+    <p>
+      Use the supplied test program to test your worm, and show it to the TA or
+      lab instructor before you continue.
+    </p>
+
+    <h3>
+      Part 2: Building the worm in different orientations
+    </h3>
+
+    <p>
+      IMPORTANT: Before you start this part of the lab, save copies of your
+      working Part 1 files.
+    </p>
+
+    <p>
+      The worm you have built can only be oriented from left to right. It would
+      be nice to have the worm built in any orientation you wish. Modify the
+      <code>WormSegment</code> and <code>HeadSegment</code> classes so that
+      their public constructors take an additional parameter <code>double
+      angle</code> that represents the desired orientation in degrees, where
+      0&deg; is a left-to-right orientation; the same parameter should be added
+      to the <code>makeNextSegment()</code> method in the
+      <code>WormSegment</code> class. In the <code>makeNextSegment()</code>
+      method, convert the angle to radians and compute its sine and cosine. (Use
+      <code>Math.toRadians()</code> and the <code>Math.sin()</code> and
+      <code>Math.cos()</code> methods as you did in the cannon lab.) Use these
+      values to locate the new segment
+      <em>cos&nbsp;&theta;&nbsp;&times;&nbsp;(SIZE&nbsp;+&nbsp;OVERLAP)</em> to
+      the right of the current segment and
+      <em>sin&nbsp;&theta;&nbsp;&times;&nbsp;(SIZE&nbsp;+&nbsp;OVERLAP)</em>
+      below the current segment.
+    </p>
+
+    <p>
+      Finally modify the <code>WormTester</code> class so that it passes an
+      angle to the <code>HeadSegment</code> constructor. You can design it
+      either to use a constant for the angle or to read the angle from the user.
+      Either way, test your modified worm using several angles and show it to
+      the TA or lab instructor before you continue.
+    </p>
+  </body>
+</html>

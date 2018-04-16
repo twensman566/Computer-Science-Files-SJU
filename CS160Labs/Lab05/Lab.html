@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:light" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:light" rel="stylesheet">
+    <style>
+      * {color: #93a1a1; font-family: "Roboto Condensed", sans-serif;}
+      body {background-color: #eee8d5;}
+      h2,h3 {color: #073642;}
+      a,a:active,a:visited {color: #d33682;}
+      pre,kbd,code {font-family: "Roboto Mono", sans-serif; font-size: 85%;}
+      kbd {color: #d33682;}
+      pre,code {color: #6c71c4;}
+    </style>
+    <title>Lab 5: Loops and classes&#8212;bullseyes and bowling pins</title>
+  </head>
+
+  <body>
+    <h2>
+      Lab 5: Loops and classes&#8212;bullseyes and bowling pins
+    </h2>
+
+    <p>
+      In this lab, you will gain experience defining classes and implementing
+      methods that require the use of loops.
+    </p>
+
+    <h3>
+      Preliminaries
+    </h3>
+
+    <p>
+      Complete the <a href="Prelab.html">pre-lab exercise</a>, if you have not
+      already done so, before going on to the exercises below.
+    </p>
+
+    <h3>
+      Part 1: basic bowling pins
+    </h3>
+
+    <p>
+      Like the bullseye program, the bowling pin program is in two files. The
+      first, <kbd>BowlingPinPlacer.java</kbd>, is provided for you. It is a
+      simple program that creates a new <code>BowlingPins</code> object. Your
+      job is to complete the second file, <kbd>BowlingPins.java</kbd>, to define
+      the <code>BowlingPins</code> class that places 10 circles representing ten
+      bowling pins lined up in 4 rows, of 4, 3, 2 and 1 pins, respectively. Your
+      final configuration of circles should be configured something like the
+      diagram below. The back left pin should be located at the x- and
+      y-coordinates defined in <kbd>BowlingPinPlacer.java</kbd>. You will know
+      if your program is correct, if the red pin created in
+      <kbd>BowlingPinPlacer.java</kbd> completely overlaps the back left pin of
+      your configuration. The size of the pins (diameter), the horizontal
+      spacing between pins and vertical spacing between rows should be declared
+      as static final constants. (Note that the horizontal spacing should be
+      about 2&thinsp;&frasl;&radic;3 times the vertical distance if you want
+      equilateral triangles; you should experiment with the constants to get
+      pleasing values.)
+    </p>
+
+    <pre style="color: #073642;">
+    &bull;   &bull;   &bull;   &bull;
+      &bull;   &bull;   &bull;
+        &bull;   &bull;
+          &bull;</pre>
+
+    <p>
+      You will need to use nested loops. The outer loop is to go through the
+      rows of circles; the inner loop is to print the circles in each row.
+    </p>
+
+    <p>
+      This exercise will be easiest if you do it in stages:
+    </p>
+
+    <ol>
+	    <li>
+        Complete the inner for-loop so that you display one row of four circles,
+        omitting the outer loop.
+      </li>
+
+      <pre style="color: #073642;">
+      &bull;   &bull;   &bull;   &bull;</pre>
+
+	    <li>
+        Add the outer loop so that you now display four rows of four
+        circles.
+      </li>
+
+      <pre style="color: #073642;">
+      &bull;   &bull;   &bull;   &bull;
+      &bull;   &bull;   &bull;   &bull;
+      &bull;   &bull;   &bull;   &bull;
+      &bull;   &bull;   &bull;   &bull;</pre>
+
+	    <li>
+        Modify the inner loop so that the top row has four circles, the second
+        row has three, the third row two and the last one.
+      </li>
+
+      <pre style="color: #073642;">
+      &bull;   &bull;   &bull;   &bull;
+      &bull;   &bull;   &bull;
+      &bull;   &bull;
+      &bull;</pre>
+
+	    <li>
+        Modify the inner loop so that the rows of circles are offset in the
+        desired bowling pin pattern shown above.
+      </li>
+    </ol>
+
+    <p>
+      Complete the class and show your lab instructor or TA your final program.
+    </p>
+
+    <h3>
+      Part 2: extending the bowling bin pattern
+    </h3>
+
+    <p>
+      Make new versions your <code>BowlingPins</code> and
+      <code>BowlingPinPlacer</code> classes so that the <code>BowlingPins</code>
+      object can be constructed with a user defined number of rows of pins
+      instead of always just four (make copies of the files and change their
+      names to <kbd>BowlingPins2.java</kbd> and
+      <kbd>BoxlingPinPlacer2.java</kbd> respectively). The desired number of
+      rows should be passed as an argument to the <code>BowlingPin2</code>
+      constructor. For example, with five rows, the alignment should look like
+      the diagram below:
+    </p>
+
+    <pre style="color: #073642;">
+    &bull;   &bull;   &bull;   &bull;   &bull;
+      &bull;   &bull;   &bull;   &bull;
+        &bull;   &bull;   &bull;
+          &bull;   &bull;
+            &bull;</pre>
+
+    <p>
+      Complete the class and show your lab instructor or TA your final program.
+    </p>
+  </body>
+</html>

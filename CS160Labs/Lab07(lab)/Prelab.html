@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:light" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:light" rel="stylesheet">
+    <style>
+      * {color: #93a1a1; font-family: "Roboto Condensed", sans-serif;}
+      body {background-color: #eee8d5;}
+      h2,h3 {color: #073642;}
+      a,a:active,a:visited {color: #d33682;}
+      pre,kbd,code {font-family: "Roboto Mono", sans-serif; font-size: 85%;}
+      kbd {color: #d33682;}
+      pre,code {color: #6c71c4;}
+    </style>
+    <title>Lab 7: A Simple Animation</title>
+  </head>
+
+  <body>
+    <h2>
+      Lab 7: Making simple animated simulations&#8212;animated boxes, turtles
+      and hares
+    </h2>
+
+    <p>
+      In this lab, you will complete several classes that will extend the
+      <code>Animator</code> class to get a better handle on how to create
+      classes that have objects that run independently.
+    </p>
+
+    <p>
+      Notes:
+      <ol>
+        <li>
+          Remember that all programs are expected to contain comments for public
+          classes, variables, constants and methods.
+        </li>
+        <li>
+          All comments set off with &#8220;***&#8221; are instructions to you as
+          the programmer. You should remove or replace those comments once
+          you've completed the instructions.
+        </li>
+      </ol>
+    </p>
+
+    <h3>
+      Preliminaries
+    </h3>
+
+    <p>
+      Using a terminal window, copy the directory named <kbd>Lab07</kbd> from
+      <kbd>/usr/people/classes/CS160/labs</kbd> into your <kbd>CS160</kbd>
+      directory. Use the <kbd>tree</kbd> command to verify that the directory
+      structure for your local copy of <kbd>Lab07</kbd> matches the following:
+    </p>
+
+    <pre style="color: #d33682;">
+    Lab07
+    |-- ActiveBox.java
+    |-- ActiveHare.java
+    |-- ActiveTurtle.java
+    |-- Box.java
+    |-- BoxController.java
+    |-- NewRace.java
+    |-- Prelab.html
+    |-- solution
+    |   |-- ActiveBox.class
+    |   |-- ActiveHare.class
+    |   |-- ActiveTurtle.class
+    |   |-- Box.class
+    |   |-- BoxController.class
+    |   |-- Hare.class
+    |   |-- NewRace.class
+    |   `-- Turtle.class
+    `-- Turtle.java
+    </pre>
+
+    <h3>
+      Pre-lab exercise: A sliding box
+    </h3>
+
+    <p>
+      Start DrJava and open the file <kbd>BoxController.java</kbd> from your lab
+      directory. The <code>BoxController</code> class is similar to others that
+      we have seen that extend the <code>GraphicsProgram</code> class. Its
+      <code>init()</code> method simply creates one line of text (a
+      <code>GLabel</code>), and its <code>mouseClicked()</code> method hides
+      that text and creates an <code>ActiveBox</code> object at the point of the
+      click. The <code>ActiveBox</code> will take care of itself, moving across
+      the screen from left to right.
+    </p>
+
+    <p>
+      Now open the file <kbd>ActiveBox.java</kbd>; in it you will see a template
+      for the <code>ActiveBox</code> class. It defines constants for the time to
+      pause between movements (<code>DELAY_TIME</code>) and the speed at which
+      to move across the canvas (<code>X_SPEED</code>). You are to complete the
+      code for the <code>run()</code> method.
+    </p>
+
+    <p>
+      The <code>run()</code> method will consist of a <code>while</code>-loop
+      that runs as long as the box has not moved beyond the right edge of the
+      canvas. You'll need to find a boolean expression involving the box size,
+      the current x-position of the box and the width of the canvas to control
+      the loop; use the <code>getX()</code> and <code>getWidth()</code> methods,
+      respectively, to get those two values. Inside the loop, the box moves to
+      the right by a distance of <code>X_SPEED</code>, and then pauses for the
+      defined delay time. After the <code>while</code>-loop, remove the box from
+      the canvas using the <code>remove()</code> method.
+    </p>
+
+    <p>
+      Show your work to the TA or lab instructor at the beginning of lab.
+    </p>
+  </body>
+</html>

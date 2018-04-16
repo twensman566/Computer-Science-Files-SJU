@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:light" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:light" rel="stylesheet">
+    <style>
+      * {color: #93a1a1; font-family: "Roboto Condensed", sans-serif;}
+      body {background-color: #eee8d5;}
+      h2,h3 {color: #073642;}
+      a,a:active,a:visited {color: #d33682;}
+      pre,kbd,code {font-family: "Roboto Mono", sans-serif; font-size: 85%;}
+      kbd {color: #d33682;}
+      pre,code {color: #6c71c4;}
+    </style>
+    <title>Lab 7: A Simple Animation</title>
+  </head>
+
+  <body>
+    <h2>
+      Lab 7: Making simple animated simulations&#8212;animated boxes, turtles
+      and hares
+    </h2>
+
+    <p>
+      Notes:
+      <ol>
+        <li>
+          Work with your pair partner(s) on this lab but swap roles.&nbsp; If
+          you were not the recorder last time, your role will be as recorder
+          this time.
+        </li>
+        <li>
+          Remember that all programs are expected to contain comments for public
+          classes, variables, constants and methods.
+        </li>
+        <li>
+          All comments set off with &#8220;***&#8221; are instructions to you as
+          the programmer. You should remove or replace those comments once
+          you've completed the instructions.
+        </li>
+        <li>
+          Remember to share your files with your partner.
+        </li>
+      </ol>
+    </p>
+
+    <h3>
+      Part 1: Animating the turtle and the hare
+    </h3>
+
+    <p>
+      In this part of the lab we're going to redo the turtle and hare race so
+      you don't have to continually click the mouse to run the race. We will now
+      have classes called <code>ActiveTurtle</code> and <code>ActiveHare</code>
+      that will run the race autonomously once they are started. The
+      <code>ActiveTurtle</code> and <code>ActiveHare</code> classes will extend
+      the <code>Animator</code> class, which allows objects to act independently
+      of each other by running in separate <em>threads</em>. The
+      <code>NewRace</code> class will create a turtle and a hare, put them on
+      the race course and start them; the two runners will run their race until
+      one of them reaches the finish line. Each runner will time him/herself
+      (fairly!) and post her/his finish time on the canvas.
+    </p>
+
+    <p>
+      Make one new Java file <kbd>Hare.java</kbd> and copy the contents of the
+      file <kbd>Turtle.java</kbd> into it. Modify the files
+      <kbd>Turtle.java</kbd> and <kbd>Hare.java</kbd> so they implement the
+      <code>Turtle</code> and <code>Hare</code> classes, respectively; use your
+      code from Lab 2 to make your classes draw the two animals. The
+      <code>ActiveHare</code> and <code>ActiveTurtle</code> classes have
+      instance variables of types <code>Hare</code> and <code>Turtle</code>,
+      respectively. The <code>ActiveTurtle</code> class is completed for you;
+      you should complete the <code>ActiveHare</code> class using the
+      <code>ActiveTurtle</code> as a model.
+    </p>
+
+    <h3>
+      Part 2: Adding another racer
+    </h3>
+
+    <p>
+      Make a class for a new animal (not a turtle or hare) and a new
+      corresponding active animal class. Modify the <code>NewRace</code> class
+      so that there are three racers, including one of the new animal.
+    </p>
+
+    <p>
+      As usual, when you are done with the in-lab exercises above, have your lab
+      instructor or TA check over your work before you leave the lab.
+    </p>
+  </body>
+</html>

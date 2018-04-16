@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class Proj45 
+
+{
+    public static void main(String[]args) 
+    {
+    Scanner Reader = new Scanner(System.in);
+    double input = 1;
+    double output = 1;
+    
+    System.out.print("Enter the number of iterations:");
+    input = Reader.nextInt();
+    
+    for(int x=1 ; x <= input ; x=x+2)
+    output = ((output) - ((1.0)/(x+2)));
+    
+    System.out.println(output);
+        }
+    }

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:light" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:light" rel="stylesheet">
+    <style>
+      * {color: #93a1a1; font-family: "Roboto Condensed", sans-serif;}
+      body {background-color: #eee8d5;}
+      h2,h3 {color: #073642;}
+      a,a:active,a:visited {color: #d33682;}
+      pre,kbd,code {font-family: "Roboto Mono", sans-serif; font-size: 85%;}
+      kbd {color: #d33682;}
+      pre,code {color: #6c71c4;}
+    </style>
+    <title>Lab 5: Loops and classes&#8212;bullseyes and bowling pins</title>
+  </head>
+
+  <body>
+    <h2>
+      Lab 5: Loops and classes&#8212;bullseyes and bowling pins
+    </h2>
+
+    <p>
+      In this lab, you will gain experience defining classes and implementing
+      methods that require the use of loops.
+    </p>
+
+    <h3>
+      Preliminaries
+    </h3>
+
+    <p>
+      Using a terminal window, copy the directory named <kbd>Lab05</kbd> from
+      <kbd>/usr/people/classes/CS160/labs</kbd> into your <kbd>CS160</kbd>
+      directory. Use the <kbd>tree</kbd> command to verify that the directory
+      structure for your local copy of <kbd>Lab05</kbd> matches the following:
+    </p>
+
+    <pre style="color: #d33682;">
+    Lab05
+    |-- BowlingPinPlacer.java
+    |-- BowlingPins.java
+    |-- Bullseye.java
+    |-- BullseyePlacer.java
+    |-- Prelab.html
+    `-- solution
+        |-- BowlingPinPlacer2.class
+        |-- BowlingPinPlacer.class
+        |-- BowlingPins2.class
+        |-- BowlingPins.class
+        |-- Bullseye.class
+        |-- BullseyePlacer.class
+        `-- BullseyeTester.class
+    </pre>
+
+    <h3>
+      Pre-lab exercise: the Bullseye
+    </h3>
+
+    <p>
+      Open the files <kbd>BullseyePlacer.java</kbd> and <kbd>Bullseye.java</kbd>
+      in DrJava. These files contain a template for the <code>Bullseye</code>
+      program, which draws a bullseye similar to the Target logo on the canvas.
+      Using a loop, the program should draw six concentric filled-in circles,
+      with the color alternating between red and black. The biggest should be
+      120 pixels in diameter, with each subsequent circle decreasing 20 pixels
+      in diameter. Each circle should be added to the <code>Bullseye</code>
+      object being created, as it is created&#8212;this is accomplished by two
+      statements.
+    </p>
+
+    <ol>
+      <li>
+        The first is included for you and is the statement <code>extends
+        GCompound</code> in the <code>Bullseye</code> class declaration. The
+        <code>GCompound</code> class is a convenience provided by the ACM
+        library. It allows you to <em>add</em> objects to other objects like you
+        would the canvas. This way, when the parent object, i.e., the object
+        which other objects are being added to, is finally added to the canvas,
+        all of its child objects will be added automatically.
+      </li>
+
+      <li>
+        The second is the <code>add()</code> method which is implemented for the
+        <code>Bullseye</code> class because it <code>extends GCompound</code>.
+        You can use it as follows: <code>this.add(circle, x, y);</code>, where
+        <code>circle</code> is a <code>GOval</code> reference variable and
+        <code>x</code> and <code>y</code> are the x- and y-offsets from the
+        <code>Bullseye</code> object to which <code>circle</code> is being
+        added.
+      </li>
+    </ol>
+
+    <p>
+      Note that you should only modify the <kbd>Bullseye.java</kbd> file; keep
+      the file <kbd>BullseyePlacer.java</kbd> unchanged.
+    </p>
+
+    <p>
+      Test your program to assure yourself that it works correctly. Add
+      appropriate comments if you have not already done so. Show your working
+      program and code to the lab instructor or TA at the <em>beginning</em> of
+      lab.
+    </p>
+  </body>
+</html>

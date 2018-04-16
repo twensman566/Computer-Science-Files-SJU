@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:light" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:light" rel="stylesheet">
+    <style>
+      * {color: #93a1a1; font-family: "Roboto Condensed", sans-serif;}
+      body {background-color: #eee8d5;}
+      h2,h3 {color: #073642;}
+      a,a:active,a:visited {color: #d33682;}
+      pre,kbd,code {font-family: "Roboto Mono", sans-serif; font-size: 85%;}
+      kbd {color: #d33682;}
+      pre,code {color: #6c71c4;}
+    </style>
+    <title>Lab 8: Graphical arrays&#8212;bullseyes and bowling pins, revisited</title>
+  </head>
+
+  <body>
+    <h2>
+      Lab 8: Graphical arrays&#8212;bullseyes and bowling pins, revisited
+    </h2>
+
+    <h3>
+      Preliminaries
+    </h3>
+
+    <p>
+      Using a terminal window, copy the directory named <kbd>Lab09</kbd> from
+      <kbd>/usr/people/classes/CS160/labs</kbd> into your <kbd>CS160</kbd>
+      directory. Use the <kbd>tree</kbd> command to verify that the directory
+      structure for your local copy of <kbd>Lab09</kbd> matches the following:
+    </p>
+
+    <pre style="color: #d33682;">
+    Lab09
+    |-- Lab.html
+    |-- Prelab.html
+    |-- solution
+    |   |-- BowlingPinPlacer.class
+    |   |-- BowlingPins.class
+    |   |-- BowlingSimulator.class
+    |   |-- Bullseye.class
+    |   |-- BullseyeTester.class
+    |-- SquareBoxes.java
+    `-- SquareBoxesPlacer.java
+    </pre>
+
+    <h3>Pre-lab exercise: a new Bullseye</h3>
+
+    <p>
+      Make a new version of the <code>Bullseye</code> class from Lab 5. Use the
+      <code>SquareBoxes</code> class as your basic model, and refer to the old
+      version of the <code>Bullseye</code> class for specific code to place the
+      circles. You should have an array instance variable to hold all the
+      circles, with the outermost circle at index 0. The constructor should take
+      a parameter <code>int numRings</code> that represents the total number of
+      rings in the bullseye, counting the center circle as a ring. The
+      constructor allocates the array to the specified size and then makes the
+      circles with alternating default colors. Add a <code>setColor(boolean
+      outer, Color newColor)</code> method that changes the color of alternate
+    rings to the specified new color; if the parameter <code>outer</code> is
+    <code>true</code>, it changes the outermost ring and every second ring
+    inward; if <code>outer</code> is <code>false</code> it changes the second
+    ring and every second ring inward.
+    </p>
+
+    <p>
+      Use the Lab 5 test program as a model to test your new
+      <code>Bullseye</code> class. Be sure to test several sizes of bullseyes,
+      including both even and odd numbers of rings, and for the color change
+      with both even- and odd-numbered bullseyes.
+    </p>
+  </body>
+</html>

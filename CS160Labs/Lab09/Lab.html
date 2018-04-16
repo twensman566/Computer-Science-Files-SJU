@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:light" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:light" rel="stylesheet">
+    <style>
+      * {color: #93a1a1; font-family: "Roboto Condensed", sans-serif;}
+      body {background-color: #eee8d5;}
+      h2,h3 {color: #073642;}
+      a,a:active,a:visited {color: #d33682;}
+      pre,kbd,code {font-family: "Roboto Mono", sans-serif; font-size: 85%;}
+      kbd {color: #d33682;}
+      pre,code {color: #6c71c4;}
+    </style>
+    <title>Lab 9: Graphical arrays&#8212;bullseyes and bowling pins, revisited</title>
+  </head>
+
+  <body>
+    <h2>
+      Lab 9: Graphical arrays&#8212;bullseyes and bowling pins, revisited
+    </h2>
+
+    <h3>
+      Part 1: a new <code>BowlingPins</code> class
+    </h3>
+
+    <p>
+      Using your <code>Bullseye</code> class as a model and the Lab 5
+      <code>BowlingPins</code> class for guidance, create a new
+      <code>BowlingPins</code> class. There should be two constructors: the first has no parameters
+      and calls the second (using <code>this()</code>), passing it
+      <code>DEFAULT_NUM_ROWS</code>, which should be defined to be four; the second
+      should take one parameter with the number of rows. The size of the array
+      should be the total number of pins, which is:
+    </p>
+
+    <pre>
+      numRows + numRows&#8722;1 + &#8230; + 2 + 1
+    = numRows * (numRows + 1) &#8260; 2
+    </pre>
+
+    <p>
+      You'll want to save the number of rows in an instance variable, but you
+      can use the array length if and when you need to check the total number of
+      pins
+    </p>
+
+    <p>
+      Add color changing methods similar to the ones in the
+      <code>BoxArray</code> class.
+    </p>
+
+    <p>
+      Again use the tester from Lab 5 and/or the tester for the
+      <code>BoxArray</code> as a model to create a tester for your bowling pins.
+      Be sure to test different numbers of rows and different combinations of
+      color and fill changes.
+    </p>
+
+    <h3>
+      Part 2: a Bowling simulator
+    </h3>
+
+    <p>
+      Write a graphical program that simulates one frame of a bowling game.
+      We'll use slightly simplified rules, but you can use the actual rules if
+      you prefer. In a typical frame, a bowler gets one or two chances to knock
+      down all the pins. If the first throw knocks down all the pins, it's
+      called a <em>strike</em>, and the player scores 10 plus the number of pins
+      on the next two throws (which will be in the next frame or two if there's
+      another strike). If the second throw knocks down all the pins, it's called
+      a <em>spare</em>, and the player scores 10 plus the number of pins on the
+      next throw (in the next frame). Otherwise, the player scores the number of
+      pins knocked over on the two throws of the frame.
+    </p>
+
+    <p>
+      Your simulation should start with a set of standing bowling pins and an
+      array <code>pinsStanding</code> which is initialized to <code>true</code>
+      for all the pins; this much can be set up in the <code>init</code> method.
+      Use the <code>mouseClicked</code> method to initiate a throw. On each
+      throw, generate a number between zero and the number of standing pins,
+      inclusive, to represent the number of pins knocked over on this throw; if
+      the number of pins knocked over is less than the number of pins still
+      standing, randomly select that many of the remaining pins, and mark them
+      as eliminated by unfilling them and setting the corresponding value in
+      <code>pinsStanding</code> to <code>false</code>; at the end of the throw,
+      report the score for the frame so far with a <code>GLabel</code> at the
+      top or bottom of the canvas. The frame ends after the first throw if it is
+      a strike or else after the second throw. If the frame is a strike, report
+      that with the score, and generate a random number between zero and 20 to
+      add to the frame's score; if the frame is a spare, report that, and
+      generate a random number between zero and 10 to add to the score.
+    </p>
+  </body>
+</html>

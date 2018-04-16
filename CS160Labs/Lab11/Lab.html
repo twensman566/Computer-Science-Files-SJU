@@ -1,0 +1,151 @@
+<!DOCTYPE>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:light" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:light" rel="stylesheet">
+    <style>
+      * {color: #93a1a1; font-family: "Roboto Condensed", sans-serif;}
+      body {background-color: #eee8d5;}
+      h2,h3 {color: #073642;}
+      a,a:active,a:visited {color: #d33682;}
+      pre,kbd,code {font-family: "Roboto Mono", sans-serif; font-size: 85%;}
+      kbd {color: #d33682;}
+      pre,code {color: #6c71c4;}
+    </style>
+    <title>Lab 11: More recursion&#8212;the Towers of Hanoi</title>
+  </head>
+
+  <body>
+    <h2>
+      Lab 11: More recursion&#8212;the Towers of Hanoi
+    </h2>
+
+    <p>
+      The <em>Towers of Hanoi</em> is a game/puzzle with origins lost in the
+      mists of time. Its legend is that in a Buddhist monastery in Hanoi,
+      Vietnam, the monks work tireless moving disks from one tower to another,
+      following the rules of the game; when they finish moving all the disks to
+      the last tower, the world will end.
+    </p>
+
+    <p>
+      The puzzle layout consists of three spindles, the first of which has
+      <em>n</em> disks stacked on it, each disk having a smaller diameter than
+      the one below it, forming a stepped cone. The rules are simple:
+    </p>
+
+    <ul>
+      <li>
+        Only one disk may be moved at a time.
+      </li>
+      <li>
+        Each move consists of taking the upper disk from one of the rods
+        and sliding it onto another rod, on top of the other disks that
+        may already be present on that rod.
+      </li>
+      <li>
+        No disk may be placed on top of a smaller disk.
+      </li>
+    </ul>
+
+    <p>
+      The puzzle has an elegant recursive solution, which you will be
+      implementing in today's lab. See the Wikipedia entry for the
+      <a href="http://en.wikipedia.org/wiki/Tower_of_Hanoi">Towers of Hanoi</a>
+      for more information.
+    </p>
+
+    <h3>
+      Preliminaries
+    </h3>
+
+    <p>
+      Using a terminal window, copy the directory named <kbd>Lab11</kbd> from
+      <kbd>/usr/people/classes/CS160/labs</kbd> into your <kbd>CS160</kbd>
+      directory. Use the <kbd>tree</kbd> command to verify that the directory
+      structure for your local copy of <kbd>Lab11</kbd> matches the following:
+    </p>
+
+    <pre style="color: #d33682;">
+    Lab11
+    |-- Lab.html
+    |-- solution
+    |   |-- TowerDisk.class
+    |   |-- Tower.class
+    |   |-- TowersOfHanoi.class
+    |   `-- TowerTest.class
+    |-- TowerDisk.java
+    |-- Tower.java
+    |-- TowersOfHanoi.java
+    `-- TowerTest.java
+    </pre>
+
+    <h2>
+      Part 1: Building the tower components.
+    </h2>
+
+    <p>
+      The files you are given include the <code>TowerDisk</code> class and the
+      <code>Tower</code> class. The <code>Tower</code> class is composed of a
+      base (<code>GRect</code>), a spindle (<code>GRect</code>), and
+      <code>TowerDisk</code> objects. You should start by implementing the
+      constructor for the <code>TowerDisk</code> class. This constructor is
+      recursive in the sense that it will draw the rectangle which represents
+      itself, then create the next <code>TowerDisk</code> object, much like how
+      each <code>WormSegment</code>, drew itself, then created the next
+      <code>WormSegment</code> object in Lab10.
+    </p>
+
+    <p>
+      Once you have the constructor, implementing the remaining methods should
+      be fairly straightforward. Work on this class until you no longer have any
+      compiler errors.
+    </p>
+
+    <p>
+      Once you can compile without errors, use the <code>TowerTest</code>
+      program to see what your tower looks like. The stack of disks should look
+      like a pyramid with a small amount of space between disks; the base disk
+      should be below the colored disks; and the spindle should appear to pass
+      through the center of the disks and stick out the top a little. When you
+      are satisfied with your tower, show it to the TA or lab instructor.
+    </p>
+
+    <h2>
+      Part 2: Solving the puzzle
+    </h2>
+
+    <p>
+      The remaining task is to implement the recursive Towers of Hanoi
+      algorithm. The basic algorithm is as follows:
+    </p>
+
+    <ul>
+      <li>
+        If there's only one disk to move, move it directly from the source to
+        the destination.
+      </li>
+      <li>
+        Otherwise, move the stack of <em>n</em>&nbsp;&#8722;&nbsp;1 disks
+        recursively from the source to the intermediate tower, using the
+        destination as an intermediate; move the remaining disk to the
+        destination; and finally move the stack of
+        <em>n</em>&nbsp;&#8722;&nbsp;1 disks recursively from the intermediate
+        tower to the destination, using the source as an intermediate.
+      </li>
+    </ul>
+
+    <p>
+      The code for the algorithm goes in the first <code>move()</code> method in
+      the <code>TowerOfHanoi</code> class.
+    </p>
+
+    <p>
+      Test your algorithm using the <code>TowersOfHanoi</code> program. You
+      should see the disks move between the towers, without violating any of the
+      rules, until the final result where the disks are stacked on the last
+      tower.
+    </p>
+  </body>
+</html>
